@@ -66,8 +66,8 @@ proxies:
     up: "500 Mbps"
     down: "3000 Mbps"
     skip-cert-verify: true
-         
 
+         
   - name: IP6 
     server: 108.181.24.7
     port: 23450
