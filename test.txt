@@ -1,11 +1,14 @@
-  - name: ip1 
+proxies:
+    
+  - name: "IP1" 
     type: hysteria2
     server: 109.104.152.219
     port: 22998
-    password: TEST123
+    password: test123.com
     alpn:
       - h3
     sni: bing.com
     skip-cert-verify: true
-    up: "100 Mbps"
-    down: "100 Mbps"
+    up: "500 Mbps"
+    down: "3000 Mbps"
+    
