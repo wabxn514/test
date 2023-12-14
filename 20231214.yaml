@@ -4,10 +4,10 @@
 proxies:
     
   - name: "IP1" 
-    type: hysteria2
-    server: 109.104.152.219
-    port: 22998
-    password: dongtaiwang.com
+    type: hysteria
+    server: 108.181.22.239
+    port: 41146
+    auth-str: dongtaiwang.com
     alpn:
       - h3
     sni: bing.com
@@ -30,17 +30,16 @@ proxies:
     
   
   - name: "IP3" 
-    server: tuic1.freeh1.xyz
-    port: 40981
-    type: tuic
-    uuid: c2faac69-e1c1-4bf5-b8a8-d2ce4d834a66
-    password: dongtaiwang
-    sni: tuic1.freeh1.xyz
-    alpn: [h3]
-    request-timeout: 8000
-    udp-relay-mode: native
-    skip-cert-verify: false
-    congestion-controller: bbr
+    type: hysteria
+    server: 108.181.22.213
+    port: 61834
+    auth-str: dongtaiwang.com
+    alpn:
+      - h3
+    protocol: udp
+    up: "500 Mbps"
+    down: "3000 Mbps"
+    skip-cert-verify: true 
     
     
   - name: IP4 
@@ -66,8 +65,8 @@ proxies:
     up: "500 Mbps"
     down: "3000 Mbps"
     skip-cert-verify: true
-
          
+
   - name: IP6 
     server: 108.181.24.7
     port: 23450
@@ -98,9 +97,9 @@ proxies:
 
   - name: "IP8"
     type: hysteria
-    server: 109.104.152.180      
-    port: 64502
-    auth_str: kxeFKpB8fhGjP7cO7NNgXYr19ZsqKQMco612ZCfXiaJrojw571
+    server: 167.160.91.115
+    port: 41189
+    auth_str: bWAwIqINo7XDm1fUlXQGBifVIXoYs1ylgVKqWFKzK1XyDKuwNF
     alpn:
       - h3  
     protocol: udp   
@@ -136,24 +135,20 @@ proxies:
 
 
   - name: "IP11"
-    type: hysteria
-    server: 109.104.152.149  
-    port: 48406
-    auth_str: xfNhrunYJ9GvDXCTktY2bIwhc1EyeyyAbiUMx1UtBOWgI4cMVB
-    alpn:
-      - h3  
-    protocol: udp   
+    type: hysteria2
+    server: 108.181.22.155
+    port: 48558
     up: 500          
-    down: 3000      
-    sni: www.amazon.cn
+    down: 3000
+    password: dongtaiwang.com
+    sni: www.bing.com
     skip-cert-verify: true
-    disable_mtu_discovery: true
     
     
   - name: "IP12"
     type: hysteria2
-    server: 108.181.22.155
-    port: 44141
+    server: www.dtku46.xyz
+    port: 29300
     up: 500          
     down: 3000
     password: dongtaiwang.com
@@ -163,8 +158,8 @@ proxies:
 
   - name: "IP13"
     type: hysteria2
-    server: www.dtku46.xyz
-    port: 49730
+    server: 167.160.90.252
+    port: 63530
     up: 500          
     down: 3000
     password: dongtaiwang.com
@@ -181,6 +176,7 @@ proxies:
     password: dongtaiwang.com
     sni: www.bing.com
     skip-cert-verify: true
+
 
 
   - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
