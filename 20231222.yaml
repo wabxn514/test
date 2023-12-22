@@ -6,11 +6,11 @@ proxies:
   - name: "IP1" 
     type: hysteria
     server: 108.181.22.239
-    port: 41146
+    port: 39967
     auth-str: dongtaiwang.com
     alpn:
       - h3
-    sni: bing.com
+    protocol: udp
     skip-cert-verify: true
     up: "500 Mbps"
     down: "3000 Mbps"
@@ -32,7 +32,7 @@ proxies:
   - name: "IP3" 
     type: hysteria
     server: 108.181.22.213
-    port: 61834
+    port: 52284
     auth-str: dongtaiwang.com
     alpn:
       - h3
@@ -43,15 +43,16 @@ proxies:
     
     
   - name: IP4 
-    server: tuic3.dtku47.xyz
-    port: 12255
-    type: tuic
-    uuid: ed6a538a-6e66-4f21-a769-4b389bb2f3ab
-    password: dongtaiwang
-    alpn: [h3]
-    request-timeout: 8000
-    udp-relay-mode: native
-    congestion-controller: bbr
+    type: hysteria
+    server: 108.181.22.155
+    port: 19721
+    auth-str: dongtaiwang.com
+    alpn:
+      - h3
+    protocol: udp
+    up: "500 Mbps"
+    down: "3000 Mbps"
+    skip-cert-verify: true 
     
     
   - name: IP5 
@@ -68,31 +69,29 @@ proxies:
          
 
   - name: IP6 
-    server: 108.181.24.7
-    port: 23450
-    type: tuic
-    uuid: 3618921b-adeb-4bd3-a2a0-f98b72a674b1
-    password: dongtaiwang
-    sni: bing.com
-    alpn: [h3]
-    request-timeout: 8000
-    udp-relay-mode: native
-    skip-cert-verify: true
-    congestion-controller: bbr 
+    type: hysteria
+    server: 104.234.70.41
+    port: 57153
+    auth-str: dongtaiwang.com
+    alpn:
+      - h3
+    protocol: udp
+    up: "11 Mbps"
+    down: "55 Mbps"
+    skip-cert-verify: true  
 
 
   - name: IP7 
-    server: 108.181.22.205
-    port: 50987
-    type: tuic
-    uuid: d6214437-e1b5-4334-9090-8f66b78bea89
-    password: dongtaiwang
-    sni: bing.com
-    alpn: [h3]
-    request-timeout: 8000
-    udp-relay-mode: native
-    skip-cert-verify: true
-    congestion-controller: bbr
+    type: hysteria
+    server: 104.234.70.6
+    port: 16117
+    auth-str: dongtaiwang.com
+    alpn:
+      - h3
+    protocol: udp
+    up: "11 Mbps"
+    down: "55 Mbps"
+    skip-cert-verify: true 
 
 
   - name: "IP8"
@@ -137,7 +136,7 @@ proxies:
   - name: "IP11"
     type: hysteria2
     server: 108.181.22.155
-    port: 48558
+    port: 40246
     up: 500          
     down: 3000
     password: dongtaiwang.com
@@ -148,7 +147,7 @@ proxies:
   - name: "IP12"
     type: hysteria2
     server: www.dtku46.xyz
-    port: 29300
+    port: 18417
     up: 500          
     down: 3000
     password: dongtaiwang.com
@@ -236,7 +235,8 @@ proxies:
 #"fast_open": true,
 #"hop_interval": 120
 #}
-  - {"name":"vmess","type":"vmess","server":"dongtaiwang3.com","port":8080,"cipher":"auto","uuid":"969f1909-c0d3-4c30-813d-3aec5c838b7d","alterId":0,"tls":false,"skip-cert-verify":true,"servername":"","network":"ws","ws-opts":{"path":"/1IKYjV0r/","headers":{"host":"dongtaiwang15.dtku47.xyz"}}}#  - {name: vmess1, server: 8.218.181.75, port: 57408, type: vmess, uuid: a93df277-c3a8-4948-abd1-663722cb32b0, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: http, http-opts: {method: GET, path: [/]}, udp: true}
+  - {"name":"vmess","type":"vmess","server":"dongtaiwang3.com","port":8080,"cipher":"auto","uuid":"969f1909-c0d3-4c30-813d-3aec5c838b7d","alterId":0,"tls":false,"skip-cert-verify":true,"servername":"","network":"ws","ws-opts":{"path":"/1IKYjV0r/","headers":{"host":"dongtaiwang15.dtku47.xyz"}}}
+#  - {name: vmess1, server: 8.218.181.75, port: 57408, type: vmess, uuid: a93df277-c3a8-4948-abd1-663722cb32b0, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: http, http-opts: {method: GET, path: [/]}, udp: true}
   - alterId: 64
     cipher: auto
     name: trojan
@@ -248,7 +248,7 @@ proxies:
     uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 
   - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":22666,"password":"dongtaiwang.com","cipher":"dummy","obfs":"plain","protocol":"auth_chain_a"}
-  - {"name":"ss","type":"ss","server":"64.31.55.47","port":11122,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}
+  - {"name":"ss","type":"ss","server":"64.31.55.40","port":11111,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}
 
 #  - name: "vmess"
 #    type: vmess
@@ -1495,8 +1495,7 @@ rules:
  - DOMAIN-SUFFIX,gvt1.com,🔰 节点选择                                                                                                                               
  - DOMAIN-SUFFIX,gvt3.com,🔰 节点选择                                                                                                                               
  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,🔰 节点选择                                                                                                                    
- - DOMAIN-SUFFIX,ytimg.com,🔰 节点选择                                                                                                                              
- - DOMAIN-KEYWORD,google,🔰 节点选择                                                                                                                                
+ - DOMAIN-SUFFIX,ytimg.com,🔰 节点选择                                                                                                                                                                                                                                                          
  - DOMAIN-KEYWORD,.blogspot.,🔰 节点选择                                                                                                                            
  - DOMAIN-SUFFIX,line.me,🔰 节点选择                                                                                                                                
  - DOMAIN-SUFFIX,line-apps.com,🔰 节点选择                                                                                                                          
@@ -2367,6 +2366,9 @@ rules:
  - DOMAIN-SUFFIX,apps.microsoft.com,🎯 全球直连
  - DOMAIN-SUFFIX,daniao.org,🎯 全球直连 
  - DOMAIN-SUFFIX,new.c.mi.com,🔰 节点选择 
- - DOMAIN-SUFFIX,mi.com,🎯 全球直连   
+ - DOMAIN-SUFFIX,mi.com,🎯 全球直连 
+ - DOMAIN-SUFFIX,ai.google.dev,CF
+ - DOMAIN-SUFFIX,makersuite.google.com,🐟 漏网之鱼 
+ - DOMAIN-KEYWORD,google,🔰 节点选择      
  - GEOIP,CN,🎯 全球直连                                                                                                                                             
  - MATCH,🐟 漏网之鱼                                                                                                                                                
