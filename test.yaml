@@ -106,16 +106,16 @@ proxies:
     skip-cert-verify: true     
             
   - name: "IP5" 
-    type: hysteria
-    server: 109.104.152.194
-    port: 58510
-    auth-str: dongtaiwang.com
-    alpn:
-      - h3
-    protocol: udp
-    up: "500 Mbps"
-    down: "3000 Mbps"
-    skip-cert-verify: true 
+    server: 51.159.77.153
+    port: 44559
+    type: tuic
+    uuid: 2f8f3873-9edf-4c4e-9888-b8a8b2d9d809
+    password: dongtaiwang.com
+    alpn: [h3]
+    disable-sni: true
+    reduce-rtt: true
+    udp-relay-mode: native
+    congestion-controller: bbr
 
     
   - name: "IP6"
