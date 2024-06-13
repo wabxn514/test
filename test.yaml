@@ -1,50 +1,17 @@
 # Profile Template for clash verge
-#https://clashnode.com/f/freenode
-#https://nodefree.org/f/freenode
-#https://auto.classelivre.eu.org/
-#alvless.comorg.us.kg/CMLiu
-#dns:
-#  nameserver:
-#    - https://dns.google/dns-query
-#    - https://8.8.8.8/dns-query
-#    - https://1.1.1.1/dns-query
-#    - https://cloudflare-dns.com/dns-query
-#    - https://dns.quad9.net/dns-query
-#    - https://doh.sb/dns-query
-#    - https://dns-unfiltered.adguard.com/dns-query
-#    - https://doh.opendns.com/dns-query
-#    - https://dns10.quad9.net/dns-query
-#  nameserver-policy:
-#    "geosite:cn,private":
-#    - https://doh.pub/dns-query
-#    - https://1.12.12.12/dns-query
-#    - https://120.53.53.53/dns-query
-#    - https://dns.alidns.com/dns-query
 
 dns:
+  enabled: true
   nameserver:
-    - https://doh.pub/dns-query
-    - https://1.12.12.12/dns-query
-    - https://120.53.53.53/dns-query
-    - https://dns.alidns.com/dns-query
     - 119.29.29.29
     - 223.5.5.5
   fallback:
-    - https://dns.google/dns-query
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.quad9.net/dns-query
-    - https://doh.sb/dns-query
-    - https://dns-unfiltered.adguard.com/dns-query
-    - https://doh.opendns.com/dns-query
-    - https://dns10.quad9.net/dns-query
     - 8.8.8.8
     - 8.8.4.4
     - tls://1.0.0.1:853
     - tls://dns.google:853
-proxies:
 
+proxies:
             
   - name: "IP1" 
     type: hysteria2
@@ -57,6 +24,7 @@ proxies:
     skip-cert-verify: true
     up: "500 Mbps"
     down: "3000 Mbps"
+    
     
   - name: IP2
     type: vless
@@ -83,6 +51,7 @@ proxies:
         up: 500
         down: 3000
     
+    
   - name: "IP3"
     type: hysteria2
     server: 51.159.77.153
@@ -95,6 +64,7 @@ proxies:
     up: 500          
     down: 3000   
        
+       
   - name: "IP4"
     type: hysteria2
     server: 62.210.103.0
@@ -104,6 +74,7 @@ proxies:
     password: dongtaiwang.com
     sni: www.bing.com
     skip-cert-verify: true     
+    
             
   - name: "IP5" 
     server: 51.159.77.153
@@ -144,7 +115,8 @@ proxies:
     down: 3000       
     sni: bing.com
     skip-cert-verify: true
-    disable_mtu_discovery: true         
+    disable_mtu_discovery: true        
+     
              
   - name: "IP8"
     type: hysteria2
@@ -156,6 +128,7 @@ proxies:
     sni: www.bing.com
     skip-cert-verify: true       
 
+
   - name: "IP9"
     type: hysteria2
     server: 104.192.224.140
@@ -165,6 +138,7 @@ proxies:
     password: dongtaiwang.com
     sni: www.bing.com
     skip-cert-verify: true     
+    
     
   - name: "IP10"
     server: www.dtku50.xyz
@@ -177,12 +151,7 @@ proxies:
     reduce-rtt: true
     udp-relay-mode: native
     congestion-controller: bbr
- 
 
-  - {"name":"IP111","type":"vmess","server":"104.19.58.60","port":8080,"cipher":"auto","uuid":"d9c5ec6a-a8d8-4732-8447-56fbd2f93e96","alterId":0,"tls":false,"skip-cert-verify":true,"servername":"concentrations-taxi-about-recognised.trycloudflare.com","network":"ws","ws-opts":{"path":"d9c5ec6a-a8d8-4732-8447-56fbd2f93e96-vm","headers":{"host":"concentrations-taxi-about-recognised.trycloudflare.com"}}}
-  - {"name":"IP112","type":"vmess","server":"yh1.dtku41.xyz","port":8080,"cipher":"auto","uuid":"ef8c954e-014f-4b36-8273-9b5086afab34","alterId":0,"tls":false,"skip-cert-verify":true,"servername":"hang-broke-john-neither.trycloudflare.com","network":"ws","ws-opts":{"path":"ef8c954e-014f-4b36-8273-9b5086afab34-vm","headers":{"host":"hang-broke-john-neither.trycloudflare.com"}}}
-  - {"name":"IP113","type":"vmess","server":"yh7.dtku41.xyz","port":8080,"cipher":"auto","uuid":"028c8131-9e3e-4836-94ac-ea7f24d4d05a","alterId":0,"tls":false,"skip-cert-verify":true,"servername":"booty-pensions-scheduling-blogging.trycloudflare.com","network":"ws","ws-opts":{"path":"028c8131-9e3e-4836-94ac-ea7f24d4d05a-vm","headers":{"host":"booty-pensions-scheduling-blogging.trycloudflare.com"}}}
-  - {"name":"IP114","type":"vmess","server":"104.20.26.40","port":8080,"cipher":"auto","uuid":"82cb93a3-65a9-4dac-a2a7-d997b6c26d6a","alterId":0,"tls":false,"skip-cert-verify":true,"servername":"fantastic-doe-bids-ended.trycloudflare.com","network":"ws","ws-opts":{"path":"82cb93a3-65a9-4dac-a2a7-d997b6c26d6a-vm","headers":{"host":"fantastic-doe-bids-ended.trycloudflare.com"}}}
 
   - name: "IP11"
     type: hysteria2
@@ -195,24 +164,12 @@ proxies:
     skip-cert-verify: true   
     alpn:
       - h3
+ 
       
-  - name: IP132
-    type: ss
-    server: 109.104.152.186
-    port: 443
-    cipher: 2022-blake3-chacha20-poly1305
-    password: "2mLw+aTguEUrvK/Jamxr4CY/RbLCL/MmfWJQ7c6bXe8="
-    plugin: shadow-tls
-    client-fingerprint: chrome
-    plugin-opts:
-      host: "nijigen-works.jp"
-      password: "UcMMbVQBzIUAcdC12ju6lV9j3rjK3cAQiZoYCDk1h/g="
-      version: 3
   - {"name":"IP12","type":"hysteria","server":"www2.dtku48.xyz","port":33449,"sni":"bing.com","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"dongtaiwang.com","up":11,"down":55,"hop_interval":10}
 
-  - {name: IP131, server: 104.19.58.80, port: 443, client-fingerprint: random, type: vless, uuid: ebfdccb6-7416-4b6e-860d-98587344d500, tls: true, tfo: false, skip-cert-verify: true, servername: tlg1.freessr2.xyz, network: ws, ws-opts: {path: /xyakws, headers: {Host: lg1.freessr2.xyz}}, udp: true}
 
-  - name: IP13
+  - name: IP13 
     server: 64.110.25.12
     port: 22447
     type: tuic
@@ -222,6 +179,9 @@ proxies:
     disable-sni: true
     reduce-rtt: true
     udp-relay-mode: native
+    congestion-controller: bbr
+    
+    
   - name: IP14
     type: ss
     server: www.dtku44.xyz
@@ -248,14 +208,12 @@ proxies:
         enabled: true
         up: 500
         down: 3000 
+  
             
   - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
   - {"name":"warp","type":"wireguard","server":"162.159.192.229","port":1010,"udp":true,"ip":"172.16.0.2","ipv6":"2606:4700:110:8040:e677:b446:ac05:a038","private-key":"ULALYURSXWaCTC2ydffFdr8uFepy7u7KwV1Rmn0ZbWU=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","dns":["1.1.1.1"],"mtu":1280,"remote-dns-resolve":true}
-
-#  - {name: vmess, server: yh3.dtku41.xyz, port: 443, client-fingerprint: random, type: vless, uuid: ebfdccb6-7416-4b6e-860d-98587344d500, tls: true, tfo: false, skip-cert-verify: true, servername: lg1.freessr2.xyz, network: ws, ws-opts: {path: /xyakws, headers: {Host: lg1.freessr2.xyz}}, udp: true}
-  - {name: vmess, server: yh7.dtku41.xyz, port: 443, client-fingerprint: random, type: vless, uuid: ebfdccb6-7416-4b6e-860d-98587344d500, tls: true, tfo: false, skip-cert-verify: true, servername: lg1.freessr2.xyz, network: ws, ws-opts: {path: /xyakws, headers: {Host: lg1.freessr2.xyz}}, udp: true}
+  - {"name":"vmess","type":"vmess","server":"109.104.152.220","port":23099,"cipher":"auto","uuid":"5e3ce6a7-170e-4939-9aae-c8fefb35a7ea","alterId":0,"tls":false,"skip-cert-verify":true,"servername":"","network":"ws","ws-opts":{"path":"/HzuOihB6/"}}
   - {"name":"trojan","type":"hysteria","server":"62.204.54.81","port":34555,"sni":"bing.com","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"dongtaiwang.com","up":11,"down":55,"hop_interval":10}
-  - {name: ssr1, server: yh9.dtku41.xyz, port: 443, client-fingerprint: random, type: vless, uuid: ebfdccb6-7416-4b6e-860d-98587344d500, tls: true, tfo: false, skip-cert-verify: true, servername: lg1.freessr2.xyz, network: ws, ws-opts: {path: /xyakws, headers: {Host: lg1.freessr2.xyz}}, udp: true}
   - {"name":"ss","type":"ss","server":"109.104.152.66","port":11111,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}
   - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":22889,"password":"dongtaiwang.com","cipher":"dummy","obfs":"plain","protocol":"auth_chain_a"}
 
