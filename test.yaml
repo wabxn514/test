@@ -13,18 +13,9 @@ dns:
 
 proxies:
             
-  - name: "IP1" 
-    type: hysteria2
-    server: 74.63.233.74
-    port: 33445
-    password: dongtaiwang.com
-    alpn:
-      - h3
-    sni: www.bing.com
-    skip-cert-verify: true
-    up: "500 Mbps"
-    down: "3000 Mbps"
-    
+
+  - {"name":"IP1","type":"hysteria","server":"64.42.176.181","port":41604,"sni":"bing.com","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"dongtaiwang.com","up":50,"down":300,"hop_interval":10}
+   
     
   - name: IP2
     type: vless
@@ -90,16 +81,20 @@ proxies:
 
     
   - name: "IP6"
-    type: hysteria
-    server: 108.181.5.133
-    port: 26022
-    auth-str: dongtaiwang.com
-    alpn:
-      - h3
-    protocol: udp
-    up: "500 Mbps"
-    down: "3000 Mbps"
-    skip-cert-verify: true
+    type: vmess
+    server: 104.19.38.12                 
+    port: 8080                                     
+    uuid: ffaba3ee-4070-4590-9959-d863f9a4c6de       
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    network: ws
+    servername: ip001.dtku47.xyz                    
+    ws-opts:
+      path: "/9aqOiXD2/"                             
+      headers:
+        Host: ip001.dtku47.xyz 
                   
     
   - name: "IP7"
@@ -141,10 +136,10 @@ proxies:
     
     
   - name: "IP10"
-    server: www.dtku50.xyz
-    port: 22335
+    server: www.dtku40.xyz
+    port: 33098
     type: tuic
-    uuid: ef634e71-99e1-4a08-ac38-a3a5d1db4188
+    uuid: fef3d3c2-ab3e-4134-a2f3-0c2d83e0a76d
     password: dongtaiwang.com
     alpn: [h3]
     disable-sni: true
@@ -154,16 +149,20 @@ proxies:
 
 
   - name: "IP11"
-    type: hysteria2
-    server: 64.31.55.72
-    port: 33229
-    up: 500          
-    down: 3000
-    password: dongtaiwang.com
-    sni: www.bing.com
-    skip-cert-verify: true   
-    alpn:
-      - h3
+    type: vmess
+    server: 162.159.128.118            
+    port: 8080                                     
+    uuid: ffaba3ee-4070-4590-9959-d863f9a4c6de       
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    network: ws
+    servername: ip001.dtku47.xyz                    
+    ws-opts:
+      path: "/9aqOiXD2/"                             
+      headers:
+        Host: ip001.dtku47.xyz
  
       
   - {"name":"IP12","type":"hysteria","server":"www2.dtku48.xyz","port":33449,"sni":"bing.com","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"dongtaiwang.com","up":11,"down":55,"hop_interval":10}
@@ -209,13 +208,29 @@ proxies:
         up: 500
         down: 3000 
   
-            
+
+  - name: vmess                     
+    type: vmess
+    server: fbi.gov                      
+    port: 8080                                     
+    uuid: ffaba3ee-4070-4590-9959-d863f9a4c6de       
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    network: ws
+    servername: ip001.dtku47.xyz                    
+    ws-opts:
+      path: "/9aqOiXD2/"                             
+      headers:
+        Host: ip001.dtku47.xyz           
+        
+         
   - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
   - {"name":"warp","type":"wireguard","server":"162.159.192.229","port":1010,"udp":true,"ip":"172.16.0.2","ipv6":"2606:4700:110:8040:e677:b446:ac05:a038","private-key":"ULALYURSXWaCTC2ydffFdr8uFepy7u7KwV1Rmn0ZbWU=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","dns":["1.1.1.1"],"mtu":1280,"remote-dns-resolve":true}
-  - {"name":"vmess","type":"vmess","server":"109.104.152.220","port":23099,"cipher":"auto","uuid":"5e3ce6a7-170e-4939-9aae-c8fefb35a7ea","alterId":0,"tls":false,"skip-cert-verify":true,"servername":"","network":"ws","ws-opts":{"path":"/HzuOihB6/"}}
   - {"name":"trojan","type":"hysteria","server":"62.204.54.81","port":34555,"sni":"bing.com","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"dongtaiwang.com","up":11,"down":55,"hop_interval":10}
   - {"name":"ss","type":"ss","server":"109.104.152.66","port":11111,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}
-  - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":22889,"password":"dongtaiwang.com","cipher":"dummy","obfs":"plain","protocol":"auth_chain_a"}
+  - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":11111,"password":"dongtaiwang.com","cipher":"dummy","obfs":"plain","protocol":"auth_chain_a"}
 
 
 proxy-groups:
