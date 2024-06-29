@@ -81,20 +81,16 @@ proxies:
 
     
   - name: "IP6"
-    type: vmess
-    server: 104.19.38.12                 
-    port: 8080                                     
-    uuid: ffaba3ee-4070-4590-9959-d863f9a4c6de       
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: false
-    network: ws
-    servername: ip001.dtku47.xyz                    
-    ws-opts:
-      path: "/9aqOiXD2/"                             
-      headers:
-        Host: ip001.dtku47.xyz 
+    server: 109.104.152.186
+    port: 44550
+    type: tuic
+    uuid: 760d4891-63ab-40db-98c7-1219ae1b92df
+    password: dongtaiwang.com
+    alpn: [h3]
+    disable-sni: true
+    reduce-rtt: true
+    udp-relay-mode: native
+    congestion-controller: bbr
                   
     
   - name: "IP7"
@@ -112,16 +108,25 @@ proxies:
     skip-cert-verify: true
     disable_mtu_discovery: true        
      
-             
-  - name: "IP8"
-    type: hysteria2
-    server: 104.192.224.141
-    port: 62894
-    up: 500          
-    down: 3000
-    password: dongtaiwang.com
-    sni: www.bing.com
-    skip-cert-verify: true       
+                
+  - name: IP8
+    type: vless
+    server: yh1.dtku41.xyz 	
+    port: 443
+    uuid: ebfdccb6-7416-4b6e-860d-98587344d500
+    udp: true
+    tls: true
+    network: ws
+    client-fingerprint: chrome # Available: "chrome","firefox","safari","random","none"
+    servername: lg1.freessr2.xyz
+    skip-cert-verify: true
+    # fingerprint: xxxx
+    ws-opts:
+      path: "/xyakws"
+      headers:
+        Host: lg1.freessr2.xyz
+      # v2ray-http-upgrade: false
+      # v2ray-http-upgrade-fast-open: false
 
 
   - name: "IP9"
@@ -150,19 +155,19 @@ proxies:
 
   - name: "IP11"
     type: vmess
-    server: 162.159.128.118            
-    port: 8080                                     
-    uuid: ffaba3ee-4070-4590-9959-d863f9a4c6de       
+    server: 104.19.38.189            
+    port: 2052                                     
+    uuid: ef8c954e-014f-4b36-8273-9b5086afab34       
     alterId: 0
     cipher: auto
     udp: true
     tls: false
     network: ws
-    servername: ip001.dtku47.xyz                    
+    servername: ip003.dtku47.xyz                    
     ws-opts:
-      path: "/9aqOiXD2/"                             
+      path: "ef8c954e-014f-4b36-8273-9b5086afab34-vm"                             
       headers:
-        Host: ip001.dtku47.xyz
+        Host: ip003.dtku47.xyz
  
       
   - {"name":"IP12","type":"hysteria","server":"www2.dtku48.xyz","port":33449,"sni":"bing.com","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"dongtaiwang.com","up":11,"down":55,"hop_interval":10}
@@ -207,9 +212,9 @@ proxies:
         enabled: true
         up: 500
         down: 3000 
-  
 
-  - name: vmess                     
+
+  - name: vmess                   
     type: vmess
     server: fbi.gov                      
     port: 8080                                     
@@ -224,6 +229,7 @@ proxies:
       path: "/9aqOiXD2/"                             
       headers:
         Host: ip001.dtku47.xyz           
+              
         
          
   - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
@@ -2133,8 +2139,7 @@ rules:
  - DOMAIN-SUFFIX,s-reader.com,🎯 全球直连                                                                                                                           
  - DOMAIN-SUFFIX,sspai.com,🎯 全球直连                                                                                                                              
  - DOMAIN-SUFFIX,subhd.tv,🎯 全球直连                                                                                                                               
- - DOMAIN-SUFFIX,takungpao.com,🎯 全球直连                                                                                                                          
- - DOMAIN-SUFFIX,teamviewer.com,🔰 节点选择                                                                                                                          
+ - DOMAIN-SUFFIX,takungpao.com,🎯 全球直连                                                                                                                                                                                                                                                 
  - DOMAIN-SUFFIX,tianyancha.com,🎯 全球直连                                                                                                                         
  - DOMAIN-SUFFIX,tophub.today,🎯 全球直连                                                                                                                           
  - DOMAIN-SUFFIX,uning.com,🎯 全球直连                                                                                                                              
