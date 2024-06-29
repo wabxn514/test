@@ -67,18 +67,8 @@ proxies:
     udp-relay-mode: native
     congestion-controller: bbr
 
-    
-  - name: "IP6"
-    server: 109.104.152.186
-    port: 44550
-    type: tuic
-    uuid: 760d4891-63ab-40db-98c7-1219ae1b92df
-    password: dongtaiwang.com
-    alpn: [h3]
-    disable-sni: true
-    reduce-rtt: true
-    udp-relay-mode: native
-    congestion-controller: bbr
+
+  - {"name":"IP6","type":"hysteria","server":"46.29.163.85","port":22334,"sni":"bing.com","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"dongtaiwang.com","up":11,"down":55,"hop_interval":10}
                   
     
   - name: "IP7"
