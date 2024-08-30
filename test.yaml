@@ -315,8 +315,8 @@ proxies:
         Host: ip3-2.freessr2.xyz           
                          
 
-  - {"name":"ss","type":"ss","server":"91.149.239.163","port":12345,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}         
-  - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":44112,"password":"dongtaiwang.com","cipher":"dummy","obfs":"plain","protocol":"auth_chain_a"}
+  - {"name":"ss","type":"ss","server":"91.149.239.116","port":12345,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}         
+  - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":55511,"password":"dongtaiwang.com","cipher":"dummy","obfs":"plain","protocol":"auth_chain_a"}
   - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
   - {"name":"warp","type":"wireguard","server":"162.159.192.229","port":1010,"udp":true,"ip":"172.16.0.2","ipv6":"2606:4700:110:8040:e677:b446:ac05:a038","private-key":"ULALYURSXWaCTC2ydffFdr8uFepy7u7KwV1Rmn0ZbWU=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","dns":["1.1.1.1"],"mtu":1280,"remote-dns-resolve":true}
 
