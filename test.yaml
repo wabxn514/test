@@ -13,73 +13,217 @@ dns:
 
 proxies:
 
-#  gitlab/clash.meta2/5/config.yaml
+#  gitlab/clash.meta2/1/config.yaml
 
   - name: IP1
     type: hysteria
-    server: 46.29.166.206
-    port: 20427
-    ports: 30000-40000
+    server: 109.104.152.251
+    port: 22577
     auth_str: dongtaiwang.com
     alpn:
       - h3
-    sni: bing.com
+    sni: www.bing.com
     skip-cert-verify: true
-    up: "50 Mbps"
-    down: "500 Mbps"
+    up: "55 Mbps"
+    down: "550 Mbps"
 
-            
+
+
+#  gitlab/clash.meta2/3/config.yaml
+ 
+  - name: IP2                 
+    type: vless
+    server: 108.181.23.41                  
+    port: 65289                             
+    uuid: d473881b-6ea7-4e32-aeb1-4ca78e29b63a  
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: www.yahoo.com                 
+    reality-opts: 
+      public-key: COPC6FtgEtofYW84xoShRYzFK8TTgdGkA0UafZiji3Y 
+      short-id: '9fa47a63'                    
+    client-fingerprint: chrome 
+
+
+
 #  gitlab/clash.meta2/5/config.yaml
 
-  - name: IP2
-    server: www.dtku40.xyz
-    port: 33098
-    type: tuic
-    uuid: fef3d3c2-ab3e-4134-a2f3-0c2d83e0a76d
-    password: dongtaiwang.com
-    alpn: [h3]
-    disable-sni: true
-    reduce-rtt: true
-    udp-relay-mode: native
-    congestion-controller: bbr
-    up: 500          
-    down: 3000   
+  - name: IP3                     
+    type: vmess
+    server: 104.21.238.203             
+    port: 2095                                     
+    uuid: 8ce8196e-28fe-4154-b33d-76e237b1e1e8    
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    network: ws
+    servername: ip4.9290254.xyz                
+    ws-opts:
+      path: "github.com/Alvin9999"                             
+      headers:
+        Host: ip4.9290254.xyz
 
 
-#  gitlab/hysteria/1/config.json 
-   
-  - name: "IP3"
+
+#  github/hysteria/1/config.json
+
+  - name: IP4
     type: hysteria
-    server: 104.192.224.138
-    port: 28850
+    server: 64.42.176.180
+    port: 12345
     auth_str: dongtaiwang.com
-    obfs: ""
     alpn:
-      - h3  
-    protocol: udp   
-    up: 500          
-    down: 3000       
+      - h3
+    protocol: udp
     sni: bing.com
     skip-cert-verify: true
-    disable_mtu_discovery: true           
-
-
-#  gitlab/hysteria2/1/config.json 
+    up: 500          
+    down: 3000   
     
-  - name: "IP4"
+
+    
+#  github/hysteria2/1/config.json
+
+  - name: IP5
     type: hysteria2
-    server: 64.110.25.12
-    port: 50942
+    server: 173.234.25.51
+    port: 22222
     up: 500          
     down: 3000
     password: dongtaiwang.com
     sni: www.bing.com
-    skip-cert-verify: true           
-       
- 
+    skip-cert-verify: true   
+    
+
+    
+#  github/hysteria2/3/config.json
+
+  - name: IP6
+    type: hysteria2
+    server: 208.87.243.187
+    port: 22222
+    up: 500          
+    down: 3000
+    password: dongtaiwang.com
+    sni: www.bing.com
+    skip-cert-verify: true   
+    
+    
+             
+#  gitlab/quick/1/config.yaml
+
+  - name: IP7                  
+    type: hysteria
+    server: 64.42.176.180
+    port: 12345
+    auth_str: dongtaiwang.com
+    alpn:
+      - h3
+    sni: www.bing.com
+    skip-cert-verify: true
+    up: "55 Mbps"
+    down: "550 Mbps"
+    
+    
+             
 #  gitlab/quick/3/config.yaml
-      
-  - name: "IP5"
+
+  - name: IP8                  
+    type: vmess
+    server: 104.21.238.200             
+    port: 2095                                     
+    uuid: 8ce8196e-28fe-4154-b33d-76e237b1e1e8    
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    network: ws
+    servername: ip4.9290254.xyz                
+    ws-opts:
+      path: "github.com/Alvin9999"                             
+      headers:
+        Host: ip4.9290254.xyz
+    
+
+
+#  gitlab/singbox/config.json
+
+  - name: IP9                    
+    type: hysteria
+    server: 207.174.28.39
+    port: 11111
+    auth_str: dongtaiwang.com
+    alpn:
+      - h3
+    sni: www.bing.com
+    skip-cert-verify: true
+    up: "55 Mbps"
+    down: "550 Mbps"
+        
+        
+        
+#  gitlab/xray/3/config.json
+   
+  - {name: "IP10", type: vless, server: 108.181.22.213, port: 13675, uuid: e0c7d644-2377-4d90-b012-215f89444c54, network: grpc, udp: true, tls: true, servername: addons.mozilla.org, flow: , client-fingerprint: chrome, reality-opts: {public-key: oKW5-LN1F4tbrSCdUH-ySdp4cgDlBiAn4_5GbqpPOgE, short-id: ""}, grpc-opts: {grpc-service-name: "grpc"} }
+ 
+  
+
+#  github/pac/hysteria/2/config.json 
+    
+  - name: "IP11"
+    type: hysteria
+    server: 104.192.224.139
+    port: 28850
+    ports: 20000-30000
+    auth_str: dongtaiwang.com
+    alpn:
+      - h3
+    protocol: udp
+    sni: bing.com
+    skip-cert-verify: true
+    up: 500          
+    down: 3000         
+                  
+           
+           
+#  github/hysteria/3/config.json
+
+  - name: IP12
+    type: hysteria
+    server: 108.181.24.77
+    port: 35862
+    ports: 40000-50000
+    auth_str: dongtaiwang.com
+    alpn:
+      - h3
+    protocol: udp
+    sni: bing.com
+    skip-cert-verify: true
+    up: 500          
+    down: 3000  
+    
+        
+     
+#  github/pac/hysteria2/2/config.json 
+    
+  - name: "IP13"
+    type: hysteria2
+    server: 64.110.25.14
+    port: 38267
+    up: 500          
+    down: 3000
+    password: dongtaiwang.com
+    sni: www.bing.com
+    skip-cert-verify: true  
+
+
+
+#  github/pac/quick/2/config.yaml
+    
+  - name: IP14       
     type: vless
     server: 45.150.165.121                      
     port: 7885                                
@@ -93,230 +237,71 @@ proxies:
       public-key: cauu7I7nFMqzwMDdULVRJam0T04U4knX8koK0OG5dC8    
       short-id: '40cb281a'                    
     client-fingerprint: chrome 
-
- 
-#  gitlab/quick/1/config.yaml
-       
-  - name: "IP6"
-    type: hysteria
-    server: 64.42.176.179
-    port: 19513
-    ports: 20000-30000
-    auth_str: dongtaiwang.com
-    alpn:
-      - h3
-    sni: www.bing.com
-    skip-cert-verify: true
-    up: "50 Mbps"
-    down: "500 Mbps"
-
-
-
-#  gitlab/xray/3/config.json
-
-  - name: "IP7"
-    type: vmess
-    server: 162.159.141.11                      
-    port: 2082                                     
-    uuid: 86e926b9-d67a-4c8f-a35e-024631838a45       
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: false
-    network: ws
-    servername: ip3-2.freessr2.xyz           
-    ws-opts:
-      path: "/github.com/Alvin9999"                             
-      headers:
-        Host: ip3-2.freessr2.xyz           
-        
-
-#  github/pac/clash.meta2/4/config.yaml
-    
-  - name: "IP8"
-    type: vless
-    server: 46.29.163.85
-    port: 18903
-    uuid: 95d7d4e7-6cf3-4eaf-ac48-c1e5e1ceb733
-    network: tcp
-    udp: true
-    tls: true
-    flow: 
-    servername: itunes.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: eBUZp9nbJb2bEUuxTX1U3i1ITVR1mtlxfmxX43ehZUs
-      short-id: 9253ae7c164999fa
-    smux:
-      enabled: true
-      protocol: h2mux
-      max-connections: 1
-      min-streams: 4
-      padding: true
-      brutal-opts:
-        enabled: true
-        up: 50
-        down: 500 
      
 
-#  github/pac/clash.meta2/6/config.yaml
-    
-  - name: "IP9"
+
+#  github/pac/singbox/2/config.json
+       
+  - name: "IP15"
     type: vless
-    server: 46.29.163.85
-    port: 18903
-    uuid: 95d7d4e7-6cf3-4eaf-ac48-c1e5e1ceb733
+    server: 154.21.193.246          
+    port: 11111
+    uuid: d473881b-6ea7-4e32-aeb1-4ca78e29b63a
+    packet-encoding: xudp
     network: tcp
     udp: true
     tls: true
-    flow: 
-    servername: itunes.apple.com
+    flow: xtls-rprx-vision
+    servername: www.yahoo.com
     client-fingerprint: chrome
+    skip-cert-verify: true
     reality-opts:
-      public-key: eBUZp9nbJb2bEUuxTX1U3i1ITVR1mtlxfmxX43ehZUs
-      short-id: 9253ae7c164999fa
-    smux:
-      enabled: true
-      protocol: h2mux
-      max-connections: 1
-      min-streams: 4
-      padding: true
-      brutal-opts:
-        enabled: true
-        up: 50
-        down: 500
-    
+      public-key: COPC6FtgEtofYW84xoShRYzFK8TTgdGkA0UafZiji3Y
+      short-id: '9fa47a63' 
+      
+           
+           
+#  github/pac/xray/1/config.json
 
-#  github/pac/hysteria/2/config.json
-              
-  - name: "IP10"
-    type: hysteria
-    server: 166.1.221.22
-    port: 17547
-    auth_str: dongtaiwang.com
-    obfs: ""
-    alpn:
-      - h3  
-    protocol: udp   
-    up: 500          
-    down: 3000       
-    sni: bing.com
-    skip-cert-verify: true
-    disable_mtu_discovery: true   
-
-
-#  github/pac/hysteria2/3/config.json
-       
-  - name: "IP11"
-    type: hysteria2
-    server: 64.110.25.12
-    port: 50942
-    up: 500          
-    down: 3000
-    password: dongtaiwang.com
-    sni: www.bing.com
-    skip-cert-verify: true      
-
-
-  - name: "IP12"
-    type: hysteria2
-    server: 208.87.243.187
-    port: 29620
-    up: 500          
-    down: 3000
-    password: dongtaiwang.com
-    sni: www.bing.com
-    skip-cert-verify: true    
- 
-
-#  github/pac/quick/4/config.yaml
-
-  - name: IP13 
-    type: hysteria
-    server: www.dtku40.xyz
-    port: 44559
-    auth_str: dongtaiwang.com
-    alpn:
-      - h3
-    sni: bing.com
-    skip-cert-verify: true
-    up: 500          
-    down: 3000  
-
-
-#  github/pac/singbox/1/config.json
-
-  - name: IP14 
-    type: hysteria
-    server: 104.192.224.142
-    port: 55118
-    auth_str: dongtaiwang.com
-    obfs: ""
-    alpn:
-      - h3  
-    protocol: udp   
-    up: 500          
-    down: 3000       
-    sni: bing.com
-    skip-cert-verify: true
-    disable_mtu_discovery: true       
-    
-
-#  github/pac/singbox/3/config.json
-
-  - name: IP15
-    type: ss
-    server: www2.dtku44.xyz
-    port: 443
-    cipher: 2022-blake3-chacha20-poly1305
-    password: "6qfEwR4QOrHq+k3csNdEZgMa+Y890g/eouGnVEtxb0c="
-    plugin: shadow-tls
-    plugin-opts:
-      host: "nijigen-works.jp"
-      password: "LdjpJtNZK+2WhXfRY+FxR9sokcOYoddKAx8dN7q8FOI="
-      version: 3
+  - name: vmess                   
+    type: vless
+    server: 46.29.166.206                      
+    port: 12345                                
+    uuid: d473881b-6ea7-4e32-aeb1-4ca78e29b63a   
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: www.yahoo.com                 
+    reality-opts: 
+      public-key: COPC6FtgEtofYW84xoShRYzFK8TTgdGkA0UafZiji3Y    
+      short-id: 9fa47a63                    
+    client-fingerprint: chrome 
+             
 
 
 #  github/pac/xray/2/config.json
 
-  - name: vmess                   
-    type: vmess
-    server: 104.19.32.188                     
-    port: 2082                                     
-    uuid: 86e926b9-d67a-4c8f-a35e-024631838a45       
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: false
-    network: ws
-    servername: ip2-2.freessr2.xyz          
-    ws-opts:
-      path: "/github.com/Alvin9999"                             
-      headers:
-        Host: ip2-2.freessr2.xyz           
-
-
-#  github/pac/xray/3/config.json
-
   - name: trojan                  
-    type: vmess
-    server: 172.64.170.111                   
-    port: 2082                                     
-    uuid: 86e926b9-d67a-4c8f-a35e-024631838a45       
-    alterId: 0
-    cipher: auto
+    type: vless
+    server: 166.1.221.22                      
+    port: 23456                                
+    uuid: e0c7d644-2377-4d90-b012-215f89444c54   
+    network: grpc
     udp: true
-    tls: false
-    network: ws
-    servername: ip3-2.freessr2.xyz          
-    ws-opts:
-      path: "/github.com/Alvin9999"                             
-      headers:
-        Host: ip3-2.freessr2.xyz           
+    tls: true
+    flow: 
+    servername: addons.mozilla.org                 
+    reality-opts: 
+      public-key: oKW5-LN1F4tbrSCdUH-ySdp4cgDlBiAn4_5GbqpPOgE    
+      short-id: ""                    
+    client-fingerprint: chrome      
+    grpc-opts:
+      grpc-service-name: "grpc"      
                          
 
-  - {"name":"ss","type":"ss","server":"91.149.239.116","port":12345,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}         
-  - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":55511,"password":"dongtaiwang.com","cipher":"dummy","obfs":"plain","protocol":"auth_chain_a"}
+  - {"name":"ss","type":"ss","server":"46.17.40.57","port":22222,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}         
+  - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":10088,"password":"dongtaiwang.com","cipher":"dummy","obfs":"plain","protocol":"auth_chain_a"}
   - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
   - {"name":"warp","type":"wireguard","server":"162.159.192.229","port":1010,"udp":true,"ip":"172.16.0.2","ipv6":"2606:4700:110:8040:e677:b446:ac05:a038","private-key":"ULALYURSXWaCTC2ydffFdr8uFepy7u7KwV1Rmn0ZbWU=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","dns":["1.1.1.1"],"mtu":1280,"remote-dns-resolve":true}
 
@@ -379,7 +364,7 @@ proxy-groups:
     interval: 300
     proxies:
 #      - 🎯 全球直连
-#      - 🔰 节点选择 
+      - ♻️ 自动选择
       - warp
       - cfvless
   - name: 🌍 国外媒体
