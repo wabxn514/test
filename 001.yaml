@@ -1,0 +1,72 @@
+# Profile Template for clash verge
+
+proxies:
+  - {name: 🇭🇰 HK🐲™️【请勿测速】 8, server: 58.176.95.46, port: 443, type: vless, uuid: 1d354326-5775-48fc-8fdc-88df8292a879, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: testpages.wabxn514.us.kg, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: testpages.wabxn514.us.kg}}}
+ 
+proxy-groups:
+  - name: 🔰 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 🇭🇰 HK🐲™️【请勿测速】 8
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 🇭🇰 HK🐲™️【请勿测速】 8
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🔰 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择 
+rules:
+ - DOMAIN-SUFFIX,local,🎯 全球直连                                                                                                                                    
+ - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve                                                                                                                      
+ - IP-CIDR,10.0.0.0/8,🎯 全球直连,no-resolve                                                                                                                        
+ - IP-CIDR,172.16.0.0/12,🎯 全球直连,no-resolve                                                                                                                     
+ - IP-CIDR,127.0.0.0/8,🎯 全球直连,no-resolve                                                                                                                       
+ - IP-CIDR,100.64.0.0/10,🎯 全球直连,no-resolve                                                                                                                     
+ - IP-CIDR6,::1/128,🎯 全球直连,no-resolve                                                                                                                          
+ - IP-CIDR6,fc00::/7,🎯 全球直连,no-resolve                                                                                                                         
+ - IP-CIDR6,fe80::/10,🎯 全球直连,no-resolve                                                                                                                        
+ - IP-CIDR6,fd00::/8,🎯 全球直连,no-resolve     
+ - DOMAIN-SUFFIX,bing.com,🔰 节点选择    
+ - DOMAIN-SUFFIX,blog.google,🎯 全球直连                                                                                                                            
+ - DOMAIN-SUFFIX,googletraveladservices.com,🎯 全球直连                                                                                                             
+ - DOMAIN,clientservices.googleapis.com,🎯 全球直连                                                                                                                 
+ - DOMAIN,safebrowsing.googleapis.com,🎯 全球直连                                                                                                                   
+ - DOMAIN,dl.google.com,🎯 全球直连                                                                                                                                 
+ - DOMAIN,dl.l.google.com,🎯 全球直连                                                                                                                               
+ - DOMAIN,update.googleapis.com,🎯 全球直连                                                                                                                         
+ - DOMAIN,fonts.googleapis.com,🎯 全球直连                                                                                                                          
+ - DOMAIN,fonts.gstatic.com,🎯 全球直连                                                                                                                             
+ - DOMAIN,mtalk.google.com,🎯 全球直连                                                                                                                              
+ - DOMAIN,alt1-mtalk.google.com,🎯 全球直连                                                                                                                         
+ - DOMAIN,alt2-mtalk.google.com,🎯 全球直连                                                                                                                         
+ - DOMAIN,alt3-mtalk.google.com,🎯 全球直连                                                                                                                         
+ - DOMAIN,alt4-mtalk.google.com,🎯 全球直连                                                                                                                         
+ - DOMAIN,alt5-mtalk.google.com,🎯 全球直连                                                                                                                         
+ - DOMAIN,alt6-mtalk.google.com,🎯 全球直连                                                                                                                         
+ - DOMAIN,alt7-mtalk.google.com,🎯 全球直连                                                                                                                         
+ - DOMAIN,alt8-mtalk.google.com,🎯 全球直连
+ - DOMAIN-SUFFIX,googlevideo.com,🔰 节点选择                                                                                                                  
+ - DOMAIN-SUFFIX,youtube.com,🔰 节点选择                                                                                                                
+ - DOMAIN-SUFFIX,ytimg.com,🔰 节点选择                                                                                                                         
+ - DOMAIN,youtubei.googleapis.com,🔰 节点选择   
+ - DOMAIN,cdn.auth0.com,🔰 节点选择    
+ - DOMAIN,challenges.cloudflare.com,🔰 节点选择    
+ - DOMAIN,openaiapi-site.azureedge.net,🔰 节点选择    
+ - DOMAIN-SUFFIX,ai.com,🔰 节点选择    
+ - DOMAIN-SUFFIX,identrust.com,🔰 节点选择    
+ - DOMAIN-SUFFIX,openai.com,🔰 节点选择    
+ - DOMAIN-SUFFIX,cloudflareclient.com,🔰 节点选择
+ - DOMAIN-KEYWORD,google,🔰 节点选择                                                                                                                                 
+ - GEOIP,CN,🎯 全球直连  
+ - MATCH,🎯 全球直连  
