@@ -20,6 +20,7 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
+      - 申请
   - name: 🐟 漏网之鱼
     type: select
     proxies:
