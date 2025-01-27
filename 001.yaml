@@ -1,8 +1,8 @@
 # Profile Template for clash verge
 
 proxies:
-  - {name: 申请, server: 58.176.95.46, port: 443, type: vless, uuid: 1d354326-5775-48fc-8fdc-88df8292a879, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: testpages.wabxn514.us.kg, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: testpages.wabxn514.us.kg}}}
- 
+  - {name: 申请, server: 47.76.255.113, port: 587, type: vless, uuid: 3e474d28-e0df-4850-b90d-1e6ed20b3315, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: testpages.wabxn514.us.kg, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: testpages.wabxn514.us.kg}}}
+
 proxy-groups:
   - name: 🔰 节点选择
     type: select
