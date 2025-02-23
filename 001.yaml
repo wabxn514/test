@@ -1,7 +1,6 @@
 # Profile Template for clash verge
 
-proxies:https://wvs.sosorg.nyc.mn/sub?host=testpages.wabxn.dynv6.net&uuid=cf0d4fab-13f6-48fa-ac0c-c8574954219a
-  - {name: 申请, server: 43.155.71.120, port: 3388, type: vless, uuid: 3e474d28-e0df-4850-b90d-1e6ed20b3315, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: testpages.wabxn514.us.kg, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: testpages.wabxn514.us.kg}}}
+proxi port: 3388, type: vless, uuid: 3e474d28-e0df-4850-b90d-1e6ed20b3315, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: testpages.wabxn514.us.kg, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: testpages.wabxn514.us.kg}}}
 
 proxy-groups:
   - name: 🔰 节点选择
