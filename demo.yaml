@@ -89,12 +89,12 @@ proxies:
 
   - name: IP5
     type: hysteria2
-    server: 108.181.5.133
-    port: 15544
+    server: 46.17.41.217
+    port: 37481
     up: 500          
     down: 3000
     password: dongtaiwang.com
-    sni: apple.com
+    sni: www.bing.com
     skip-cert-verify: true  
     
     
@@ -103,8 +103,8 @@ proxies:
 
   - name: IP6
     type: hysteria2
-    server: 108.181.5.130
-    port: 43836
+    server: 108.181.5.133
+    port: 15544
     up: 500          
     down: 3000
     password: dongtaiwang.com
@@ -116,13 +116,14 @@ proxies:
 #  GH/ipp/m/1
 
   - name: IP7                 
-    type: mieru
-    server: 108.181.23.41
-    port: 11111
-#    port-range: 2090-2099
-    transport: TCP
-    username: dongtaiwang.com
+    type: hysteria2
+    server: 46.29.163.171
+    port: 18626
+    up: 500          
+    down: 3000
     password: dongtaiwang.com
+    sni: www.bing.com
+    skip-cert-verify: true  
     
     
 
