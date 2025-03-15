@@ -204,17 +204,17 @@ proxies:
 
   - name: IP12
     type: vless
-    server: 185.22.153.75                     
-    port: 21315                                
-    uuid: 095ad0e3-9ed9-4346-9108-58b40e664f5c   
+    server: 51.158.205.126                     
+    port: 24957                                
+    uuid: ef1fdecb-e56f-4996-9b6a-da7ddb7f7c8d   
     network: tcp
     udp: true
     tls: true
     flow: xtls-rprx-vision
     servername: www.yahoo.com              
     reality-opts: 
-      public-key: YySncDZNohAu8pygK6hAG2OcptADdEJBwArHe4amnm8    
-      short-id: d019a9ad                   
+      public-key: Ok7Mg4VmHT4Typ9HydPSmHI55BgLONFk5ppLGiL8n1A    
+      short-id: 4b4d9d72                   
     client-fingerprint: chrome  
     
     
