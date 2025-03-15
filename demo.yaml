@@ -76,6 +76,10 @@ proxies:
     auth-str: dongtaiwang.com
     #obfs: dongtaiwang.com
     sni: apple.com
+    skip-cert-verify: true
+    alpn:
+      - h3
+    protocol: udp
     up: "55 Mbps"
     down: "550 Mbps"
     
