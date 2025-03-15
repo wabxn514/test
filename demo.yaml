@@ -70,16 +70,12 @@ proxies:
 #  GH/ipp/h/2
 
   - name: IP4                    
-    type: hysteria2
-    server: 46.17.41.217
-    port: 37481
+    type: hysteria
+    server: 51.159.226.1
+    port: 14241
     auth-str: dongtaiwang.com
     #obfs: dongtaiwang.com
-    sni: www.bing.com
-    skip-cert-verify: true
-    alpn:
-      - h3
-    protocol: udp
+    sni: apple.com
     up: "55 Mbps"
     down: "550 Mbps"
     
