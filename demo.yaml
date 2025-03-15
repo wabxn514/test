@@ -144,22 +144,20 @@ proxies:
         
         
         
-#  GH/ipp/q/3
+#  pac2/h2/1
 
   - name: IP9                 
-    type: vless
-    server: 185.22.155.105                    
-    port: 42632                               
-    uuid: f3ba3679-f2f4-465f-92a5-de320b775a88
-    network: tcp
-    udp: true
-    tls: true
-    flow: xtls-rprx-vision
-    servername: www.yahoo.com                 
-    reality-opts: 
-      public-key: qtqcKrPLXaN-jpo7Zs1_80QDmA2uvCZKFGanJLJFFXA  
-      short-id: '1f8b5201'                    
-    client-fingerprint: chrome
+    type: hysteria
+    server: 108.181.5.133
+    port: 15544
+    auth-str: dongtaiwang.com
+    sni: apple.com
+    skip-cert-verify: true
+    alpn:
+      - h3
+    protocol: udp
+    up: "55 Mbps"
+    down: "550 Mbps"  
                   
            
            
