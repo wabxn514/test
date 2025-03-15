@@ -220,7 +220,7 @@ proxies:
     
     
     
-#  GH/ipp/x/3_old
+#  GH/ipp/x/4
 
   - name: IP13
     type: vless
