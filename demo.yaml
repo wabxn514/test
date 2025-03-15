@@ -13,30 +13,31 @@ dns:
 
 proxies:
 
-#  GH/ipp/cm2/1
+#  GH/ipp/cm2/4
 
   - name: IP1                     
-    type: hysteria
-    server: 195.154.200.40
-    port: 15010
-    auth_str: dongtaiwang.com
-    alpn:
-      - h3
+    server: 46.29.166.207
+    port: 19988
+    type: tuic
+    uuid: c2028608-6993-46eb-8b58-0426c813a7ac
+    password: dongtaiwang.com
+    alpn: [h3]
     sni: apple.com
-    protocol: udp
     skip-cert-verify: true
+    reduce-rtt: true
+    udp-relay-mode: native
+    congestion-controller: bbr
     up: "55 Mbps"
     down: "550 Mbps"
 
 
 
-#  GH/ipp/cm2/2
+#  GH/ipp/cm2/5
  
   - name: IP2                     
     type: hysteria
     server: 108.181.24.77
     port: 11512
-    ports: 20000-30000
     auth-str: dongtaiwang.com
     sni: apple.com
     skip-cert-verify: true
