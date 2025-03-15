@@ -53,10 +53,10 @@ proxies:
  
   - name: IP3                     
     type: hysteria
-    server: 195.154.200.178
-    port: 34911
+    server: 46.17.41.174
+    port: 10469
     auth-str: dongtaiwang.com
-    obfs: dongtaiwang.com
+    #obfs: dongtaiwang.com
     sni: apple.com
     skip-cert-verify: true
     alpn:
