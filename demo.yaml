@@ -71,11 +71,10 @@ proxies:
 
   - name: IP4                    
     type: hysteria
-    server: 208.87.243.187
-    port: 63721
-    ports: 47000-48000
+    server: 51.159.226.1
+    port: 14241
     auth-str: dongtaiwang.com
-    obfs: dongtaiwang.com
+    #obfs: dongtaiwang.com
     sni: apple.com
     skip-cert-verify: true
     alpn:
