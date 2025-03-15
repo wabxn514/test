@@ -32,7 +32,7 @@ proxies:
 
 
 
-#  GH/ipp/cm2/5
+#  pac2/q/1
  
   - name: IP2                     
     type: hysteria
@@ -49,14 +49,13 @@ proxies:
 
 
 
-#  GH/ipp/cm2/3
+#  pac2/h/c
  
   - name: IP3                     
     type: hysteria
     server: 46.17.41.174
     port: 10469
     auth-str: dongtaiwang.com
-    #obfs: dongtaiwang.com
     sni: apple.com
     skip-cert-verify: true
     alpn:
@@ -85,7 +84,7 @@ proxies:
     
 
     
-#  GH/ipp/h2/1
+#  pac2/h2/c
 
   - name: IP5
     type: hysteria2
@@ -241,14 +240,14 @@ proxies:
 
 
     
-#   
+#   pac2/h2/13
     
   - name: "IP14"
     type: hysteria
-    server: 104.192.224.142
-    port: 14747
+    server: 46.17.41.174
+    port: 10469
     auth-str: dongtaiwang.com
-    sni: bing.com
+    sni: apple.com
     skip-cert-verify: true
     alpn:
       - h3
