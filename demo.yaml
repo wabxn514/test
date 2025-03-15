@@ -102,14 +102,16 @@ proxies:
 #  GH/ipp/h2/2
 
   - name: IP6
-    type: hysteria2
-    server: 108.181.5.133
-    port: 15544
-    up: 500          
-    down: 3000
-    password: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true  
+    type: hysteria
+    server: 185.22.155.71
+    port: 10803
+    auth_str: dongtaiwang.com
+    alpn:
+      - h3
+    sni: www.bing.com
+    skip-cert-verify: true
+    up: "55 Mbps"
+    down: "550 Mbps"
     
     
              
