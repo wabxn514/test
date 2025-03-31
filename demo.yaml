@@ -16,17 +16,15 @@ proxies:
 #  GH/ipp/cm2/4
 
   - name: IP1                     
-    server: 46.29.166.207
-    port: 19988
-    type: tuic
-    uuid: c2028608-6993-46eb-8b58-0426c813a7ac
-    password: dongtaiwang.com
-    alpn: [h3]
+    type: hysteria
+    server: 108.181.24.77
+    port: 11512
+    auth-str: dongtaiwang.com
     sni: apple.com
     skip-cert-verify: true
-    reduce-rtt: true
-    udp-relay-mode: native
-    congestion-controller: bbr
+    alpn:
+      - h3
+    protocol: udp
     up: "55 Mbps"
     down: "550 Mbps"
 
@@ -89,7 +87,7 @@ proxies:
   - name: IP5
     type: hysteria2
     server: 46.17.41.217
-    port: 37481
+    port: 4395
     up: 500          
     down: 3000
     password: dongtaiwang.com
@@ -114,17 +112,22 @@ proxies:
     
     
              
-#  GH/ipp/m/1
+#  GH/ipp/x/3
 
   - name: IP7                 
-    type: hysteria2
-    server: 46.29.163.171
-    port: 18626
-    up: 500          
-    down: 3000
-    password: dongtaiwang.com
-    sni: www.bing.com
-    skip-cert-verify: true  
+    type: vless
+    server: 156.225.81.102               
+    port: 16113                               
+    uuid: 9b04495c-caf6-4ece-895f-402f12a270a5
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: www.yahoo.com              
+    reality-opts: 
+      public-key: gLFqVMVuAmp_TQJJyz0eEhh2jGiUY3973cOSEKG3cxc
+      short-id: 'f3e00baf'                    
+    client-fingerprint: chrome
     
     
 
@@ -144,18 +147,16 @@ proxies:
         
         
         
-#  pac2/h2/1
+#  GH/ipp/m/2
 
   - name: IP9                 
-    type: hysteria
-    server: 108.181.5.133
-    port: 15544
-    auth-str: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true
-    alpn:
-      - h3
-    protocol: udp
+    type: mieru
+    server: 108.181.23.41
+    port: 28676
+#    port-range: 2090-2099
+    transport: TCP
+    username: dongtaiwang.com
+    password: dongtaiwang.com 
     up: "55 Mbps"
     down: "550 Mbps"  
                   
@@ -203,19 +204,14 @@ proxies:
 #  GH/ipp/x/3
 
   - name: IP12
-    type: vless
-    server: 208.115.249.104                     
-    port: 63067                                
-    uuid: cc2272a3-0ddd-4c5a-bbb7-9a2079ac650d   
-    network: tcp
-    udp: true
-    tls: true
-    flow: xtls-rprx-vision
-    servername: www.yahoo.com              
-    reality-opts: 
-      public-key: jqXZMbA5yqqAOQJa_7GAOOGK7qb_BUBXgG702ItdZRc    
-      short-id: cb2c9c63                   
-    client-fingerprint: chrome  
+    type: hysteria2
+    server: 46.29.163.171
+    port: 35751
+    up: 500          
+    down: 3000
+    password: dongtaiwang.com
+    sni: www.bing.com
+    skip-cert-verify: true  	 
     
     
     
@@ -255,7 +251,7 @@ proxies:
      
 
 
-#   
+#   GH/ipp/m/1
     
   - name: "IP15"
     type: mieru
