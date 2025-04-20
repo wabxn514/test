@@ -82,16 +82,16 @@ proxies:
     
 
     
-#  pac2/h2/c
+#  pac2/h2/2
 
   - name: IP5
     type: hysteria2
-    server: 46.17.41.217
-    port: 4395
+    server: 108.181.5.130
+    port: 65232
     up: 500          
     down: 3000
     password: dongtaiwang.com
-    sni: www.bing.com
+    sni: apple.com
     skip-cert-verify: true  
     
     
@@ -162,22 +162,17 @@ proxies:
                   
            
            
-#  GH/ipp/q/4
+#  GH/ipp/h2/3
 
-  - name: IP10                 
-    type: vless
-    server: 195.154.33.15               
-    port: 62075                               
-    uuid: 1384ac29-65d3-488f-9b7c-e964b777f206
-    network: tcp
-    udp: true
-    tls: true
-    flow: xtls-rprx-vision
-    servername: dash.cloudflare.com               
-    reality-opts: 
-      public-key: MLKLAxXqG39LBE6FFf1PEKkCM_L7suV8YelyLFvm4yg
-      short-id: ''                    
-    client-fingerprint: chrome
+  - name: IP10
+    type: hysteria2
+    server: 51.159.226.1
+    port: 43496
+    up: 500          
+    down: 3000
+    password: dongtaiwang.com
+    sni: www.bing.com
+    skip-cert-verify: true 
 
 
 
@@ -256,7 +251,7 @@ proxies:
   - name: "IP15"
     type: mieru
     server: 45.150.165.84
-    port: 20504
+    port: 8067
 #    port-range: 2090-2099
     transport: TCP
     username: dongtaiwang.com
@@ -289,8 +284,8 @@ proxies:
      
                          
 
-  - {"name":"ss","type":"ss","server":"208.115.249.82","port":11111,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}           
-  - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":40000,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
+  - {"name":"ss","type":"ss","server":"92.118.205.110","port":33400,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}           
+  - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":32000,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
   - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
   - {"name":"warp","type":"wireguard","server":"162.159.192.229","port":1010,"udp":true,"ip":"172.16.0.2","ipv6":"2606:4700:110:8040:e677:b446:ac05:a038","private-key":"ULALYURSXWaCTC2ydffFdr8uFepy7u7KwV1Rmn0ZbWU=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","dns":["1.1.1.1"],"mtu":1280,"remote-dns-resolve":true}
   - {name: ET13, server: 141.11.218.253, port: 8080, type: vless, uuid: 7ef02dba-fa1a-4ded-b93d-050e8eaf02f3, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: testpages.wabxn514.us.kg, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: testpages.wabxn514.us.kg}}}
@@ -619,8 +614,7 @@ rules:
  - DOMAIN,pubads.g.doubleclick.net,🎯 全球直连                                                                                                                      
  - DOMAIN,fairplay.l.qq.com,🎯 全球直连                                                                                                                             
  - DOMAIN,livew.l.qq.com,🎯 全球直连                                                                                                                                
- - DOMAIN,vd.l.qq.com,🎯 全球直连                                                                                                                                   
- - DOMAIN,analytics.strava.com,🎯 全球直连                                                                                                                          
+ - DOMAIN,vd.l.qq.com,🎯 全球直连                                                                                                                                                                                                                                                         
  - DOMAIN,msg.umeng.com,🎯 全球直连                                                                                                                                 
  - DOMAIN,msg.umengcloud.com,🎯 全球直连
  - DOMAIN,sms-activate.org,🎯 全球直连                                                                                                                 
@@ -2280,5 +2274,6 @@ rules:
  - DOMAIN-SUFFIX,gofile.io,🎯 全球直连 
  - DOMAIN-SUFFIX,1fichier.com,🎯 全球直连  
  - DOMAIN-SUFFIX,jb51.net,🎯 全球直连  
+ - DOMAIN-SUFFIX,ccc.msi.com,🎯 全球直连 
  - GEOIP,CN,🎯 全球直连                                                                                                                                             
  - MATCH,🐟 漏网之鱼                                                                                                                                                
