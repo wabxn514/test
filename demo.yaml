@@ -252,14 +252,17 @@ proxies:
 
 
 
+#   pac2/h2/1
+  
   - name: vmess                  
-    type: mieru
-    server: 173.234.25.51
-    port: 44444
-#    port-range: 2090-2099
-    transport: TCP
-    username: dongtaiwang.com
-    password: dongtaiwang.com 
+    type: hysteria2
+    server: hy2.694463.xyz
+    port: 30033
+    up: 500          
+    down: 3000
+    password: dongtaiwang.com
+    sni: www.bing.com
+    skip-cert-verify: true 
 
 
 
