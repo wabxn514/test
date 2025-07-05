@@ -4,7 +4,7 @@ dns:
   enabled: true
   nameserver:
     - 119.29.29.29
-    - 223.5.5.5
+    - tls://223.5.5.5
   fallback:
     - 8.8.8.8
     - 8.8.4.4
@@ -79,18 +79,22 @@ proxies:
     
 
     
-#  GH/ipp/h2/2
+#  GH/ipp/cm2/5
 
-  - name: IP5
-    type: hysteria2
-    server: hy2-1.694463.xyz
-    port: 4489
-    up: 500          
-    down: 3000
+  - name: IP5                     
+    type: anytls
+    server: tw.534582.xyz
+    port: 8443
     password: dongtaiwang.com
-    sni: www.bing.com
-    skip-cert-verify: true  
-    
+    client-fingerprint: chrome
+    udp: true
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    min-idle-session: 0
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true
     
              
 #  GH/ipp/h2/2
@@ -109,17 +113,22 @@ proxies:
     
     
              
-#  GH/ipp/h2/3
+#  GH/ipp/x/3
 
   - name: IP7
-    type: hysteria2
-    server: 108.181.5.130
-    port: 57773
-    up: 500          
-    down: 3000
-    password: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true  
+    type: vless
+    server: 185.22.155.105                    
+    port: 62750                                
+    uuid: fdd2d176-2602-46f2-b694-ce247de88b22
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: www.paypal.com
+    reality-opts: 
+      public-key: _E_YXE_gOkDrffe4t6gcajtnjFZAJ3g7ZwTJbL3IOHA
+      short-id: ''                    
+    client-fingerprint: chrome 
     
     
 
@@ -169,20 +178,17 @@ proxies:
              
 
 
-#  GH/ipp/q/3
+#  pac2/h2/13
 
   - name: IP11
-    type: hysteria
-    server: 51.158.213.119
-    port: 36194
-    auth-str: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true
-    alpn:
-      - h3
-    protocol: udp
-    up: "55 Mbps"
-    down: "550 Mbps"
+    type: hysteria2
+    server: 45.129.2.248
+    port: 23579
+    up: 500          
+    down: 3000
+    password: dongtaiwang.com
+    sni: www.bing.com
+    skip-cert-verify: true 
 
 
 
@@ -203,21 +209,21 @@ proxies:
     
     
     
-#  GH/ipp/x/4
+#  GH/ipp/x/1
 
   - name: IP13
     type: vless
-    server: 185.22.155.105                      
-    port: 42632                                
-    uuid: f3ba3679-f2f4-465f-92a5-de320b775a88   
+    server: tw-2.534582.xyz                     
+    port: 49226                                
+    uuid: 9244d7a3-6c74-4035-b64f-a90f3ee6e173   
     network: tcp
     udp: true
     tls: true
     flow: xtls-rprx-vision
-    servername: www.yahoo.com          
+    servername: dash.cloudflare.com
     reality-opts: 
-      public-key: qtqcKrPLXaN-jpo7Zs1_80QDmA2uvCZKFGanJLJFFXA   
-      short-id: '1f8b5201'                    
+      public-key: vyqO2y1XKUzVQNuOAtBpYPaZJWxuvfA9CTVuoF9RClQ
+      short-id: ''                    
     client-fingerprint: chrome  
 
 
@@ -416,7 +422,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - IP6  
+      - IP3  
   - name: 🌍 国外媒体
     type: select
     proxies:
