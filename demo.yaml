@@ -178,12 +178,12 @@ proxies:
              
 
 
-#  pac2/h2/13
+#  pac2/h2/1
 
   - name: IP11
     type: hysteria2
-    server: 45.129.2.248
-    port: 23579
+    server: 46.17.41.217
+    port: 30033
     up: 500          
     down: 3000
     password: dongtaiwang.com
@@ -248,14 +248,19 @@ proxies:
 #   GH/ipp/m/1
     
   - name: "IP15"
-    type: mieru
-    server: 45.150.165.84
-    port: 8067
-#    port-range: 2090-2099
-    transport: TCP
-    username: dongtaiwang.com
-    password: dongtaiwang.com 
-
+    type: vless
+    server: 212.129.5.242                    
+    port: 35780                                
+    uuid: d7703b51-41e8-42c1-aa71-2b5099148227
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: www.paypal.com
+    reality-opts: 
+      public-key: 78FJmeccKt0_704WnpAy9eY7Q2cfUJ301yZGcxkKbVU
+      short-id: ''                    
+    client-fingerprint: chrome 
 
 
 #   pac2/h2/1
@@ -275,24 +280,20 @@ proxies:
 #   GH/ipp/x/1              
 
   - name: "trojan"
-    type: vless
-    server: 51.158.213.119                  
-    port: 24957                                
-    uuid: ef1fdecb-e56f-4996-9b6a-da7ddb7f7c8d
-    network: tcp
-    udp: true
-    tls: true
-    flow: xtls-rprx-vision
-    servername: www.yahoo.com          
-    reality-opts: 
-      public-key: Ok7Mg4VmHT4Typ9HydPSmHI55BgLONFk5ppLGiL8n1A  
-      short-id: '4b4d9d72'                    
-    client-fingerprint: chrome  
+    type: hysteria2
+    server: 51.15.172.84
+    port: 38800
+    up: 500          
+    down: 3000
+    password: dongtaiwang.com
+    sni: apple.com
+    skip-cert-verify: true 
+
 
                          
 
-  - {"name":"ss","type":"ss","server":"195.154.54.171","port":13355,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}           
-  - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":43000,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
+  - {"name":"ss","type":"ss","server":"46.17.40.79","port":38674,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}           
+  - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":25679,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
   - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
   - {"name":"warp","type":"wireguard","server":"162.159.192.229","port":1010,"udp":true,"ip":"172.16.0.2","ipv6":"2606:4700:110:8040:e677:b446:ac05:a038","private-key":"ULALYURSXWaCTC2ydffFdr8uFepy7u7KwV1Rmn0ZbWU=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","dns":["1.1.1.1"],"mtu":1280,"remote-dns-resolve":true}
   - {name: ET13, server: 141.11.218.253, port: 8080, type: vless, uuid: 7ef02dba-fa1a-4ded-b93d-050e8eaf02f3, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: testpages.wabxn514.us.kg, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: testpages.wabxn514.us.kg}}}
@@ -473,6 +474,7 @@ proxy-groups:
       - IP12
       - IP13
       - IP14
+      - IP15
       - cfvless
       - warp
       - vmess
