@@ -13,12 +13,12 @@ dns:
 
 proxies:
 
-#  GH/ipp/cm2/4
+#  GH/ipp/cm2/1
 
   - name: IP1                     
     type: hysteria
-    server: 108.181.24.77
-    port: 11512
+    server: 62.210.10.113
+    port: 13767
     auth-str: dongtaiwang.com
     sni: apple.com
     skip-cert-verify: true
@@ -30,62 +30,40 @@ proxies:
 
 
 
-#  pac2/q/1
+#  GH/ipp/cm2/2
  
   - name: IP2                     
-    type: hysteria
-    server: 108.181.24.77
-    port: 11512
-    auth-str: dongtaiwang.com
-    sni: apple.com
+    server: 108.181.5.131
+    port: 22998
+    type: tuic
+    uuid: f350ada4-7d6a-46d0-bc44-27f93436286f
+    password: dongtaiwang.com
+    alpn: [h3]
+    sni: bing.com
     skip-cert-verify: true
-    alpn:
-      - h3
-    protocol: udp
-    up: "55 Mbps"
-    down: "550 Mbps"
+    reduce-rtt: true
+    udp-relay-mode: native
+    congestion-controller: bbr
 
 
 
-#  GH/ipp/h2/1
+#  GH/ipp/cm2/3
 
   - name: IP3
-    type: hysteria2
-    server: 51.159.111.32	
-    port: 31180
-    up: 500          
-    down: 3000
+    type: mieru
+    server: 108.181.23.41
+    port: 50223
+    transport: TCP
+    username: dongtaiwang.com
     password: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true 
 
 
 
-#  GH/ipp/h/2
-
-  - name: IP4                    
-    type: hysteria
-    server: 51.159.226.1
-    port: 14241
-    auth-str: dongtaiwang.com
-    #obfs: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true
-    alpn:
-      - h3
-    protocol: udp
-    up: "55 Mbps"
-    down: "550 Mbps"
-    
-
-
-  - { name: 'IP5',type: anytls, server: tj-jp-1.aikunapp.com, port: 6001, password: 605c1d84-4cba-49e1-9d72-4efddfe2ef03, udp: true, client-fingerprint: chrome, skip-cert-verify: true, sni: bootcdn.xuexi.cn }
-    
 #  GH/ipp/cm2/5
 
-  - name: IP51                     
+  - name: IP4
     type: anytls
-    server: tx-1.756794.xyz
+    server: tw.399403.xyz
     port: 8443
     password: dongtaiwang.com
     client-fingerprint: chrome
@@ -100,75 +78,100 @@ proxies:
   
     
              
-#  GH/ipp/h2/2
+#  GH/ipp/h2/1
 
-  - name: IP6
+  - name: IP5
     type: hysteria
-    server: 185.22.155.71
-    port: 10803
-    auth_str: dongtaiwang.com
+    server: 195.154.200.40
+    port: 15010
+    auth-str: dongtaiwang.com
+    sni: apple.com
+    skip-cert-verify: true
     alpn:
       - h3
-    sni: www.bing.com
-    skip-cert-verify: true
+    protocol: udp
     up: "55 Mbps"
     down: "550 Mbps"
-    
-    
-             
-#  GH/ipp/x/3
+        
 
-  - name: IP7
-    type: vless
-    server: 185.22.155.105                    
-    port: 62750                                
-    uuid: fdd2d176-2602-46f2-b694-ce247de88b22
-    network: tcp
-    udp: true
-    tls: true
-    flow: xtls-rprx-vision
-    servername: www.paypal.com
-    reality-opts: 
-      public-key: _E_YXE_gOkDrffe4t6gcajtnjFZAJ3g7ZwTJbL3IOHA
-      short-id: ''                    
-    client-fingerprint: chrome 
-    
-    
 
-#  GH/ipp/q/2
+#  GH/ipp/h/2
 
-  - name: "IP8"
+  - name: "IP6"
     type: hysteria
     server: 208.87.243.151
-    port: 17549
+    port: 38845
     auth_str: dongtaiwang.com
     alpn:
       - h3
     sni: www.bing.com
     skip-cert-verify: true
     up: "55 Mbps"
-    down: "500 Mbps"            
-        
-        
-        
-#  GH/ipp/m/2
+    down: "500 Mbps"    
+    
+    
+    
+#  GH/ipp/h/3
 
-  - name: IP9                 
-    type: mieru
-    server: 108.181.23.41
-    port: 28676
-#    port-range: 2090-2099
-    transport: TCP
-    username: dongtaiwang.com
-    password: dongtaiwang.com 
+  - name: "IP7"
+    type: hysteria
+    server: 51.159.226.1
+    port: 49003
+    auth_str: dongtaiwang.com
+    alpn:
+      - h3
+    sni: apple.com
+    skip-cert-verify: true
     up: "55 Mbps"
-    down: "550 Mbps"  
+    down: "500 Mbps"       
+    
+    
+
+#  GH/ipp/h2/1
+
+  - name: IP8
+    type: hysteria2
+    server: 51.159.111.32
+    port: 5355
+    up: 500          
+    down: 3000
+    password: dongtaiwang.com
+    sni: www.bing.com
+    skip-cert-verify: true 
+    
+      
+        
+#  GH/ipp/h2/2
+
+  - name: IP9
+    type: hysteria2
+    server: 51.158.218.2
+    port: 50066
+    up: 500          
+    down: 3000
+    password: dongtaiwang.com
+    sni: www.bing.com
+    skip-cert-verify: true  
                   
            
-           
-#  GH/ipp/m/1
+
+#  GH/ipp/h2/3
 
   - name: IP10
+    type: hysteria2
+    server: 108.181.22.213
+    port: 15167
+    up: 500          
+    down: 3000
+    password: dongtaiwang.com
+    sni: www.bing.com
+    skip-cert-verify: true             
+            
+
+
+#  GH/ipp/m/1
+
+  - name: IP11
     type: mieru
     server: 175.29.23.246
     port: 10011
@@ -177,71 +180,58 @@ proxies:
     username: dongtaiwang.com
     password: dongtaiwang.com 
     up: "55 Mbps"
-    down: "550 Mbps"  
-             
+    down: "550 Mbps" 
+    
 
 
-#  pac2/h2/1
-
-  - name: IP11
-    type: hysteria2
-    server: 46.17.41.217
-    port: 30033
-    up: 500          
-    down: 3000
-    password: dongtaiwang.com
-    sni: www.bing.com
-    skip-cert-verify: true 
-
-
-
-#  GH/ipp/s/1
+#  GH/ipp/q/1
 
   - name: IP12
+    server: 62.210.10.113
+    port: 33998
+    type: tuic
+    uuid: 909212b8-5d67-4532-885e-7a6b5e724ab8
+    password: dongtaiwang.com
+    alpn: [h3]
+    sni: bing.com
+    skip-cert-verify: true
+    reduce-rtt: true
+    udp-relay-mode: native
+    congestion-controller: bbr 
+    
+    
+    
+#  GH/ipp/q/3
+
+  - name: IP13
     type: hysteria
-    server: 195.154.200.178
-    port: 46938
+    server: 51.159.111.32
+    port: 23880
     auth-str: dongtaiwang.com
-    sni: apple.com
+    sni: bing.com
     skip-cert-verify: true
     alpn:
       - h3
     protocol: udp
     up: "55 Mbps"
-    down: "550 Mbps"	 
-    
-    
-    
-# new-pac/v2ray/4
-
-  - name: IP13
-    type: hysteria2
-    server: 154.26.186.7
-    port: 10831
-    up: 500          
-    down: 3000
-    password: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true 
+    down: "550 Mbps"
 
 
-    
-#   new-pac/v2ray/2
-    
-  - name: "IP14"                   
-    type: vless
-    server: 212.129.5.242                  
-    port: 35780                                
-    uuid: d7703b51-41e8-42c1-aa71-2b5099148227   
-    network: tcp
-    udp: true
-    tls: true
-    flow: xtls-rprx-vision
-    servername: www.paypal.com
-    reality-opts: 
-      public-key: 78FJmeccKt0_704WnpAy9eY7Q2cfUJ301yZGcxkKbVU
-      short-id: ''                    
-    client-fingerprint: chrome 
+
+#  GH/ipp/s/1
+
+  - name: IP14
+    type: hysteria
+    server: 108.181.24.77
+    port: 37872
+    auth-str: dongtaiwang.com
+    sni: apople.com
+    skip-cert-verify: true
+    alpn:
+      - h3
+    protocol: udp
+    up: "55 Mbps"
+    down: "550 Mbps"    
      
 
 
@@ -266,22 +256,8 @@ proxies:
   
   - name: vmess                  
     type: hysteria2
-    server: hy2.694463.xyz
-    port: 30033
-    up: 500          
-    down: 3000
-    password: dongtaiwang.com
-    sni: www.bing.com
-    skip-cert-verify: true 
-
-
-
-#   new-pac/v2ray/3              
-
-  - name: "trojan"
-    type: hysteria2
-    server: 51.15.172.84
-    port: 38800
+    server: 62.210.113.151
+    port: 55423
     up: 500          
     down: 3000
     password: dongtaiwang.com
@@ -289,10 +265,31 @@ proxies:
     skip-cert-verify: true 
 
 
+
+  - { name: 'trojan',type: anytls, server: tj-jp-1.aikunapp.com, port: 6001, password: 605c1d84-4cba-49e1-9d72-4efddfe2ef03, udp: true, client-fingerprint: chrome, skip-cert-verify: true, sni: bootcdn.xuexi.cn }
+
+
+#   GH/ipp/x/1
+    
+  - name: "vless"                   
+    type: vless
+    server: 108.181.3.70                  
+    port: 443                                
+    uuid: 6ae3299d-8ffd-4fbe-8ced-a1212c7494d5   
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: www.paypal.com
+    reality-opts: 
+      public-key: 78FJmeccKt0_704WnpAy9eY7Q2cfUJ301yZGcxkKbVU
+      short-id: ''                    
+    client-fingerprint: chrome 
+
                          
 
-  - {"name":"ss","type":"ss","server":"46.17.40.79","port":38674,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}           
-  - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":25679,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
+  - {"name":"ss","type":"ss","server":"92.118.205.61","port":11111,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}           
+  - {"name":"ssr","type":"ssr","server":"dongtaiwang5.com","port":33336,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
   - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
   - {"name":"warp","type":"wireguard","server":"162.159.192.229","port":1010,"udp":true,"ip":"172.16.0.2","ipv6":"2606:4700:110:8040:e677:b446:ac05:a038","private-key":"ULALYURSXWaCTC2ydffFdr8uFepy7u7KwV1Rmn0ZbWU=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","dns":["1.1.1.1"],"mtu":1280,"remote-dns-resolve":true}
   - {name: ET13, server: 141.11.218.253, port: 8080, type: vless, uuid: 7ef02dba-fa1a-4ded-b93d-050e8eaf02f3, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: testpages.wabxn514.us.kg, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: testpages.wabxn514.us.kg}}}
@@ -303,30 +300,7 @@ proxies:
   - {name: 🇭🇰 HK🐲™️【请勿测速】 4, server: 185.106.176.128, port: 443, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
   - {name: 🇸🇬 SG🐲™️【请勿测速】, server: 8.222.209.98, port: 443, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
   - {name: 🇸🇬 SG🐲™️【请勿测速】 2, server: 27.50.49.188, port: 2096, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇸🇬 SG🐲™️【请勿测速】 3, server: 92.243.75.49, port: 2087, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇸🇬 SG🐲™️【请勿测速】 4, server: 27.50.48.115, port: 2087, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇸🇬 SG🐲™️【请勿测速】 5, server: 27.50.48.186, port: 2083, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇯🇵 JP🐲™️【请勿测速】, server: 43.207.160.61, port: 10003, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇯🇵 JP🐲™️【请勿测速】 2, server: 47.91.18.127, port: 443, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇯🇵 JP🐲™️【请勿测速】 3, server: 152.70.101.24, port: 16052, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇯🇵 JP🐲™️【请勿测速】 4, server: 47.79.88.21, port: 6010, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇯🇵 JP🐲™️【请勿测速】 5, server: 13.230.34.30, port: 443, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇰🇷 KR🐲™️【请勿测速】, server: 59.16.189.174, port: 12241, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇰🇷 KR🐲™️【请勿测速】 2, server: 220.118.248.123, port: 10100, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇰🇷 KR🐲™️【请勿测速】 3, server: 169.212.176.182, port: 35559, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇰🇷 KR🐲™️【请勿测速】 4, server: 183.96.243.131, port: 50000, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇰🇷 KR🐲™️【请勿测速】 5, server: 183.99.193.147, port: 12580, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇺🇸 US🐲™️【请勿测速】, server: 108.165.152.98, port: 2087, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇺🇸 US🐲™️【请勿测速】 2, server: 103.116.7.103, port: 2083, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇺🇸 US🐲™️【请勿测速】 3, server: 108.165.152.169, port: 2087, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇺🇸 US🐲™️【请勿测速】 4, server: 23.95.215.205, port: 8443, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇺🇸 US🐲™️【请勿测速】 5, server: 64.69.24.13, port: 443, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇵🇱 PL🐲™️【请勿测速】, server: 185.188.147.79, port: 443, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇵🇱 PL🐲™️【请勿测速】 2, server: 217.30.10.55, port: 443, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-  - {name: 🇵🇱 PL🐲™️【请勿测速】 3, server: 176.105.253.98, port: 443, type: vless, uuid: 53ed7378-c63a-468e-ae6f-b6a95bfd1685, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: 3ed.wabxn514.ip-ddns.com, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: 3ed.wabxn514.ip-ddns.com}}}
-
-
-
+ 
 
 proxy-groups:
   - name: 🔰 节点选择
@@ -394,35 +368,12 @@ proxy-groups:
       - 🇭🇰 HK🐲™️【请勿测速】 3        
       - 🇭🇰 HK🐲™️【请勿测速】 4        
       - 🇸🇬 SG🐲™️【请勿测速】       
-      - 🇸🇬 SG🐲™️【请勿测速】 2     
-      - 🇸🇬 SG🐲™️【请勿测速】 3     
-      - 🇸🇬 SG🐲™️【请勿测速】 4     
-      - 🇸🇬 SG🐲™️【请勿测速】 5     
-      - 🇯🇵 JP🐲™️【请勿测速】       
-      - 🇯🇵 JP🐲™️【请勿测速】 2           
-      - 🇯🇵 JP🐲™️【请勿测速】 3             
-      - 🇯🇵 JP🐲™️【请勿测速】 4             
-      - 🇯🇵 JP🐲™️【请勿测速】 5                  
-      - 🇰🇷 KR🐲™️【请勿测速】       
-      - 🇰🇷 KR🐲™️【请勿测速】 2     
-      - 🇰🇷 KR🐲™️【请勿测速】 3     
-      - 🇰🇷 KR🐲™️【请勿测速】 4     
-      - 🇰🇷 KR🐲™️【请勿测速】 5     
-      - 🇺🇸 US🐲™️【请勿测速】       
-      - 🇺🇸 US🐲™️【请勿测速】 2     
-      - 🇺🇸 US🐲™️【请勿测速】 3     
-      - 🇺🇸 US🐲™️【请勿测速】 4     
-      - 🇺🇸 US🐲™️【请勿测速】 5     
-      - 🇵🇱 PL🐲™️【请勿测速】       
-      - 🇵🇱 PL🐲™️【请勿测速】 2     
-      - 🇵🇱 PL🐲™️【请勿测速】 3      
+      - 🇸🇬 SG🐲™️【请勿测速】 2         
       - ET13
   - name: DL
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
+    type: select
     proxies:
-      - IP3  
+      - trojan  
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -2341,5 +2292,6 @@ rules:
  - DOMAIN-SUFFIX,jb51.net,🎯 全球直连  
  - DOMAIN-SUFFIX,ccc.msi.com,🎯 全球直连 
  - DOMAIN-SUFFIX,claude.ai,DL
+ - DOMAIN-SUFFIX,chatgpt.com,DL 
  - GEOIP,CN,🎯 全球直连                                                                                                                                             
  - MATCH,🐟 漏网之鱼                                                                                                                                                
