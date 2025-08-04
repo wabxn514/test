@@ -267,6 +267,7 @@ proxies:
 
 
   - { name: 'trojan',type: anytls, server: tj-jp-1.aikunapp.com, port: 6001, password: 605c1d84-4cba-49e1-9d72-4efddfe2ef03, udp: true, client-fingerprint: chrome, skip-cert-verify: true, sni: bootcdn.xuexi.cn }
+  - { name: 'gpt', server: v4-aws-jp.aikunapp.com, port: 7001, sni: d1--cn-gotcha204-3.bilivideo.com, skip-cert-verify: true, type: hysteria2, password: 605c1d84-4cba-49e1-9d72-4efddfe2ef03 }
 
 
 #   GH/ipp/x/1
@@ -349,6 +350,7 @@ proxy-groups:
       - IP13
       - IP14
       - IP15
+      - gpt
       - warp
       - vmess
       - ssr
@@ -361,15 +363,7 @@ proxy-groups:
     proxies:
 #      - 🎯 全球直连
 #      - ♻️ 自动选择
-      - warp
-      - cfvless          
-      - 🇭🇰 HK🐲™️【请勿测速】       
-      - 🇭🇰 HK🐲™️【请勿测速】 2        
-      - 🇭🇰 HK🐲™️【请勿测速】 3        
-      - 🇭🇰 HK🐲™️【请勿测速】 4        
-      - 🇸🇬 SG🐲™️【请勿测速】       
-      - 🇸🇬 SG🐲™️【请勿测速】 2         
-      - ET13
+      - gpt
   - name: DL
     type: select
     proxies:
@@ -2291,6 +2285,7 @@ rules:
  - DOMAIN-SUFFIX,1fichier.com,🎯 全球直连  
  - DOMAIN-SUFFIX,jb51.net,🎯 全球直连  
  - DOMAIN-SUFFIX,ccc.msi.com,🎯 全球直连 
+ - DOMAIN-SUFFIX,gemini.google.com,CF
  - DOMAIN-SUFFIX,claude.ai,DL
  - DOMAIN-SUFFIX,chatgpt.com,DL 
  - GEOIP,CN,🎯 全球直连                                                                                                                                             
