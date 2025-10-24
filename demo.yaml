@@ -1,15 +1,53 @@
 # Profile Template for clash verge
 
+#dns:
+#  enabled: true
+#  default-nameserver: [223.5.5.5, 119.29.29.29, 114.114.114.114]
+#  enhanced-mode: fake-ip
+#  fake-ip-range: 198.18.0.1/16
+#  respect-rules: true
+#  proxy-server-nameserver: [223.5.5.5, 119.29.29.29, 114.114.114.114]
+#  nameserver: [223.5.5.5, 119.29.29.29, 114.114.114.114]
+#  fallback: [1.1.1.1, 8.8.8.8]
+#  fallback-filter: { geoip: true, geoip-code: CN, geosite: [gfw], ipcidr: [240.0.0.0/4], domain: [+.google.com, +.facebook.com, +.youtube.com] }
+
+
 dns:
   enabled: true
-  nameserver:
+  prefer-h3: true
+  listen: :53
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  # respect-rules: true
+  default-nameserver:
+    - 43.154.154.162
+    - 223.5.5.5
+    - 114.114.114.114
+    - 1.1.1.1
+    - 8.8.8.8
     - 119.29.29.29
-    - tls://223.5.5.5
+  nameserver:
+    # - system
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
   fallback:
+    - https://1.0.0.1/dns-query
+    - tls://dns.google
     - 8.8.8.8
     - 8.8.4.4
     - tls://1.0.0.1:853
     - tls://dns.google:853
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+  fake-ip-filter:
+    - geosite:cn   
+
 
 proxies:
 
@@ -155,7 +193,7 @@ proxies:
     sni: apple.com
     skip-cert-verify: true
     up: "55 Mbps"
-    down: "500 Mbps"    
+    down: "500 Mbps"      
                   
            
 
@@ -276,16 +314,26 @@ proxies:
     sni: apple.com
     skip-cert-verify: true 
 
+
+
+  - name: "http"
+    type: http
+    server: tw.399403.xyz
+    port: 13000
+    username: dongtaiwang.com
+    password: dongtaiwang.com
+    tls: true
+    skip-cert-verify: true 
+    
        
 
 #   pac2/h2/1
   
   - {"name":"vmess","type":"ssr","server":"2001:bc8:1203:106::301","port":60066,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
 
-
-
   - { name: 'anytls',type: anytls, server: tj-jp-1.aikunapp.com, port: 6001, password: 605c1d84-4cba-49e1-9d72-4efddfe2ef03, udp: true, client-fingerprint: chrome, skip-cert-verify: true, sni: bootcdn.xuexi.cn }
-  - { name: 'gpt', server: v4-aws-jp.aikunapp.com, port: 7001, sni: d1--cn-gotcha204-3.bilivideo.com, skip-cert-verify: true, type: hysteria2, password: 605c1d84-4cba-49e1-9d72-4efddfe2ef03 }
+  - { name: 'gpt111', server: v4-aws-jp.aikunapp.com, port: 7001, sni: d1--cn-gotcha204-3.bilivideo.com, skip-cert-verify: true, type: hysteria2, password: 605c1d84-4cba-49e1-9d72-4efddfe2ef03 }
+  - { name: 'gpt', server: ovo.518183.xyz, port: 63518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 34279209-1a79-4f7e-ae6d-f6c2dac7357e }
 
 
 #   GH/ipp/x/1
@@ -315,12 +363,29 @@ proxies:
 
 
 
+  - { name: '香港 - HY2 - 2倍 - 大妮妮', server: hk.518183.xyz, port: 50518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 99cda4c6-6d79-4951-88f1-5bcdc9ee4717 }
+  - { name: '日本 - HY2 - 大妮妮', server: ovo.518183.xyz, port: 64518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 99cda4c6-6d79-4951-88f1-5bcdc9ee4717 }
+  - { name: '新加坡 - HY2 - 大妮妮', server: ovo.518183.xyz, port: 63518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 99cda4c6-6d79-4951-88f1-5bcdc9ee4717 }
+  - { name: '印尼 - HY2 - 大妮妮', server: ovo.518183.xyz, port: 63518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 99cda4c6-6d79-4951-88f1-5bcdc9ee4717 }
+  - { name: '台湾 - HY2 - 大妮妮', server: ovo.518183.xyz, port: 62518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 99cda4c6-6d79-4951-88f1-5bcdc9ee4717 }
+  - { name: '美国原生 - HY2 - 大妮妮', server: uss.518183.xyz, port: 58518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 99cda4c6-6d79-4951-88f1-5bcdc9ee4717 }
+  - { name: '法国 - HY2 - 大妮妮', server: ovo.518183.xyz, port: 64518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 99cda4c6-6d79-4951-88f1-5bcdc9ee4717 }
+  - { name: '德国 - HY2 - 大妮妮', server: de.518183.xyz, port: 62518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 99cda4c6-6d79-4951-88f1-5bcdc9ee4717 }
+
+  - { name: kkk-tuic,server: tuic5.69cn.cn,port: 21000,type: tuic,uuid: 40219862-e46d-4de2-b447-156964807b09,password: 40219862-e46d-4de2-b447-156964807b09,alpn: [h3],disable-sni: true,reduce-rtt: true,udp-relay-mode: native,congestion-controller: bbr}
+  - { name: '美国住宅02',type: socks5,server: 38.143.29.117, port: 25768, username: 369ff0c9, password: 8a49fa7498b2, dialer-proxy: kkk-tuic}
+  - { name: '日本住宅02',type: socks5,server: asia-relay.lycheeip.com, port: 1337, username: aeurs2gsck8h, password: p4xhd60i5ds6, dialer-proxy: kkk-tuic}
+  - { name: '美国住宅01',type: socks5,server: 38.143.29.117, port: 25768, username: 369ff0c9, password: 8a49fa7498b2, dialer-proxy: '日本 - HY2 - 大妮妮'}
+  - { name: '日本住宅01',type: socks5,server: asia-relay.lycheeip.com, port: 1337, username: aeurs2gsck8h, password: p4xhd60i5ds6, dialer-proxy: '日本 - HY2 - 大妮妮'}
+  - { name: HK01, server: qew2g-g04.hk01-ae5.entry.v50708.dev, port: 19274, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+
 proxy-groups:
   - name: 🔰 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - 🎯 全球直连
+      - DL
       - IP1
       - IP2
       - IP3
@@ -342,6 +407,7 @@ proxy-groups:
       - ssr
       - ss
       - trojan
+      - gpt
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -377,9 +443,25 @@ proxy-groups:
 #      - ♻️ 自动选择
       - gpt
   - name: DL
-    type: select
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 7200
     proxies:
-      - trojan  
+      - gpt   
+      - kkk-tuic
+      - '美国住宅02'
+      - '日本住宅02'
+      - '美国住宅01'
+      - '日本住宅01'
+      - '香港 - HY2 - 2倍 - 大妮妮'  
+      - '日本 - HY2 - 大妮妮'            
+      - '新加坡 - HY2 - 大妮妮'              
+      - '印尼 - HY2 - 大妮妮'             
+      - '台湾 - HY2 - 大妮妮'        
+      - '美国原生 - HY2 - 大妮妮'              
+      - '法国 - HY2 - 大妮妮'              
+      - '德国 - HY2 - 大妮妮'      
+      - HK01      
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -1150,7 +1232,7 @@ rules:
  - DOMAIN-KEYWORD,.hbogoasia.,🌍 国外媒体                                                                                                                           
  - DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,🌍 国外媒体                                                                                           
  - DOMAIN,bcbolthboa-a.akamaihd.net,🌍 国外媒体                                                                                                                     
- - DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net,🌍 国外媒体                                                                                                     
+ - DOMAIN,DL-images.ap-southeast-1.prod.boltdns.net,🌍 国外媒体                                                                                                     
  - DOMAIN,dai3fd1oh325y.cloudfront.net,🌍 国外媒体                                                                                                                  
  - DOMAIN,hboasia1-i.akamaihd.net,🌍 国外媒体                                                                                                                       
  - DOMAIN,hboasia2-i.akamaihd.net,🌍 国外媒体                                                                                                                       
@@ -2260,25 +2342,25 @@ rules:
  - DOMAIN-KEYWORD,yunpan,🎯 全球直连                                                                                                                                
  - DOMAIN-KEYWORD,Thunder,🎯 全球直连                                                                                                                               
  - DOMAIN-KEYWORD,XLLiveUD,🎯 全球直连
- - DOMAIN,cdn.auth0.com,CF
- - DOMAIN,challenges.CF.com,CF
- - DOMAIN,openaiapi-site.azureedge.net,CF
- - DOMAIN-SUFFIX,ai.com,CF
- - DOMAIN-SUFFIX,identrust.com,CF
+ - DOMAIN,cdn.auth0.com,DL
+ - DOMAIN,challenges.CF.com,DL
+ - DOMAIN,openaiapi-site.azureedge.net,DL
+ - DOMAIN-SUFFIX,ai.com,DL
+ - DOMAIN-SUFFIX,identrust.com,DL
  - DOMAIN-SUFFIX,openai.com,🔰 节点选择 
- - DOMAIN-SUFFIX,CF.com,CF
- - DOMAIN-SUFFIX,CFclient.com,CF
- - DOMAIN-SUFFIX,thepiratebay.org,CF
- - DOMAIN-SUFFIX,yts.mx,CF
- - DOMAIN-SUFFIX,skidrowreloaded.com,CF
- - DOMAIN-SUFFIX,fitgirl-repacks.site,CF
- - DOMAIN-SUFFIX,torrentfreak.com,CF 
- - DOMAIN-SUFFIX,t66y.com,CF
- - DOMAIN-SUFFIX,kdwshell.com,CF
- - DOMAIN-SUFFIX,thumbplus.com,CF
- - DOMAIN-SUFFIX,qqzz008.com,CF 
- - DOMAIN-SUFFIX,videocelebs.net,CF 
- - DOMAIN-SUFFIX,rargb.to,CF   
+ - DOMAIN-SUFFIX,DL.com,DL
+ - DOMAIN-SUFFIX,DLclient.com,DL
+ - DOMAIN-SUFFIX,thepiratebay.org,DL
+ - DOMAIN-SUFFIX,yts.mx,DL
+ - DOMAIN-SUFFIX,skidrowreloaded.com,DL
+ - DOMAIN-SUFFIX,fitgirl-repacks.site,DL
+ - DOMAIN-SUFFIX,torrentfreak.com,DL 
+ - DOMAIN-SUFFIX,t66y.com,DL
+ - DOMAIN-SUFFIX,kdwshell.com,DL
+ - DOMAIN-SUFFIX,thumbplus.com,DL
+ - DOMAIN-SUFFIX,qqzz008.com,DL 
+ - DOMAIN-SUFFIX,videocelebs.net,DL 
+ - DOMAIN-SUFFIX,rargb.to,DL   
  - DOMAIN-SUFFIX,1login.to,🎯 全球直连    
  - DOMAIN-SUFFIX,zlibrary-global.se,🎯 全球直连  
  - DOMAIN-SUFFIX,geforce.com,🎯 全球直连                                                                                       
@@ -2288,7 +2370,7 @@ rules:
  - PROCESS-NAME,USBRecoveryCreator.exe,🔰 节点选择
  - DOMAIN-SUFFIX,lenovo.com,🔰 节点选择 
  - DOMAIN-SUFFIX,mi.com,🎯 全球直连 
- - DOMAIN-SUFFIX,ai.google.dev,CF
+ - DOMAIN-SUFFIX,ai.google.dev,DL
  - DOMAIN-SUFFIX,makersuite.google.com,🐟 漏网之鱼 
  - DOMAIN-KEYWORD,google,🔰 节点选择     
  - DOMAIN-SUFFIX,passport-glb.lenovo.com,🎯 全球直连 
@@ -2297,7 +2379,7 @@ rules:
  - DOMAIN-SUFFIX,1fichier.com,🎯 全球直连  
  - DOMAIN-SUFFIX,jb51.net,🎯 全球直连  
  - DOMAIN-SUFFIX,ccc.msi.com,🎯 全球直连 
- - DOMAIN-SUFFIX,gemini.google.com,CF
+ - DOMAIN-SUFFIX,gemini.google.com,DL
  - DOMAIN-SUFFIX,claude.ai,DL
  - DOMAIN-SUFFIX,chatgpt.com,DL 
  - GEOIP,CN,🎯 全球直连                                                                                                                                             
