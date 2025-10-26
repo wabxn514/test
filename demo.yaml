@@ -28,6 +28,7 @@ dns:
     - 119.29.29.29
   nameserver:
     # - system
+    - https://dns.flymc.cc/dns-query
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
   proxy-server-nameserver:
@@ -47,6 +48,7 @@ dns:
       - 240.0.0.0/4
   fake-ip-filter:
     - geosite:cn   
+
 
 
 proxies:
@@ -377,7 +379,7 @@ proxies:
   - { name: '日本住宅02',type: socks5,server: asia-relay.lycheeip.com, port: 1337, username: aeurs2gsck8h, password: p4xhd60i5ds6, dialer-proxy: kkk-tuic}
   - { name: '美国住宅01',type: socks5,server: 38.143.29.117, port: 25768, username: 369ff0c9, password: 8a49fa7498b2, dialer-proxy: '日本 - HY2 - 大妮妮'}
   - { name: '日本住宅01',type: socks5,server: asia-relay.lycheeip.com, port: 1337, username: aeurs2gsck8h, password: p4xhd60i5ds6, dialer-proxy: '日本 - HY2 - 大妮妮'}
-  - { name: HK01, server: qew2g-g04.hk01-ae5.entry.v50708.dev, port: 19274, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - { name: HK01, server: 9q5qo-g04.hk01-ae5.entry.v50708.dev, port: 19274, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
 
 proxy-groups:
   - name: 🔰 节点选择
@@ -434,14 +436,6 @@ proxy-groups:
       - ssr
       - ss
       - trojan  
-  - name: CF
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    proxies:
-#      - 🎯 全球直连
-#      - ♻️ 自动选择
-      - gpt
   - name: DL
     type: url-test
     url: 'http://www.gstatic.com/generate_204'
@@ -575,7 +569,7 @@ proxy-groups:
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - CF
+      - DL
   - name: 🛑 全球拦截
     type: select
     proxies:
@@ -603,7 +597,7 @@ proxy-groups:
       - IP14
       - cfvless
       - warp
-      - CF
+      - DL
       - vmess
       - ssr
       - ss
@@ -2381,6 +2375,7 @@ rules:
  - DOMAIN-SUFFIX,ccc.msi.com,🎯 全球直连 
  - DOMAIN-SUFFIX,gemini.google.com,DL
  - DOMAIN-SUFFIX,claude.ai,DL
- - DOMAIN-SUFFIX,chatgpt.com,DL 
+ - DOMAIN-SUFFIX,chatgpt.com,DL
+ - DOMAIN-SUFFIX,cloudfront.net,DL
  - GEOIP,CN,🎯 全球直连                                                                                                                                             
  - MATCH,🐟 漏网之鱼                                                                                                                                                
