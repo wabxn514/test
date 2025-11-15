@@ -169,53 +169,61 @@ proxies:
     
     
 
-#  GH/ipp/h2/1
+#  GH/ipp/cm2/1
 
   - name: IP8
-    type: hysteria2
-    server: 51.159.111.32
-    port: 5355
-    up: 500          
-    down: 3000
+    type: anytls
+    server: 62.210.11.74
+    port: 8443
     password: dongtaiwang.com
-    sni: www.bing.com
-    skip-cert-verify: true 
+    client-fingerprint: chrome
+    udp: true
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    min-idle-session: 0
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true
     
       
         
-#  GH/ipp/h2/2
+#  GH/ipp/q/1
 
   - name: IP9
-    type: hysteria
-    server: 62.210.127.217
-    port: 35511
-    auth_str: dongtaiwang.com
+    type: anytls  
+    server: fan3.394615.xyz
+    port: 8443
+    password: dongtaiwang.com
+    client-fingerprint: chrome
+    udp: true
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    min-idle-session: 0
     alpn:
-      - h3
-    sni: apple.com
-    skip-cert-verify: true
-    up: "55 Mbps"
-    down: "500 Mbps"      
+      - h2
+      - http/1.1
+    skip-cert-verify: true    
                   
            
 
-#  GH/ipp/h2/3
+#  GH/ipp/cm2/2
 
   - name: IP10
-    type: vless
-    server: 212.129.5.242             
-    port: 34510                                
-    uuid: 1760348a-b1be-4d31-99b1-fa6598ccce84
-    network: tcp
+    type: anytls
+    server: 62.210.10.140
+    port: 8443
+    password: dongtaiwang.com
+    client-fingerprint: chrome
     udp: true
-    tls: true
-    flow: xtls-rprx-vision
-    servername: www.yahoo.com
-    reality-opts: 
-      public-key: o_Arms0URCfznCID2NVVqVkySfzLMyZY0sZYJufboCQ
-      short-id: 'acd258443f77253f'                    
-    client-fingerprint: chrome 
-          
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    min-idle-session: 0
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true
+            
             
 
 
@@ -308,8 +316,8 @@ proxies:
 
   - name: trojan
     type: hysteria2
-    server: 2001:bc8:32d7:30b::3
-    port: 11223
+    server: 2001:bc8:1203:209::60
+    port: 33880
     up: 500          
     down: 3000
     password: dongtaiwang.com
@@ -2375,7 +2383,8 @@ rules:
  - DOMAIN-SUFFIX,mi.com,🎯 全球直连 
  - DOMAIN-SUFFIX,ai.google.dev,DL
  - DOMAIN-SUFFIX,makersuite.google.com,🐟 漏网之鱼 
- - DOMAIN-KEYWORD,google,🔰 节点选择     
+ - DOMAIN-KEYWORD,google,🔰 节点选择
+ - DOMAIN-SUFFIX,x.com,🔰 节点选择       
  - DOMAIN-SUFFIX,passport-glb.lenovo.com,🎯 全球直连 
  - DOMAIN-SUFFIX,account.lenovo.com,🔰 节点选择 
  - DOMAIN-SUFFIX,gofile.io,🎯 全球直连 
