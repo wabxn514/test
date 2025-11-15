@@ -156,16 +156,19 @@ proxies:
 #  GH/ipp/h/3
 
   - name: "IP7"
-    type: hysteria
-    server: 51.159.226.1
-    port: 49003
-    auth_str: dongtaiwang.com
-    alpn:
-      - h3
-    sni: apple.com
-    skip-cert-verify: true
-    up: "55 Mbps"
-    down: "500 Mbps"       
+    type: vless
+    server: 195.154.200.156                
+    port: 33009                                
+    uuid: 77a33d77-7af9-4c33-9556-d6711becca04
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: www.yahoo.com
+    reality-opts: 
+      public-key: vQxUlk2tCENv9crfrUAp5JdJOZTKhMH7XnoKLqbAYx0
+      short-id: 'c0d304da0c4dcadc'                    
+    client-fingerprint: chrome      
     
     
 
