@@ -168,7 +168,7 @@ proxies:
     reality-opts: 
       public-key: vQxUlk2tCENv9crfrUAp5JdJOZTKhMH7XnoKLqbAYx0
       short-id: 'c0d304da0c4dcadc'                    
-    client-fingerprint: chrome      
+    client-fingerprint: chrome     
     
     
 
@@ -376,21 +376,16 @@ proxies:
 
 
 
-  - { name: '香港 - HY2 - 大妮妮', server: hk.518183.xyz, port: 45518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 34279209-1a79-4f7e-ae6d-f6c2dac7357e  }
-  - { name: '日本 - HY2 - 大妮妮', server: jp.518183.xyz, port: 45518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 34279209-1a79-4f7e-ae6d-f6c2dac7357e }
-  - { name: '新加坡 - HY2 - 大妮妮', server: sg1.518183.xyz, port: 45518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 34279209-1a79-4f7e-ae6d-f6c2dac7357e }
-  - { name: '泰国 - HY2 - 大妮妮', server: th.518183.xyz, port: 45518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 34279209-1a79-4f7e-ae6d-f6c2dac7357e }
-  - { name: '美国 - HY2 - 大妮妮', server: us1.518183.xyz, port: 45518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 34279209-1a79-4f7e-ae6d-f6c2dac7357e }
-  - { name: '德国 - HY2 - 大妮妮', server: de.518183.xyz, port: 45518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 34279209-1a79-4f7e-ae6d-f6c2dac7357e }
-  - { name: '荷兰 - HY2 - 大妮妮', server: nl.518183.xyz, port: 45518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 34279209-1a79-4f7e-ae6d-f6c2dac7357e }
- 
-  - { name: kkk-tuic,server: tuic5.69cn.cn,port: 21000,type: tuic,uuid: 40219862-e46d-4de2-b447-156964807b09,password: 40219862-e46d-4de2-b447-156964807b09,alpn: [h3],disable-sni: true,reduce-rtt: true,udp-relay-mode: native,congestion-controller: bbr}
-  - { name: '美国住宅02',type: socks5,server: 38.143.29.117, port: 25768, username: 369ff0c9, password: 8a49fa7498b2, dialer-proxy: kkk-tuic}
-  - { name: '日本住宅02',type: socks5,server: asia-relay.lycheeip.com, port: 1337, username: aeurs2gsck8h, password: p4xhd60i5ds6, dialer-proxy: kkk-tuic}
-  - { name: '美国住宅01',type: socks5,server: 38.143.29.117, port: 25768, username: 369ff0c9, password: 8a49fa7498b2, dialer-proxy: '日本 - HY2 - 大妮妮'}
-  - { name: '日本住宅01',type: socks5,server: asia-relay.lycheeip.com, port: 1337, username: aeurs2gsck8h, password: p4xhd60i5ds6, dialer-proxy: '日本 - HY2 - 大妮妮'}
+  - { name: '🇯🇵 日本丨Edge 03', type: vless, server: ejp3s.matte1163.com, port: 27960, uuid: a3e1e8e5-fdb5-4383-aec7-1e7635c2020e, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: safari, servername: academy.nvidia.com, reality-opts: { public-key: ZN4b08Kidnu17N1k6-0XJaYsNc8ahCq3ITzacf8QqWQ, short-id: 0846de8b } }
+  - { name: '🇰🇷 韩国丨Edge 01', type: vless, server: ekr1s.matte1163.com, port: 25790, uuid: a3e1e8e5-fdb5-4383-aec7-1e7635c2020e, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: safari, servername: academy.nvidia.com, reality-opts: { public-key: SqzEm8uP7J7GF5URk8O17CE8gYUF6lHJumnPFFv-SFk, short-id: 67721d1c } }
+  - { name: '🇪🇺 网址TRO.UCUN.ME', type: vless, server: dh.matte1163.com, port: 18562, uuid: a3e1e8e5-fdb5-4383-aec7-1e7635c2020e, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: safari, servername: academy.nvidia.com, reality-opts: { public-key: fO-EzPlCwNpvUA-TiPLqgaZHLOCLlGJDIhyYeT9r1jM, short-id: 9c803616 } }
+  - { name: '🇺🇸 美国丨Edge 01', type: vless, server: eus1s.matte1163.com, port: 26908, uuid: a3e1e8e5-fdb5-4383-aec7-1e7635c2020e, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: safari, servername: academy.nvidia.com, reality-opts: { public-key: oo91-xJ_cjtvDbs-2AE2A1u1wV3p1AwXHEXbM5b8kTA, short-id: 09a8c5b2 } }
+  - {name: 🇯🇵 免费-日本4-Ver.8, server: uthy3-g04.jp04-1d-vm0.entry.fr0528.art, port: 447, type: vmess, uuid: a5fa9c72-9693-3619-9673-7fb482baa9ee, alterId: 1, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: 🇺🇲 美国Z02, server: v52ry8d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
 
   - {name: HK01, server: naqnz-g04.hk01-ae5.entry.v50708.dev, port: 19274, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.akebi.cc", port: 30001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw1-vds14.anyhk.co", skip-cert-verify: true, up: null, down: null}
+  - {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.akebi.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
 
   - name: France_None_hy2_2
     type: hysteria2
@@ -430,6 +425,8 @@ proxy-groups:
       - ss
       - trojan
       - gpt
+      - 🇹🇼 TW-1 | Sub3
+      - 🇹🇼 TW-2 | Sub3
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -450,32 +447,29 @@ proxy-groups:
       - IP13
       - IP14
       - IP15
-      - cfvless
       - warp
       - vmess
       - ssr
       - ss
       - trojan  
+      - 🇹🇼 TW-1 | Sub3
+      - 🇹🇼 TW-2 | Sub3
   - name: DL
     type: url-test
     url: 'http://www.gstatic.com/generate_204'
     interval: 7200
     proxies:
       - gpt   
-      - kkk-tuic
-      - '美国住宅02'
-      - '日本住宅02'
-      - '美国住宅01'
-      - '日本住宅01'
-      - '香港 - HY2 - 大妮妮'  
-      - '日本 - HY2 - 大妮妮'            
-      - '新加坡 - HY2 - 大妮妮'              
-      - '泰国 - HY2 - 大妮妮'             
-      - '美国 - HY2 - 大妮妮'              
-      - '荷兰 - HY2 - 大妮妮'              
-      - '德国 - HY2 - 大妮妮'      
+      - 🇯🇵 日本丨Edge 03
+      - 🇰🇷 韩国丨Edge 01
+      - 🇪🇺 网址TRO.UCUN.ME
+      - 🇺🇸 美国丨Edge 01
+      - 🇯🇵 免费-日本4-Ver.8
+      - 🇺🇲 美国Z02
       - HK01      
       - France_None_hy2_2
+      - 🇹🇼 TW-1 | Sub3
+      - 🇹🇼 TW-2 | Sub3
   - name: 🌍 国外媒体
     type: select
     proxies:
