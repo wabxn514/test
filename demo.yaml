@@ -357,7 +357,13 @@ proxies:
       short-id: ''                    
     client-fingerprint: chrome 
 
-                         
+  - name: "KR家宽"
+    server: 221.139.79.41
+    port: 41240
+    type: ss
+    cipher: aes-256-cfb
+    password: qwerREWQ@@
+    udp: true                         
 
   - {"name":"ss","type":"ss","server":"2a14:7583:29cd::a","port":12345,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}           
   - {"name":"ssr","type":"ssr","server":"ssr2.762988.xyz","port":33336,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
@@ -396,7 +402,8 @@ proxy-groups:
       - IP13
       - IP14
       - IP15
-      - 美国2
+      - 🇺🇲 美国Z02
+      - KR家宽
       - cfvless
       - warp
       - ssr
@@ -404,6 +411,8 @@ proxy-groups:
       - trojan
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
+      - 🇯🇵 免费-日本4-Ver.8
+      - HK01 
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -441,6 +450,7 @@ proxy-groups:
       - HK01      
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
+      - KR家宽
   - name: 🌍 国外媒体
     type: select
     proxies:
