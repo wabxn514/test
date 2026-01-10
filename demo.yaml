@@ -53,55 +53,52 @@ dns:
 
 proxies:
 
-#  GH/ipp/cm2/2
+
+#  GL/ipp/q/4
 
   - name: IP1                     
-    server: 62.210.10.140
-    port: 23556
+    type: anytls
+    server: fan2.856098.xyz
+    port: 8443
+    password: dongtaiwang.com
+    client-fingerprint: chrome
+    udp: true
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    min-idle-session: 0
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true
+    
+
+#  GL/ipp/cm2/5
+ 
+  - name: IP2                     
+    server: 89.144.35.231
+    port: 33457
     type: tuic
-    uuid: e732a82b-612f-415d-a9f8-e4b1df37d066
+    uuid: 66d37a65-7f6f-4e7c-a0f6-163bd917756a
     password: dongtaiwang.com
     alpn: [h3]
-    sni: bing.com
+    sni: apple.com
     skip-cert-verify: true
     reduce-rtt: true
     udp-relay-mode: native
-    congestion-controller: bbr
+    congestion-controller: bbr   
 
 
-
-#  GH/ipp/cm2/3
- 
-  - name: IP2                     
-    type: hysteria
-    server: 62.210.10.140
-    port: 42248
-    auth-str: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true
-    alpn:
-      - h3
-    protocol: udp
-    up: "55 Mbps"
-    down: "550 Mbps"
-    
-
-
-#  GH/ipp/h/2
+#  GL/ipp/h2/3
 
   - name: IP3
     type: hysteria2
-    server: 2001:bc8:32d7:158::9
-    port: 33356
+    server: 62.210.124.146
+    port: 22000 
     up: 500          
     down: 3000
     password: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true  
-
-
-
-#  GH/ipp/cm2/5
+    sni: www.microsoft.com
+    skip-cert-verify: true   
 
   - name: IP4
     type: anytls
@@ -118,9 +115,6 @@ proxies:
       - http/1.1
     skip-cert-verify: true
   
-    
-             
-#  GH/ipp/h2/3
 
   - name: IP5
     type: hysteria
@@ -136,9 +130,6 @@ proxies:
     down: "300 Mbps"
         
 
-
-#  GH/ipp/h/2
-
   - name: "IP6"
     type: hysteria
     server: 208.87.243.151
@@ -151,28 +142,34 @@ proxies:
     up: "55 Mbps"
     down: "500 Mbps"    
     
-    
-    
-#  GH/ipp/h/3
+                
+#  GL/ipp/s/2
 
   - name: "IP7"
     type: vless
-    server: 195.154.200.156                
-    port: 33009                                
-    uuid: 77a33d77-7af9-4c33-9556-d6711becca04
-    network: tcp
+    server: 89.144.35.232
+    port: 15531
+    uuid: d3fd3b3c-f8d4-4894-b91e-5a6a53923a95
     udp: true
     tls: true
-    flow: xtls-rprx-vision
-    servername: www.yahoo.com
-    reality-opts: 
-      public-key: vQxUlk2tCENv9crfrUAp5JdJOZTKhMH7XnoKLqbAYx0
-      short-id: 'c0d304da0c4dcadc'                    
-    client-fingerprint: chrome     
-    
-    
-
-#  GH/ipp/cm2/1
+    servername: itunes.apple.com
+    flow: "" 
+    network: tcp
+    reality-opts:
+      public-key: o4gXQf1n5YOoLo6OnyHykodK1ZShHvDqu1FgxNHe6n8
+      short-id: 8346964417a2552b
+    client-fingerprint: chrome
+    smux:
+      enabled: true
+      protocol: h2mux
+      max-connections: 1
+      min-streams: 4
+      padding: true
+      brutal-opts:
+        enabled: true
+        up: 50
+        down: 300
+        
 
   - name: IP8
     type: anytls
@@ -188,10 +185,7 @@ proxies:
       - h2
       - http/1.1
     skip-cert-verify: true
-    
-      
-        
-#  GH/ipp/q/1
+
 
   - name: IP9
     type: anytls  
@@ -208,29 +202,34 @@ proxies:
       - http/1.1
     skip-cert-verify: true    
                   
-           
 
-#  GH/ipp/cm2/2
+#  GL/ipp/cm2/3
 
   - name: IP10
-    type: anytls
-    server: 62.210.10.140
-    port: 8443
-    password: dongtaiwang.com
-    client-fingerprint: chrome
+    type: vless
+    server: 2001:bc8:32d7:181::2
+    port: 17401
+    uuid: add14a5b-f648-4423-8a1f-8b8f54c0daef
+    network: tcp
     udp: true
-    idle-session-check-interval: 30
-    idle-session-timeout: 30
-    min-idle-session: 0
-    alpn:
-      - h2
-      - http/1.1
-    skip-cert-verify: true
-            
-            
+    tls: true
+    flow: 
+    servername: itunes.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: IXcXrT_Y0ATTZlGOhPnSmKo-cuGr4yMKV9Rz4-nA3yU
+      short-id: 8ef4455ba637425b
+    smux:
+      enabled: true
+      protocol: h2mux
+      max-connections: 1
+      min-streams: 4
+      padding: true
+      brutal-opts:
+        enabled: true
+        up: 50
+        down: 300
 
-
-#  GH/ipp/m/2
 
   - name: IP11
     type: mieru
@@ -244,9 +243,6 @@ proxies:
     down: "550 Mbps" 
     
 
-
-#  GH/ipp/q/1
-
   - name: IP12
     server: 62.210.10.113
     port: 33998
@@ -259,10 +255,7 @@ proxies:
     reduce-rtt: true
     udp-relay-mode: native
     congestion-controller: bbr 
-    
-    
-    
-#  GH/ipp/q/1
+
 
   - name: IP13
     server: 2001:bc8:32d7:306::123
@@ -277,57 +270,66 @@ proxies:
     udp-relay-mode: native
     congestion-controller: bbr
 
-
-
-#  GH/ipp/cm2/4
+    
+#  GL/ipp/cm2/2
 
   - name: IP14
+    type: anytls
+    server: 45.221.98.14
+    port: 59901
+    password: dongtaiwang.com
+    client-fingerprint: chrome
+    udp: true
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    min-idle-session: 0
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true
+    
+
+#  GL/ipp/cm2/3
+    
+  - name: "IP15"     
     type: vless
-    server: 2001:bc8:32d7:158::5
-    port: 10033
-    uuid: 56618bde-5a09-4ef8-ae56-6e7a8d69ec67
-    network: grpc
+    server: 2001:bc8:32d7:181::3
+    port: 17401
+    uuid: add14a5b-f648-4423-8a1f-8b8f54c0daef
+    network: tcp
     udp: true
     tls: true
     flow: 
-    servername: nijigen-works.jp
+    servername: itunes.apple.com
+    client-fingerprint: chrome
     reality-opts:
-      public-key: m1ORavmKKsF8kn6JfNF1m35wRORu8c6YLyxpSfyiYQ0
-      short-id: dfdfb0e2e2d400c4
-    grpc-opts:
-      grpc-service-name: "FhwHiFzK"
-    client-fingerprint: chrome 
+      public-key: IXcXrT_Y0ATTZlGOhPnSmKo-cuGr4yMKV9Rz4-nA3yU
+      short-id: 8ef4455ba637425b
+    smux:
+      enabled: true
+      protocol: h2mux
+      max-connections: 1
+      min-streams: 4
+      padding: true
+      brutal-opts:
+        enabled: true
+        up: 50
+        down: 300
 
 
-
-#  GH/ipp/h/1
-    
-  - name: "IP15"
-    type: hysteria
-    server: 195.154.200.40
-    port: 15010
-    auth-str: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true
-    alpn:
-      - h3
-    protocol: udp
-    up: "55 Mbps"
-    down: "550 Mbps"  
-     
-
+#  GL/ipp/h2/1
 
   - name: trojan
     type: hysteria2
-    server: 2001:bc8:1203:209::60
-    port: 33880
-    up: 500          
-    down: 3000
+    server: 157.254.223.43
+    port: 27921
+    port-range: 28000-29000  
+    up: 50          
+    down: 300
     password: dongtaiwang.com
     sni: apple.com
     skip-cert-verify: true 
-
-
+    
 
   - name: "http"
     type: http
@@ -338,18 +340,7 @@ proxies:
     tls: true
     skip-cert-verify: true 
     
-       
-
-#   pac2/h2/1
-  
-  - {"name":"vmess","type":"ssr","server":"2001:bc8:1203:106::301","port":60066,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
-
-  - { name: 'anytls',type: anytls, server: tj-jp-1.aikunapp.com, port: 6001, password: 605c1d84-4cba-49e1-9d72-4efddfe2ef03, udp: true, client-fingerprint: chrome, skip-cert-verify: true, sni: bootcdn.xuexi.cn }
-  - { name: 'gpt111', server: v4-aws-jp.aikunapp.com, port: 7001, sni: d1--cn-gotcha204-3.bilivideo.com, skip-cert-verify: true, type: hysteria2, password: 605c1d84-4cba-49e1-9d72-4efddfe2ef03 }
-  - { name: 'gpt', server: ovo.518183.xyz, port: 63518, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: 34279209-1a79-4f7e-ae6d-f6c2dac7357e }
-
-
-#   GH/ipp/x/1
+    
     
   - name: "vless"                   
     type: vless
@@ -368,33 +359,20 @@ proxies:
 
                          
 
-  - {"name":"ss","type":"ss","server":"2001:bc8:1203:106::300","port":33333,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}           
-  - {"name":"ssr","type":"ssr","server":"ssr.762988.xyz","port":33336,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
+  - {"name":"ss","type":"ss","server":"2a14:7583:29cd::a","port":12345,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}           
+  - {"name":"ssr","type":"ssr","server":"ssr2.762988.xyz","port":33336,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
   - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
   - {"name":"warp","type":"wireguard","server":"162.159.192.229","port":1010,"udp":true,"ip":"172.16.0.2","ipv6":"2606:4700:110:8040:e677:b446:ac05:a038","private-key":"ULALYURSXWaCTC2ydffFdr8uFepy7u7KwV1Rmn0ZbWU=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","dns":["1.1.1.1"],"mtu":1280,"remote-dns-resolve":true}
-  - {name: ET13, server: 141.11.218.253, port: 8080, type: vless, uuid: 7ef02dba-fa1a-4ded-b93d-050e8eaf02f3, tls: true, alpn: [http%2F1.1], tfo: false, skip-cert-verify: true, servername: testpages.wabxn514.us.kg, client-fingerprint: random, network: ws, ws-opts: {path: "/?ed=2560&proxyip=ts.hpc.tw", headers: {Host: testpages.wabxn514.us.kg}}}
 
 
-
-  - { name: '🇯🇵 日本丨Edge 03', type: vless, server: ejp3s.matte1163.com, port: 27960, uuid: a3e1e8e5-fdb5-4383-aec7-1e7635c2020e, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: safari, servername: academy.nvidia.com, reality-opts: { public-key: ZN4b08Kidnu17N1k6-0XJaYsNc8ahCq3ITzacf8QqWQ, short-id: 0846de8b } }
-  - { name: '🇰🇷 韩国丨Edge 01', type: vless, server: ekr1s.matte1163.com, port: 25790, uuid: a3e1e8e5-fdb5-4383-aec7-1e7635c2020e, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: safari, servername: academy.nvidia.com, reality-opts: { public-key: SqzEm8uP7J7GF5URk8O17CE8gYUF6lHJumnPFFv-SFk, short-id: 67721d1c } }
-  - { name: '🇪🇺 网址TRO.UCUN.ME', type: vless, server: dh.matte1163.com, port: 18562, uuid: a3e1e8e5-fdb5-4383-aec7-1e7635c2020e, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: safari, servername: academy.nvidia.com, reality-opts: { public-key: fO-EzPlCwNpvUA-TiPLqgaZHLOCLlGJDIhyYeT9r1jM, short-id: 9c803616 } }
-  - { name: '🇺🇸 美国丨Edge 01', type: vless, server: eus1s.matte1163.com, port: 26908, uuid: a3e1e8e5-fdb5-4383-aec7-1e7635c2020e, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: safari, servername: academy.nvidia.com, reality-opts: { public-key: oo91-xJ_cjtvDbs-2AE2A1u1wV3p1AwXHEXbM5b8kTA, short-id: 09a8c5b2 } }
   - {name: 🇯🇵 免费-日本4-Ver.8, server: uthy3-g04.jp04-1d-vm0.entry.fr0528.art, port: 447, type: vmess, uuid: a5fa9c72-9693-3619-9673-7fb482baa9ee, alterId: 1, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
   - {name: 🇺🇲 美国Z02, server: v52ry8d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - { name: 美国2, type: ss, server: us.xn--mes358aijj3t9a.shop, port: 23456, cipher: 2022-blake3-aes-128-gcm, password: 'OTlkYTVmYmVjNzRkNGIyMw==:MGEzMGEyOWEtNTIxNS00YQ==', udp: true }
 
   - {name: HK01, server: naqnz-g04.hk01-ae5.entry.v50708.dev, port: 19274, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.akebi.cc", port: 30001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw1-vds14.anyhk.co", skip-cert-verify: true, up: null, down: null}
   - {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.akebi.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
 
-  - name: France_None_hy2_2
-    type: hysteria2
-    server: 163.172.21.105
-    port: 5355
-    password: dongtaiwang.com
-    fast-open: true
-    sni: www.bing.com
-    skip-cert-verify: true
 
 proxy-groups:
   - name: 🔰 节点选择
@@ -418,13 +396,12 @@ proxy-groups:
       - IP13
       - IP14
       - IP15
+      - 美国2
       - cfvless
       - warp
-      - vmess
       - ssr
       - ss
       - trojan
-      - gpt
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
   - name: ♻️ 自动选择
@@ -448,7 +425,6 @@ proxy-groups:
       - IP14
       - IP15
       - warp
-      - vmess
       - ssr
       - ss
       - trojan  
@@ -458,16 +434,11 @@ proxy-groups:
     type: url-test
     url: 'http://www.gstatic.com/generate_204'
     interval: 7200
-    proxies:
-      - gpt   
-      - 🇯🇵 日本丨Edge 03
-      - 🇰🇷 韩国丨Edge 01
-      - 🇪🇺 网址TRO.UCUN.ME
-      - 🇺🇸 美国丨Edge 01
+    proxies:  
       - 🇯🇵 免费-日本4-Ver.8
       - 🇺🇲 美国Z02
+      - 美国2
       - HK01      
-      - France_None_hy2_2
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
   - name: 🌍 国外媒体
@@ -492,7 +463,6 @@ proxy-groups:
       - IP14
       - cfvless
       - warp
-      - vmess
       - ssr
       - ss
       - trojan
@@ -523,7 +493,6 @@ proxy-groups:
       - IP15
       - cfvless
       - warp
-      - vmess
       - ssr
       - ss
       - trojan
@@ -548,7 +517,6 @@ proxy-groups:
       - IP14
       - cfvless
       - warp
-      - vmess
       - ssr
       - ss
       - trojan
@@ -574,7 +542,6 @@ proxy-groups:
       - IP14
       - cfvless
       - warp
-      - vmess
       - ssr
       - ss
       - trojan
@@ -612,7 +579,6 @@ proxy-groups:
       - cfvless
       - warp
       - DL
-      - vmess
       - ssr
       - ss
       - trojan
