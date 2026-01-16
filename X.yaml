@@ -254,17 +254,18 @@ proxies:
 
   - name: "IP25"
     type: socks5
-    server: lajiaoDirj54572
-    port: 443
-    username: lajiaoDirj54572
-    password: X6pxfSxp
-    tls: true
+    server: 192.217.9.125
+    port: 35125
+    username: 16Af2a8Z
+    password: JfJ2xmf3q8
+    dialer-proxy: "🇹🇼 TW-2 | Sub3"
+    #tls: true
     # fingerprint: xxxx # 配置指纹将实现 SSL Pining 效果, 可使用 openssl x509 -noout -fingerprint -sha256 -inform pem -in yourcert.pem 获取
     # 下面两项如果填写则开启 mTLS（需要同时填写）
     # certificate: ./client.crt # 证书 PEM 格式，或者 证书的路径
     # private-key: ./client.key # 证书对应的私钥 PEM 格式，或者私钥路径
-    skip-cert-verify: true
-    udp: true
+    #skip-cert-verify: true
+    #udp: true
     # ip-version: ipv6
 
   - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.akebi.cc", port: 30001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw1-vds14.anyhk.co", skip-cert-verify: true, up: null, down: null}
@@ -308,20 +309,22 @@ proxy-groups:
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
   - name: ♻️ 自动选择
-    type: url-test
+    type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
       - IP20
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
+      - IP25
   - name: DL
-    type: url-test
+    type: select
     url: 'http://www.gstatic.com/generate_204'
     interval: 7200
     proxies:
       - 🔰 节点选择
       - IP20   
+      - IP25
   - name: 🌍 国外媒体
     type: select
     proxies:
