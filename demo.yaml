@@ -363,7 +363,25 @@ proxies:
     type: ss
     cipher: aes-256-cfb
     password: qwerREWQ@@
-    udp: true                         
+    udp: true        
+    
+    
+  - name: "IP16-美国家宽-only中转"
+    type: socks5
+    server: 192.217.9.125
+    port: 35125
+    username: 16Af2a8Z
+    password: JfJ2xmf3q8
+    dialer-proxy: "🇹🇼 TW-2 | Sub3"
+    #tls: true
+    # fingerprint: xxxx # 配置指纹将实现 SSL Pining 效果, 可使用 openssl x509 -noout -fingerprint -sha256 -inform pem -in yourcert.pem 获取
+    # 下面两项如果填写则开启 mTLS（需要同时填写）
+    # certificate: ./client.crt # 证书 PEM 格式，或者 证书的路径
+    # private-key: ./client.key # 证书对应的私钥 PEM 格式，或者私钥路径
+    #skip-cert-verify: true
+    #udp: true
+    # ip-version: ipv6    
+                     
 
   - {"name":"ss","type":"ss","server":"2a14:7583:29cd::a","port":12345,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}           
   - {"name":"ssr","type":"ssr","server":"ssr2.762988.xyz","port":33336,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
@@ -373,7 +391,7 @@ proxies:
 
   - {name: 🇯🇵 免费-日本4-Ver.8, server: uthy3-g04.jp04-1d-vm0.entry.fr0528.art, port: 447, type: vmess, uuid: a5fa9c72-9693-3619-9673-7fb482baa9ee, alterId: 1, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
   - {name: 🇺🇲 美国Z02, server: v52ry8d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-  - { name: 美国2, type: ss, server: us.xn--mes358aijj3t9a.shop, port: 23456, cipher: 2022-blake3-aes-128-gcm, password: 'OTlkYTVmYmVjNzRkNGIyMw==:MGEzMGEyOWEtNTIxNS00YQ==', udp: true }
+  - { name: 美国2, server: 0.b.q.e.4.q.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
 
   - {name: HK01, server: naqnz-g04.hk01-ae5.entry.v50708.dev, port: 19274, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.akebi.cc", port: 30001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw1-vds14.anyhk.co", skip-cert-verify: true, up: null, down: null}
@@ -402,8 +420,10 @@ proxy-groups:
       - IP13
       - IP14
       - IP15
+      - IP16-美国家宽-only中转
       - 🇺🇲 美国Z02
       - KR家宽
+      - 美国2
       - cfvless
       - warp
       - ssr
@@ -440,17 +460,18 @@ proxy-groups:
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
   - name: DL
-    type: url-test
+    type: select
     url: 'http://www.gstatic.com/generate_204'
     interval: 7200
     proxies:  
       - 🇯🇵 免费-日本4-Ver.8
       - 🇺🇲 美国Z02
       - 美国2
+      - IP16-美国家宽-only中转
       - HK01      
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
-      - KR家宽
+      #- KR家宽
   - name: 🌍 国外媒体
     type: select
     proxies:
