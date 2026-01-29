@@ -50,6 +50,18 @@ dns:
     - geosite:cn   
 
 
+#port: 7890
+#socks-port: 7891
+#allow-lan: false
+#mode: Rule
+#log-level: info
+#external-controller: 127.0.0.1:9090
+#unified-delay: true
+#hosts:
+#  time.facebook.com: 17.253.84.125
+#  time.android.com: 17.253.84.125
+
+
 
 proxies:
 
@@ -381,6 +393,32 @@ proxies:
     #skip-cert-verify: true
     #udp: true
     # ip-version: ipv6    
+         
+ 
+  - name: "IP18"
+    type: ss
+    server: 85.239.232.127
+    port: 10026
+    cipher: chacha20-ietf-poly1305
+    password: ef33c53f6e9e3c1b
+ 
+  - {name: 🇫🇷 法国Z01, server: p.2.2.k.v.n.f.8.d.fr01-ae5.entry.v51124-4.qpon, port: 20067, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+ 
+  - {name: IP17, server: 0.c.g.x.4.l.b.8.d.fr01-ae5.entry.v51124-4.qpon, port: 20067, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+                    
+  - name: "IP17bak"
+    type: vless
+    server: 69.63.210.177
+    port: 12555
+    uuid: 88c3b7b9-fb03-410b-9a78-135c2b29e794
+    servername: WWW.APPLE.COM
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: ios
+    reality-opts:
+      public-key: aCEHec7c37p2bzA5s84ZaLNEtC281Ccoq64bql_3-Cw
+      short-id: bf7b47
+                     
                      
 
   - {"name":"ss","type":"ss","server":"2a14:7583:29cd::a","port":12345,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}           
@@ -421,6 +459,8 @@ proxy-groups:
       - IP14
       - IP15
       - IP16-美国家宽-only中转
+      - IP17
+      - IP18
       - 🇺🇲 美国Z02
       - KR家宽
       - 美国2
@@ -471,6 +511,9 @@ proxy-groups:
       - HK01      
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
+      - IP1
+      - IP4
+      - IP9
       #- KR家宽
   - name: 🌍 国外媒体
     type: select
@@ -1086,7 +1129,7 @@ rules:
  - DOMAIN-SUFFIX,betterzipcn.com,🛑 全球拦截                                                                                                                        
  - DOMAIN-SUFFIX,beyondcompare.cc,🛑 全球拦截                                                                                                                       
  - DOMAIN-SUFFIX,bingdianhuanyuan.cn,🛑 全球拦截                                                                                                                    
- - DOMAIN-SUFFIX,chemdraw.com.cn,🛑 全球拦截                                                                                                                        
+ #- DOMAIN-SUFFIX,chemdraw.com.cn,🛑 全球拦截                                                                                                                        
  - DOMAIN-SUFFIX,cjmakeding.com,🛑 全球拦截                                                                                                                         
  - DOMAIN-SUFFIX,cjmkt.com,🛑 全球拦截                                                                                                                              
  - DOMAIN-SUFFIX,codesoftchina.com,🛑 全球拦截                                                                                                                      
@@ -2389,5 +2432,6 @@ rules:
  - DOMAIN-SUFFIX,claude.ai,DL
  - DOMAIN-SUFFIX,chatgpt.com,DL
  - DOMAIN-SUFFIX,cloudfront.net,DL
+ - DOMAIN-SUFFIX,salesmartly.com,🔰 节点选择 
  - GEOIP,CN,🎯 全球直连                                                                                                                                             
  - MATCH,🐟 漏网之鱼                                                                                                                                                
