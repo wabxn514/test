@@ -12,42 +12,16 @@
 #  fallback-filter: { geoip: true, geoip-code: CN, geosite: [gfw], ipcidr: [240.0.0.0/4], domain: [+.google.com, +.facebook.com, +.youtube.com] }
 
 
-dns:
-  enabled: true
-  prefer-h3: true
-  listen: :53
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  # respect-rules: true
-  default-nameserver:
-    - 43.154.154.162
-    - 223.5.5.5
-    - 114.114.114.114
-    - 1.1.1.1
-    - 8.8.8.8
-    - 119.29.29.29
-  nameserver:
-    # - system
-    - https://dns.flymc.cc/dns-query
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
-  proxy-server-nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
-  fallback:
-    - https://1.0.0.1/dns-query
-    - tls://dns.google
-    - 8.8.8.8
-    - 8.8.4.4
-    - tls://1.0.0.1:853
-    - tls://dns.google:853
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
-  fake-ip-filter:
-    - geosite:cn   
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+unified-delay: true
+hosts:
+  time.facebook.com: 17.253.84.125
+  time.android.com: 17.253.84.125
 
 
 
@@ -194,25 +168,28 @@ proxies:
     udp-relay-mode: native
     congestion-controller: bbr   
 
+
+#us.novproxy.io:1000:wqxt37639-region-US-st-Oregon-sid-DK9duGeQ-t-5:8t2pnnqj
+#us.novproxy.io:1000:wqxt37639-region-US-st-Oregon-sid-iZpncx6Z-t-5:8t2pnnqj
+#us.novproxy.io:1000:wqxt37639-region-US-st-Oregon-sid-QgsDyEWW-t-5:8t2pnnqj
+
+
       
 #  GL/ipp/s/1
 
   - name: IP21                  
-    type: ss
-    server: pr3.jymzffbquawl.com
-    port: 5608
-    cipher: rc4-md5
-    password: RenzheCloudSS
-    udp: true
-    plugin: obfs
-    plugin-opts:
-      mode: http
-      host: df30f299369.microsoft.com
+    type: socks5
+    server: us.novproxy.io
+    port: 1000
+    username: wqxt37639-region-US-st-Oregon-sid-DK9duGeQ-t-5
+    password: 8t2pnnqj
+    #dialer-proxy: "🇹🇼 TW-2 | Sub3"
         
                 
 #  GL/ipp/s/2
+  - {name: IP22, server: e.2.g.e.z.q.f.8.d.fr01-ae5.entry.v51124-4.qpon, port: 20067, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
 
-  - name: IP22                  
+  - name: bakIP22                  
     type: vless
     server: 89.144.35.232
     port: 15531
@@ -252,7 +229,7 @@ proxies:
     down: "55 Mbps"
 
 
-  - name: "IP25"
+  - name: "IP25-美国家宽-中转1"
     type: socks5
     server: 192.217.9.125
     port: 35125
@@ -267,6 +244,21 @@ proxies:
     #skip-cert-verify: true
     #udp: true
     # ip-version: ipv6
+    
+    
+  - name: "IP26-美国家宽-中转2"
+    type: socks5
+    server: 192.217.9.125
+    port: 35125
+    username: 16Af2a8Z
+    password: JfJ2xmf3q8
+    dialer-proxy: "IP22"
+
+  - { name: pro-家庭宽带-美国ATT-2X, type: vless, server: api-live38418.videos.acfun.cn.bilibili-cdn.uk, port: 50022, uuid: f8fa566b-7ec3-45b5-badc-447117393377, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, servername: www.discoverasr.com, reality-opts: { public-key: 4IVQhlWjwhdd0HifWkcG0ZI7rBAWt5iShZV1KoEceX0, short-id: be594c4068c89d }, client-fingerprint: ios }
+  - { name: pro-家庭宽带-美国Frontier-2X, type: vless, server: api-live10893.videos.acfun.cn.bilibili-cdn.uk, port: 48543, uuid: f8fa566b-7ec3-45b5-badc-447117393377, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, servername: www.discoverasr.com, reality-opts: { public-key: SZjuxSV5QObOencvdXyjBn-y9mNBDoy8GGMeZSWBRh4, short-id: 6f632563a3594c }, client-fingerprint: edge }
+  - { name: pro-家庭宽带-美国hawallan-10X, type: vless, server: api-live52574.videos.acfun.cn.bilibili-cdn.uk, port: 54146, uuid: f8fa566b-7ec3-45b5-badc-447117393377, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, servername: www.discoverasr.com, reality-opts: { public-key: 52g23i7IAWOctbBA5sShp8vSwMQapvvjs2OKC0NTEhw, short-id: 2fffad }, client-fingerprint: qq }
+  - { name: pro-卫星宽带-美国starlink-100X, type: vless, server: api-live86405.videos.acfun.cn.bilibili-cdn.uk, port: 48542, uuid: f8fa566b-7ec3-45b5-badc-447117393377, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: false, servername: www.discoverasr.com, reality-opts: { public-key: 8kZm9gW7saiRPuqXppCTlOAx_dIsqZUbNOBERMvMDVw, short-id: be33ecc1975c }, client-fingerprint: ios }
+    
 
   - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.akebi.cc", port: 30001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw1-vds14.anyhk.co", skip-cert-verify: true, up: null, down: null}
   - {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.akebi.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
@@ -280,6 +272,10 @@ proxy-groups:
     proxies:
       - ♻️ 自动选择
       - 🎯 全球直连
+      - pro-家庭宽带-美国ATT-2X
+      - pro-家庭宽带-美国Frontier-2X
+      - pro-家庭宽带-美国hawallan-10X
+      - pro-卫星宽带-美国starlink-100X     
       - IP1-52-1w+
       - IP2-89-1w+
       - IP3-20-100-IDC
@@ -303,7 +299,8 @@ proxy-groups:
       - IP21
       - IP22
       - IP23   
-      - IP25
+      - IP25-美国家宽-中转1
+      - IP26-美国家宽-中转2
       - 美国2
       - 🇺🇸 美国1
       - 🇹🇼 TW-1 | Sub3
@@ -316,7 +313,11 @@ proxy-groups:
       - IP20
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
-      - IP25
+      - IP25-美国家宽-中转1
+      - pro-家庭宽带-美国ATT-2X
+      - pro-家庭宽带-美国Frontier-2X
+      - pro-家庭宽带-美国hawallan-10X
+      - pro-卫星宽带-美国starlink-100X
   - name: DL
     type: select
     url: 'http://www.gstatic.com/generate_204'
@@ -324,7 +325,11 @@ proxy-groups:
     proxies:
       - 🔰 节点选择
       - IP20   
-      - IP25
+      - IP25-美国家宽-中转1
+      - pro-家庭宽带-美国ATT-2X
+      - pro-家庭宽带-美国Frontier-2X
+      - pro-家庭宽带-美国hawallan-10X
+      - pro-卫星宽带-美国starlink-100X
   - name: 🌍 国外媒体
     type: select
     proxies:
