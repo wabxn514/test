@@ -436,6 +436,9 @@ proxies:
   - {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.akebi.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
 
 
+  - {name: ip-US-NetLab, server: 185.218.6.250, port: 443, type: trojan, password: 2e752fd9-923d-4687-8657-4eaaafd5a354, sni: us-1.fw-node.cc, skip-cert-verify: true, network: ws, ws-opts: {path: /game, headers: {Host: us-1.fw-node.cc}}, udp: true, tfo: true}
+
+
 proxy-groups:
   - name: 🔰 节点选择
     type: select
@@ -443,6 +446,7 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - DL
+      - ip-US-NetLab
       - IP1
       - IP2
       - IP3
@@ -493,6 +497,7 @@ proxy-groups:
       - IP13
       - IP14
       - IP15
+      - ip-US-NetLab
       - warp
       - ssr
       - ss
@@ -514,7 +519,7 @@ proxy-groups:
       - IP1
       - IP4
       - IP9
-      #- KR家宽
+      - ip-US-NetLab
   - name: 🌍 国外媒体
     type: select
     proxies:
