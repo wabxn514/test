@@ -405,6 +405,13 @@ proxies:
   - {name: 🇫🇷 法国Z01, server: p.2.2.k.v.n.f.8.d.fr01-ae5.entry.v51124-4.qpon, port: 20067, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
  
   - {name: IP17, server: 0.c.g.x.4.l.b.8.d.fr01-ae5.entry.v51124-4.qpon, port: 20067, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+
+
+  - {name: IP9-US-IDC, type: "anytls", server: "43.162.108.172", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+  - {name: IP13-US-IDC, server: e.2.q.x.v.n.f.8.d.us01-ae5.entry.v51124-4.qpon, port: 20012, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: IP14-US-IDC, server: e.2.q.x.v.n.f.8.d.us01-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: IP15-US-IDC, server: v52ry8d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+
                     
   - name: "IP17bak"
     type: vless
@@ -432,10 +439,10 @@ proxies:
   - { name: 美国2, server: 0.b.q.e.4.q.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
 
   - {name: HK01, server: naqnz-g04.hk01-ae5.entry.v50708.dev, port: 19274, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-  - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.akebi.cc", port: 30001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw1-vds14.anyhk.co", skip-cert-verify: true, up: null, down: null}
-  - {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.akebi.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+  - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.ccwink.cc", port: 30001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw1-vds14.anyhk.co", skip-cert-verify: true, up: null, down: null}
+  - {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.ccwink.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
 
-
+  - {name: ip-US-2, server: jzgz.tcity8.monster, port: 22000, type: vmess, uuid: b6cc7e4d-1404-4be1-a8ec-56cf210f8d3f, alterId: 0, cipher: auto, tls: false, udp: true}
   - {name: ip-US-NetLab, server: 185.218.6.250, port: 443, type: trojan, password: 2e752fd9-923d-4687-8657-4eaaafd5a354, sni: us-1.fw-node.cc, skip-cert-verify: true, network: ws, ws-opts: {path: /game, headers: {Host: us-1.fw-node.cc}}, udp: true, tfo: true}
 
 
@@ -447,6 +454,7 @@ proxy-groups:
       - 🎯 全球直连
       - DL
       - ip-US-NetLab
+      - ip-US-2
       - IP1
       - IP2
       - IP3
@@ -476,6 +484,10 @@ proxy-groups:
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
       - 🇯🇵 免费-日本4-Ver.8
+      - IP9-US-IDC
+      - IP13-US-IDC
+      - IP14-US-IDC
+      - IP15-US-IDC
       - HK01 
   - name: ♻️ 自动选择
     type: url-test
@@ -504,6 +516,10 @@ proxy-groups:
       - trojan  
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
+      - IP9-US-IDC
+      - IP13-US-IDC
+      - IP14-US-IDC
+      - IP15-US-IDC
   - name: DL
     type: select
     url: 'http://www.gstatic.com/generate_204'
@@ -520,6 +536,10 @@ proxy-groups:
       - IP4
       - IP9
       - ip-US-NetLab
+      - IP9-US-IDC
+      - IP13-US-IDC
+      - IP14-US-IDC
+      - IP15-US-IDC
   - name: 🌍 国外媒体
     type: select
     proxies:
