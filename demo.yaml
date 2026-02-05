@@ -11,6 +11,43 @@
 #  fallback: [1.1.1.1, 8.8.8.8]
 #  fallback-filter: { geoip: true, geoip-code: CN, geosite: [gfw], ipcidr: [240.0.0.0/4], domain: [+.google.com, +.facebook.com, +.youtube.com] }
 
+#
+#dns:
+#  enabled: true
+#  prefer-h3: true
+#  listen: :53
+#  enhanced-mode: fake-ip
+#  fake-ip-range: 198.18.0.1/16
+#  # respect-rules: true
+#  default-nameserver:
+#    - 43.154.154.162
+#    - 223.5.5.5
+#    - 114.114.114.114
+#    - 1.1.1.1
+#    - 8.8.8.8
+#    - 119.29.29.29
+#  nameserver:
+#    # - system
+#    - https://dns.flymc.cc/dns-query
+#    - https://dns.alidns.com/dns-query
+#    - https://doh.pub/dns-query
+#  proxy-server-nameserver:
+#    - https://dns.alidns.com/dns-query
+#    - https://doh.pub/dns-query
+#  fallback:
+#    - https://1.0.0.1/dns-query
+#    - tls://dns.google
+#    - 8.8.8.8
+#    - 8.8.4.4
+#    - tls://1.0.0.1:853
+#    - tls://dns.google:853
+#  fallback-filter:
+#    geoip: true
+#    geoip-code: CN
+#    ipcidr:
+#      - 240.0.0.0/4
+#  fake-ip-filter:
+#    - geosite:cn   
 
 dns:
   enabled: true
@@ -18,48 +55,31 @@ dns:
   listen: :53
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
-  # respect-rules: true
+  respect-rules: true  # 开启此项以减少泄露
   default-nameserver:
-    - 43.154.154.162
     - 223.5.5.5
-    - 114.114.114.114
-    - 1.1.1.1
-    - 8.8.8.8
-    - 119.29.29.29
   nameserver:
-    # - system
     - https://dns.flymc.cc/dns-query
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+    - https://dns.cloudflare.com/dns-query
+  nameserver-policy:
+    "geosite:cn,private":
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
   proxy-server-nameserver:
     - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
-  fallback:
-    - https://1.0.0.1/dns-query
-    - tls://dns.google
-    - 8.8.8.8
-    - 8.8.4.4
-    - tls://1.0.0.1:853
-    - tls://dns.google:853
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
-  fake-ip-filter:
-    - geosite:cn   
 
 
-#port: 7890
-#socks-port: 7891
-#allow-lan: false
-#mode: Rule
-#log-level: info
-#external-controller: 127.0.0.1:9090
-#unified-delay: true
-#hosts:
-#  time.facebook.com: 17.253.84.125
-#  time.android.com: 17.253.84.125
+
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+unified-delay: true
+hosts:
+  time.facebook.com: 17.253.84.125
+  time.android.com: 17.253.84.125
 
 
 
@@ -369,14 +389,6 @@ proxies:
       short-id: ''                    
     client-fingerprint: chrome 
 
-  - name: "KR家宽"
-    server: 221.139.79.41
-    port: 41240
-    type: ss
-    cipher: aes-256-cfb
-    password: qwerREWQ@@
-    udp: true        
-    
     
   - name: "IP16-美国家宽-only中转"
     type: socks5
@@ -394,39 +406,56 @@ proxies:
     #udp: true
     # ip-version: ipv6    
          
- 
-  - name: "IP18"
-    type: ss
-    server: 85.239.232.127
-    port: 10026
-    cipher: chacha20-ietf-poly1305
-    password: ef33c53f6e9e3c1b
- 
-  - {name: 🇫🇷 法国Z01, server: p.2.2.k.v.n.f.8.d.fr01-ae5.entry.v51124-4.qpon, port: 20067, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
- 
-  - {name: IP17, server: 0.c.g.x.4.l.b.8.d.fr01-ae5.entry.v51124-4.qpon, port: 20067, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+
+  - name: IP17
+    type: vless
+    server: 157.254.223.64
+    port: 23000
+    uuid: bcb13ecb-4f63-4257-ae01-ec5aeaa613a5
+    network: http
+    servername: mxj.myanimelist.net
+    tls: true
+    client-fingerprint: chrome
+    http-opts:
+      path:
+        - /alvin9999.com
+    reality-opts:
+      public-key: dJFLqPCinyadJxJk7zA_DwBOEAvexvm7AZT2Pw84_EY
+      short-id: 955275866feece09
+      
+      
+  - name: IP18
+    type: vmess
+    server: 2a14:7584:d0a2::a
+    port: 23456
+    uuid: bd48e0ac-e90e-4451-a4f2-abf061cfb890
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /alvin9999.com
+      headers:
+        Host: www.bing.com
+        
+        
+  - name: IP19
+    type: hysteria2
+    server: 2a14:7584:d04a::a
+    port: 50022
+    password: dongtaiwang.com
+    sni: apple.com
+    skip-cert-verify: true
+    alpn:
+      - h3 
 
 
   - {name: IP9-US-IDC, type: "anytls", server: "43.162.108.172", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
   - {name: IP13-US-IDC, server: e.2.q.x.v.n.f.8.d.us01-ae5.entry.v51124-4.qpon, port: 20012, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: IP14-US-IDC, server: e.2.q.x.v.n.f.8.d.us01-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: IP15-US-IDC, server: v52ry8d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-
-                    
-  - name: "IP17bak"
-    type: vless
-    server: 69.63.210.177
-    port: 12555
-    uuid: 88c3b7b9-fb03-410b-9a78-135c2b29e794
-    servername: WWW.APPLE.COM
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: ios
-    reality-opts:
-      public-key: aCEHec7c37p2bzA5s84ZaLNEtC281Ccoq64bql_3-Cw
-      short-id: bf7b47
-                     
-                     
+     
 
   - {"name":"ss","type":"ss","server":"2a14:7583:29cd::a","port":12345,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}           
   - {"name":"ssr","type":"ssr","server":"ssr2.762988.xyz","port":33336,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
@@ -435,16 +464,18 @@ proxies:
 
 
   - {name: 🇯🇵 免费-日本4-Ver.8, server: uthy3-g04.jp04-1d-vm0.entry.fr0528.art, port: 447, type: vmess, uuid: a5fa9c72-9693-3619-9673-7fb482baa9ee, alterId: 1, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: 🇺🇲 美国Z02, server: v52ry8d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - { name: 美国2, server: 0.b.q.e.4.q.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
 
   - {name: HK01, server: naqnz-g04.hk01-ae5.entry.v50708.dev, port: 19274, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.ccwink.cc", port: 30001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw1-vds14.anyhk.co", skip-cert-verify: true, up: null, down: null}
   - {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.ccwink.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
 
-  - {name: ip-US-2, server: jzgz.tcity8.monster, port: 22000, type: vmess, uuid: b6cc7e4d-1404-4be1-a8ec-56cf210f8d3f, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: ip-US-NetLab, server: 185.218.6.250, port: 443, type: trojan, password: 2e752fd9-923d-4687-8657-4eaaafd5a354, sni: us-1.fw-node.cc, skip-cert-verify: true, network: ws, ws-opts: {path: /game, headers: {Host: us-1.fw-node.cc}}, udp: true, tfo: true}
+  - {name: ip-US-2, server: 34.221.19.27, port: 50000, type: ss, cipher: aes-256-gcm, password: a9a37b54-e95a-4bc4-9637-7fd00a03dd2e, udp: true, tfo: true}
 
+  - {name: ip-US-HostPapa, server: 104.26.3.233, port: 8443, type: vless, tls: true, uuid: 572a0d47-567c-4085-a2de-69cc41365a27, servername: rncf.wwxgxn.cfd, network: ws, ws-opts: {path: /sayuri, headers: {Host: rncf.wwxgxn.cfd}}, skip-cert-verify: true, udp: true, tfo: true}
+  - {name: ip-US-HostPapa2, server: 144.48.186.101, port: 30804, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true, tfo: true}
+  - {name: ip-US-Oracle, server: 152.67.224.214, port: 9443, type: hysteria2, password: bcb7c581-3c95-4569-a4e7-918141e91ea3, sni: us.887774.xyz, skip-cert-verify: true, udp: true, tfo: true}
+ 
 
 proxy-groups:
   - name: 🔰 节点选择
@@ -453,8 +484,9 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - DL
-      - ip-US-NetLab
-      - ip-US-2
+      - ip-US-HostPapa  
+      - ip-US-HostPapa2  
+      - ip-US-Oracle 	
       - IP1
       - IP2
       - IP3
@@ -473,8 +505,7 @@ proxy-groups:
       - IP16-美国家宽-only中转
       - IP17
       - IP18
-      - 🇺🇲 美国Z02
-      - KR家宽
+      - IP19
       - 美国2
       - cfvless
       - warp
@@ -509,7 +540,6 @@ proxy-groups:
       - IP13
       - IP14
       - IP15
-      - ip-US-NetLab
       - warp
       - ssr
       - ss
@@ -526,7 +556,6 @@ proxy-groups:
     interval: 7200
     proxies:  
       - 🇯🇵 免费-日本4-Ver.8
-      - 🇺🇲 美国Z02
       - 美国2
       - IP16-美国家宽-only中转
       - HK01      
@@ -535,7 +564,6 @@ proxy-groups:
       - IP1
       - IP4
       - IP9
-      - ip-US-NetLab
       - IP9-US-IDC
       - IP13-US-IDC
       - IP14-US-IDC
