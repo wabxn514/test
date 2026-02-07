@@ -70,127 +70,50 @@ dns:
 
 
 
-port: 7890
-socks-port: 7891
-allow-lan: false
-mode: Rule
-log-level: info
-external-controller: 127.0.0.1:9090
-unified-delay: true
-hosts:
-  time.facebook.com: 17.253.84.125
-  time.android.com: 17.253.84.125
-
-
-
 proxies:
 
+#  GL/ipp/cm2/1
 
-#  GL/ipp/q/4
-
-  - name: IP1                     
-    type: anytls
-    server: fan2.856098.xyz
-    port: 8443
-    password: dongtaiwang.com
-    client-fingerprint: chrome
-    udp: true
-    idle-session-check-interval: 30
-    idle-session-timeout: 30
-    min-idle-session: 0
-    alpn:
-      - h2
-      - http/1.1
-    skip-cert-verify: true
-    
-
-#  GL/ipp/cm2/5
- 
-  - name: IP2                     
-    server: 89.144.35.231
-    port: 33457
-    type: tuic
-    uuid: 66d37a65-7f6f-4e7c-a0f6-163bd917756a
-    password: dongtaiwang.com
-    alpn: [h3]
+  - name: cm2_1_IP1  
+    type: hysteria  
+    server: ip1.758733.xyz
+    port: 23008
+    auth-str: alvin9999.com
     sni: apple.com
     skip-cert-verify: true
-    reduce-rtt: true
-    udp-relay-mode: native
-    congestion-controller: bbr   
-
-
-#  GL/ipp/h2/3
-
-  - name: IP3
-    type: hysteria2
-    server: 62.210.124.146
-    port: 22000 
-    up: 500          
-    down: 3000
-    password: dongtaiwang.com
-    sni: www.microsoft.com
-    skip-cert-verify: true   
-
-  - name: IP4
-    type: anytls
-    server: tw.399403.xyz
-    port: 8443
-    password: dongtaiwang.com
-    client-fingerprint: chrome
-    udp: true
-    idle-session-check-interval: 30
-    idle-session-timeout: 30
-    min-idle-session: 0
     alpn:
-      - h2
-      - http/1.1
-    skip-cert-verify: true
-  
-
-  - name: IP5
+      - h3
+    protocol: udp
+    up: "50 Mbps"
+    down: "500 Mbps"
+    
+  - name: cm2_1_IP2                  
     type: hysteria
-    server: 208.87.243.151
-    port: 10023
+    server: 5.178.101.33
+    port: 23008
     auth-str: dongtaiwang.com
     sni: apple.com
     skip-cert-verify: true
     alpn:
       - h3
     protocol: udp
-    up: "55 Mbps"
-    down: "300 Mbps"
-        
-
-  - name: "IP6"
-    type: hysteria
-    server: 208.87.243.151
-    port: 38845
-    auth_str: dongtaiwang.com
-    alpn:
-      - h3
-    sni: www.bing.com
-    skip-cert-verify: true
-    up: "55 Mbps"
-    down: "500 Mbps"    
+    up: "50 Mbps"
+    down: "500 Mbps"
     
-                
-#  GL/ipp/s/2
-
-  - name: "IP7"
+  - name: cm2_1_IP3                
     type: vless
-    server: 89.144.35.232
-    port: 15531
-    uuid: d3fd3b3c-f8d4-4894-b91e-5a6a53923a95
+    server: 195.154.200.13
+    port: 17401
+    uuid: add14a5b-f648-4423-8a1f-8b8f54c0daef
+    network: tcp
     udp: true
     tls: true
+    flow: 
     servername: itunes.apple.com
-    flow: "" 
-    network: tcp
-    reality-opts:
-      public-key: o4gXQf1n5YOoLo6OnyHykodK1ZShHvDqu1FgxNHe6n8
-      short-id: 8346964417a2552b
     client-fingerprint: chrome
+    reality-opts:
+      public-key: IXcXrT_Y0ATTZlGOhPnSmKo-cuGr4yMKV9Rz4-nA3yU
+      short-id: 8ef4455ba637425b
     smux:
       enabled: true
       protocol: h2mux
@@ -200,44 +123,58 @@ proxies:
       brutal-opts:
         enabled: true
         up: 50
-        down: 300
+        down: 500
         
-
-  - name: IP8
-    type: anytls
-    server: 62.210.11.74
-    port: 8443
-    password: dongtaiwang.com
-    client-fingerprint: chrome
-    udp: true
-    idle-session-check-interval: 30
-    idle-session-timeout: 30
-    min-idle-session: 0
-    alpn:
-      - h2
-      - http/1.1
+  - name: cm2_1_IP4                     
+    type: hysteria
+    server: 2001:bc8:32d7:402::3
+    port: 20001
+    auth-str: dongtaiwang.com
+    sni: apple.com
     skip-cert-verify: true
-
-
-  - name: IP9
-    type: anytls  
-    server: fan3.394615.xyz
-    port: 8443
-    password: dongtaiwang.com
-    client-fingerprint: chrome
-    udp: true
-    idle-session-check-interval: 30
-    idle-session-timeout: 30
-    min-idle-session: 0
     alpn:
-      - h2
-      - http/1.1
-    skip-cert-verify: true    
-                  
+      - h3
+    protocol: udp
+    up: "50 Mbps"
+    down: "500 Mbps"
+    
+  - name: cm2_1_IP5                     
+    type: hysteria
+    server: 2001:bc8:32d7:402::4
+    port: 20001
+    auth-str: dongtaiwang.com
+    sni: apple.com
+    skip-cert-verify: true
+    alpn:
+      - h3
+    protocol: udp
+    up: "50 Mbps"
+    down: "500 Mbps"
+
+
+
+#  GL/ipp/cm2/2
+
+- name: cm2_2_IP1                   
+  type: anytls
+  server: 45.221.98.14
+  port: 59901
+  password: dongtaiwang.com
+  client-fingerprint: chrome
+  udp: true
+  idle-session-check-interval: 30
+  idle-session-timeout: 30
+  min-idle-session: 0
+  alpn:
+    - h2
+    - http/1.1
+  skip-cert-verify: true
+
+
 
 #  GL/ipp/cm2/3
 
-  - name: IP10
+  - name: cm2_3_IP1           
     type: vless
     server: 2001:bc8:32d7:181::2
     port: 17401
@@ -260,70 +197,9 @@ proxies:
       brutal-opts:
         enabled: true
         up: 50
-        down: 300
-
-
-  - name: IP11
-    type: mieru
-    server: 45.221.98.11
-    port: 28866
-#    port-range: 2090-2099
-    transport: TCP
-    username: dongtaiwang.com
-    password: dongtaiwang.com 
-    up: "55 Mbps"
-    down: "550 Mbps" 
-    
-
-  - name: IP12
-    server: 62.210.10.113
-    port: 33998
-    type: tuic
-    uuid: 909212b8-5d67-4532-885e-7a6b5e724ab8
-    password: dongtaiwang.com
-    alpn: [h3]
-    sni: bing.com
-    skip-cert-verify: true
-    reduce-rtt: true
-    udp-relay-mode: native
-    congestion-controller: bbr 
-
-
-  - name: IP13
-    server: 2001:bc8:32d7:306::123
-    port: 33998
-    type: tuic
-    uuid: 909212b8-5d67-4532-885e-7a6b5e724ab8
-    password: dongtaiwang.com
-    alpn: [h3]
-    sni: bing.com
-    skip-cert-verify: true
-    reduce-rtt: true
-    udp-relay-mode: native
-    congestion-controller: bbr
-
-    
-#  GL/ipp/cm2/2
-
-  - name: IP14
-    type: anytls
-    server: 45.221.98.14
-    port: 59901
-    password: dongtaiwang.com
-    client-fingerprint: chrome
-    udp: true
-    idle-session-check-interval: 30
-    idle-session-timeout: 30
-    min-idle-session: 0
-    alpn:
-      - h2
-      - http/1.1
-    skip-cert-verify: true
-    
-
-#  GL/ipp/cm2/3
-    
-  - name: "IP15"     
+        down: 500
+        
+  - name: cm2_3_IP2                    
     type: vless
     server: 2001:bc8:32d7:181::3
     port: 17401
@@ -346,22 +222,363 @@ proxies:
       brutal-opts:
         enabled: true
         up: 50
-        down: 300
+        down: 500       
+
+
+
+#  GL/ipp/cm2/4
+
+  - name: cm2_4_IP                     
+    type: mieru
+    server: 157.254.223.48
+    port: 33990
+    transport: TCP
+    username: dongtaiwang.com
+    password: dongtaiwang.com
+
+
+
+#  GL/ipp/cm2/5
+
+  - name: cm2_5_IP
+    type: hysteria
+    server: 2a14:7584:d097::a
+    port: 54177
+    auth-str: dongtaiwang.com
+    sni: apple.com
+    skip-cert-verify: true
+    alpn:
+      - h3
+    protocol: udp
+    up: "50 Mbps"
+    down: "500 Mbps"
+
+
+
+#  GL/ipp/cm2/6
+
+
+
+#  GL/ipp/h/1
+
+  - name: h_1_IP
+    type: hysteria
+    server: 5.83.129.153
+    port: 20088
+    auth-str: dongtaiwang.com
+    sni: apple.com
+    skip-cert-verify: true
+    alpn:
+      - h3
+    protocol: udp
+    up: "50 Mbps"
+    down: "500 Mbps"
+
+
+
+#  GL/ipp/h/2
+
+  - name: h_2_IP
+    type: hysteria
+    server: 98.142.247.21
+    port: 39228
+    auth-str: dongtaiwang.com
+    sni: apple.com
+    skip-cert-verify: true
+    alpn:
+      - h3
+    protocol: udp
+    up: "50 Mbps"
+    down: "500 Mbps"
+
+
+
+#  GL/ipp/h/3
+
+  - name: h_3_IP
+    type: hysteria
+    server: 5.83.129.90
+    port: 54177
+    auth-str: dongtaiwang.com
+    sni: apple.com
+    skip-cert-verify: true
+    alpn:
+      - h3
+    protocol: udp
+    up: "50 Mbps"
+    down: "500 Mbps"
+
+
+
+#  GL/ipp/h/4
+
 
 
 #  GL/ipp/h2/1
 
-  - name: trojan
+  - name: h2_1_IP
     type: hysteria2
     server: 157.254.223.43
     port: 27921
     port-range: 28000-29000  
     up: 50          
-    down: 300
+    down: 500
     password: dongtaiwang.com
     sni: apple.com
     skip-cert-verify: true 
+
+
+
+#  GL/ipp/h2/2
+
+  - name: h2_2_IP
+    type: hysteria2
+    server: 157.254.223.24
+    port: 30088
+    port-range: 31000-32000
+    up: 50          
+    down: 500
+    password: alvin9999.com
+    sni: apple.com
+    skip-cert-verify: true 
+
+
+
+#  GL/ipp/h2/3
+
+  - name: h2_3_IP
+    type: hysteria2
+    server: 62.210.124.146
+    port: 22000 
+    up: 500          
+    down: 5000
+    password: dongtaiwang.com
+    sni: www.microsoft.com
+    skip-cert-verify: true 
+
+
+
+#  GL/ipp/h2/4
+
+  - name: h2_4_IP
+    type: hysteria2
+    server: 2a14:7584:d04a::a
+    port: 50022 
+    up: 50          
+    down: 500
+    password: dongtaiwang.com
+    sni: apple.com
+    skip-cert-verify: true 
+
+
+
+#  GL/ipp/m/1
+
+  - name: m_1_IP
+    type: mieru
+    server: 45.221.98.11
+    port: 28866
+    transport: TCP
+    username: dongtaiwang.com
+    password: dongtaiwang.com 
+    up: "55 Mbps"
+    down: "550 Mbps" 
+
+
+	
+#  GL/ipp/m/2
+
+
+
+#  GL/ipp/naiveproxy/1
+
+  - name: "n_1_IP"
+    type: http
+    server: us.193919.xyz
+    port: 44000
+    username: dongtaiwang.com
+    password: dongtaiwang.com
+    #tls: true
+    #skip-cert-verify: true  # 根据情况可选
+
+
+
+#  GL/ipp/naiveproxy/2
+
+  - name: "n_2_IP"
+    type: http
+    server: naive1.336892.xyz
+    port: 22338
+    username: dongtaiwang.com
+    password: dongtaiwang.com
+	
+	
+	
+#  GL/ipp/q/1
+
+
+
+#  GL/ipp/q/2
+
+  - name: q_2_IP               
+    type: hysteria
+    server: 208.87.243.151
+    port: 10023
+    auth-str: dongtaiwang.com
+    sni: apple.com
+    skip-cert-verify: true
+    alpn:
+      - h3
+    protocol: udp
+    up: "50 Mbps"
+    down: "500 Mbps"
+
+
+
+#  GL/ipp/q/3
+
+
+
+#  GL/ipp/q/4
+
+  - name: q_4_IP                     
+    type: anytls
+    server: fan2.856098.xyz
+    port: 8443
+    password: dongtaiwang.com
+    client-fingerprint: chrome
+    udp: true
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    min-idle-session: 0
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true
+
+
+
+#  GL/ipp/s/1
+
+  - name: s_1_IP
+    type: vless
+    server: 157.254.223.44
+    port: 18959
+    uuid: d0b3e27d-bbfc-4a3b-8e60-6973de8fcefa
+    network: tcp
+    udp: true
+    tls: true
+    flow: 
+    servername: itunes.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: -hwVEdgFkvjku8ESuDoAA7id5yGGv_zXBvBW_RdhmHA
+      short-id: d557c6895d014075
+    smux:
+      enabled: true
+      protocol: h2mux
+      max-connections: 1
+      min-streams: 4
+      padding: true
+      brutal-opts:
+        enabled: true
+        up: 50
+        down: 500
+
+
+
+#  GL/ipp/s/2
+
+  - name: s_2_IP
+    type: vless
+    server: 89.144.35.232
+    port: 15531
+    uuid: d3fd3b3c-f8d4-4894-b91e-5a6a53923a95
+    network: tcp
+    udp: true
+    tls: true
+    flow: ""
+    servername: itunes.apple.com
+    client-fingerprint: chrome
+    packet-encoding: xudp
+    reality-opts:
+      public-key: o4gXQf1n5YOoLo6OnyHykodK1ZShHvDqu1FgxNHe6n8
+      short-id: 8346964417a2552b
+    smux:
+      enabled: true
+      protocol: h2mux
+      max-connections: 1
+      min-streams: 4
+      padding: true
+      brutal-opts:
+        enabled: true
+        up: 50
+        down: 100
+
+
+
+#  GL/ipp/x/1
+#  GL/ipp/x/2
+#  GL/ipp/x/3
+#  GL/ipp/x/4
+#xhttp mihomo 还不支持，以上4个都无法导入
+ 
+
+
+#  GL/ipp/h2/3
+
+
+  - name: IP001
+    type: anytls
+    server: tw.399403.xyz
+    port: 8443
+    password: dongtaiwang.com
+    client-fingerprint: chrome
+    udp: true
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    min-idle-session: 0
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true
+  
+        
+
+  - name: IP002
+    type: hysteria
+    server: 208.87.243.151
+    port: 38845
+    auth_str: dongtaiwang.com
+    alpn:
+      - h3
+    sni: www.bing.com
+    skip-cert-verify: true
+    up: "55 Mbps"
+    down: "500 Mbps"    
     
+
+
+  - name: IP003
+    type: anytls  
+    server: fan3.394615.xyz
+    port: 8443
+    password: dongtaiwang.com
+    client-fingerprint: chrome
+    udp: true
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    min-idle-session: 0
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true    
+                  
+
+
+  - name: trojan
+    
+
 
   - name: "http"
     type: http
@@ -372,7 +589,7 @@ proxies:
     tls: true
     skip-cert-verify: true 
     
-    
+       
     
   - name: "vless"                   
     type: vless
@@ -407,23 +624,7 @@ proxies:
     # ip-version: ipv6    
          
 
-  - name: IP17
-    type: vless
-    server: 157.254.223.64
-    port: 23000
-    uuid: bcb13ecb-4f63-4257-ae01-ec5aeaa613a5
-    network: http
-    servername: mxj.myanimelist.net
-    tls: true
-    client-fingerprint: chrome
-    http-opts:
-      path:
-        - /alvin9999.com
-    reality-opts:
-      public-key: dJFLqPCinyadJxJk7zA_DwBOEAvexvm7AZT2Pw84_EY
-      short-id: 955275866feece09
-      
-      
+     
   - name: IP18
     type: vmess
     server: 2a14:7584:d0a2::a
@@ -438,17 +639,7 @@ proxies:
       path: /alvin9999.com
       headers:
         Host: www.bing.com
-        
-        
-  - name: IP19
-    type: hysteria2
-    server: 2a14:7584:d04a::a
-    port: 50022
-    password: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true
-    alpn:
-      - h3 
+       
 
 
   - {name: IP9-US-IDC, type: "anytls", server: "43.162.108.172", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
@@ -472,10 +663,7 @@ proxies:
 
   - {name: ip-US-2, server: 34.221.19.27, port: 50000, type: ss, cipher: aes-256-gcm, password: a9a37b54-e95a-4bc4-9637-7fd00a03dd2e, udp: true, tfo: true}
 
-  - {name: ip-US-HostPapa, server: 104.26.3.233, port: 8443, type: vless, tls: true, uuid: 572a0d47-567c-4085-a2de-69cc41365a27, servername: rncf.wwxgxn.cfd, network: ws, ws-opts: {path: /sayuri, headers: {Host: rncf.wwxgxn.cfd}}, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: ip-US-HostPapa2, server: 144.48.186.101, port: 30804, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true, tfo: true}
-  - {name: ip-US-Oracle, server: 152.67.224.214, port: 9443, type: hysteria2, password: bcb7c581-3c95-4569-a4e7-918141e91ea3, sni: us.887774.xyz, skip-cert-verify: true, udp: true, tfo: true}
- 
+
 
 proxy-groups:
   - name: 🔰 节点选择
@@ -484,9 +672,11 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - DL
-      - ip-US-HostPapa  
-      - ip-US-HostPapa2  
-      - ip-US-Oracle 	
+      - ip-US-FranTech1 
+      - ip-US-FranTech2  
+      - ip-US-GCSL
+      - ip-US-AKILE                               
+      - ip-US-FranTech3
       - IP1
       - IP2
       - IP3
@@ -519,6 +709,8 @@ proxy-groups:
       - IP13-US-IDC
       - IP14-US-IDC
       - IP15-US-IDC
+      - 🇭🇰 HK-10 | Sub3
+      - 🇭🇰 HK-11 | Sub3
       - HK01 
   - name: ♻️ 自动选择
     type: url-test
@@ -540,16 +732,26 @@ proxy-groups:
       - IP13
       - IP14
       - IP15
+      - IP16-美国家宽-only中转
+      - IP17
+      - IP18
+      - IP19
+      - 美国2
+      - cfvless
       - warp
       - ssr
       - ss
-      - trojan  
+      - trojan
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
+      - 🇯🇵 免费-日本4-Ver.8
       - IP9-US-IDC
       - IP13-US-IDC
       - IP14-US-IDC
       - IP15-US-IDC
+      - 🇭🇰 HK-10 | Sub3
+      - 🇭🇰 HK-11 | Sub3
+      - HK01
   - name: DL
     type: select
     url: 'http://www.gstatic.com/generate_204'
@@ -574,6 +776,7 @@ proxy-groups:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
+      - DL
       - IP1
       - IP2
       - IP3
@@ -588,11 +791,27 @@ proxy-groups:
       - IP12
       - IP13
       - IP14
+      - IP15
+      - IP16-美国家宽-only中转
+      - IP17
+      - IP18
+      - IP19
+      - 美国2
       - cfvless
       - warp
       - ssr
       - ss
       - trojan
+      - 🇹🇼 TW-1 | Sub3
+      - 🇹🇼 TW-2 | Sub3
+      - 🇯🇵 免费-日本4-Ver.8
+      - IP9-US-IDC
+      - IP13-US-IDC
+      - IP14-US-IDC
+      - IP15-US-IDC
+      - 🇭🇰 HK-10 | Sub3
+      - 🇭🇰 HK-11 | Sub3
+      - HK01 
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -800,22 +1019,22 @@ rules:
  - DOMAIN,sycm.mmstat.com,🎯 全球直连                                                                                                                               
  - DOMAIN-SUFFIX,blog.google,🎯 全球直连                                                                                                                            
  - DOMAIN-SUFFIX,googletraveladservices.com,🎯 全球直连                                                                                                             
- - DOMAIN,clientservices.googleapis.com,🎯 全球直连                                                                                                                 
+# - DOMAIN,clientservices.googleapis.com,🎯 全球直连                                                                                                                 
  - DOMAIN,safebrowsing.googleapis.com,🎯 全球直连                                                                                                                   
  - DOMAIN,dl.google.com,🎯 全球直连                                                                                                                                 
  - DOMAIN,dl.l.google.com,🎯 全球直连                                                                                                                               
- - DOMAIN,update.googleapis.com,🎯 全球直连                                                                                                                         
- - DOMAIN,fonts.googleapis.com,🎯 全球直连                                                                                                                          
+# - DOMAIN,update.googleapis.com,🎯 全球直连                                                                                                                         
+# - DOMAIN,fonts.googleapis.com,🎯 全球直连                                                                                                                          
  - DOMAIN,fonts.gstatic.com,🎯 全球直连                                                                                                                             
- - DOMAIN,mtalk.google.com,🎯 全球直连                                                                                                                              
- - DOMAIN,alt1-mtalk.google.com,🎯 全球直连                                                                                                                         
- - DOMAIN,alt2-mtalk.google.com,🎯 全球直连                                                                                                                         
- - DOMAIN,alt3-mtalk.google.com,🎯 全球直连                                                                                                                         
- - DOMAIN,alt4-mtalk.google.com,🎯 全球直连                                                                                                                         
- - DOMAIN,alt5-mtalk.google.com,🎯 全球直连                                                                                                                         
- - DOMAIN,alt6-mtalk.google.com,🎯 全球直连                                                                                                                         
- - DOMAIN,alt7-mtalk.google.com,🎯 全球直连                                                                                                                         
- - DOMAIN,alt8-mtalk.google.com,🎯 全球直连                                                                                                                         
+# - DOMAIN,mtalk.google.com,🎯 全球直连                                                                                                                              
+# - DOMAIN,alt1-mtalk.google.com,🎯 全球直连                                                                                                                         
+# - DOMAIN,alt2-mtalk.google.com,🎯 全球直连                                                                                                                         
+# - DOMAIN,alt3-mtalk.google.com,🎯 全球直连                                                                                                                         
+# - DOMAIN,alt4-mtalk.google.com,🎯 全球直连                                                                                                                         
+# - DOMAIN,alt5-mtalk.google.com,🎯 全球直连                                                                                                                         
+# - DOMAIN,alt6-mtalk.google.com,🎯 全球直连                                                                                                                         
+# - DOMAIN,alt7-mtalk.google.com,🎯 全球直连                                                                                                                         
+# - DOMAIN,alt8-mtalk.google.com,🎯 全球直连                                                                                                                         
  - DOMAIN,pubads.g.doubleclick.net,🎯 全球直连                                                                                                                      
  - DOMAIN,fairplay.l.qq.com,🎯 全球直连                                                                                                                             
  - DOMAIN,livew.l.qq.com,🎯 全球直连                                                                                                                                
