@@ -1,53 +1,5 @@
 # Profile Template for clash verge
 
-#dns:
-#  enabled: true
-#  default-nameserver: [223.5.5.5, 119.29.29.29, 114.114.114.114]
-#  enhanced-mode: fake-ip
-#  fake-ip-range: 198.18.0.1/16
-#  respect-rules: true
-#  proxy-server-nameserver: [223.5.5.5, 119.29.29.29, 114.114.114.114]
-#  nameserver: [223.5.5.5, 119.29.29.29, 114.114.114.114]
-#  fallback: [1.1.1.1, 8.8.8.8]
-#  fallback-filter: { geoip: true, geoip-code: CN, geosite: [gfw], ipcidr: [240.0.0.0/4], domain: [+.google.com, +.facebook.com, +.youtube.com] }
-
-#
-#dns:
-#  enabled: true
-#  prefer-h3: true
-#  listen: :53
-#  enhanced-mode: fake-ip
-#  fake-ip-range: 198.18.0.1/16
-#  # respect-rules: true
-#  default-nameserver:
-#    - 43.154.154.162
-#    - 223.5.5.5
-#    - 114.114.114.114
-#    - 1.1.1.1
-#    - 8.8.8.8
-#    - 119.29.29.29
-#  nameserver:
-#    # - system
-#    - https://dns.flymc.cc/dns-query
-#    - https://dns.alidns.com/dns-query
-#    - https://doh.pub/dns-query
-#  proxy-server-nameserver:
-#    - https://dns.alidns.com/dns-query
-#    - https://doh.pub/dns-query
-#  fallback:
-#    - https://1.0.0.1/dns-query
-#    - tls://dns.google
-#    - 8.8.8.8
-#    - 8.8.4.4
-#    - tls://1.0.0.1:853
-#    - tls://dns.google:853
-#  fallback-filter:
-#    geoip: true
-#    geoip-code: CN
-#    ipcidr:
-#      - 240.0.0.0/4
-#  fake-ip-filter:
-#    - geosite:cn   
 
 dns:
   enabled: true
@@ -71,9 +23,7 @@ dns:
 
 
 proxies:
-
 #  GL/ipp/cm2/1
-
   - name: cm2_1_IP1  
     type: hysteria  
     server: ip1.758733.xyz
@@ -86,7 +36,6 @@ proxies:
     protocol: udp
     up: "50 Mbps"
     down: "500 Mbps"
-    
   - name: cm2_1_IP2                  
     type: hysteria
     server: 5.178.101.33
@@ -99,7 +48,6 @@ proxies:
     protocol: udp
     up: "50 Mbps"
     down: "500 Mbps"
-    
   - name: cm2_1_IP3                
     type: vless
     server: 195.154.200.13
@@ -124,7 +72,6 @@ proxies:
         enabled: true
         up: 50
         down: 500
-        
   - name: cm2_1_IP4                     
     type: hysteria
     server: 2001:bc8:32d7:402::3
@@ -137,7 +84,6 @@ proxies:
     protocol: udp
     up: "50 Mbps"
     down: "500 Mbps"
-    
   - name: cm2_1_IP5                     
     type: hysteria
     server: 2001:bc8:32d7:402::4
@@ -150,30 +96,22 @@ proxies:
     protocol: udp
     up: "50 Mbps"
     down: "500 Mbps"
-
-
-
 #  GL/ipp/cm2/2
-
-- name: cm2_2_IP1                   
-  type: anytls
-  server: 45.221.98.14
-  port: 59901
-  password: dongtaiwang.com
-  client-fingerprint: chrome
-  udp: true
-  idle-session-check-interval: 30
-  idle-session-timeout: 30
-  min-idle-session: 0
-  alpn:
-    - h2
-    - http/1.1
-  skip-cert-verify: true
-
-
-
+  - name: cm2_2_IP1                   
+    type: anytls
+    server: 45.221.98.14
+    port: 59901
+    password: dongtaiwang.com
+    client-fingerprint: chrome
+    udp: true
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    min-idle-session: 0
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true
 #  GL/ipp/cm2/3
-
   - name: cm2_3_IP1           
     type: vless
     server: 2001:bc8:32d7:181::2
@@ -198,7 +136,6 @@ proxies:
         enabled: true
         up: 50
         down: 500
-        
   - name: cm2_3_IP2                    
     type: vless
     server: 2001:bc8:32d7:181::3
@@ -223,11 +160,7 @@ proxies:
         enabled: true
         up: 50
         down: 500       
-
-
-
 #  GL/ipp/cm2/4
-
   - name: cm2_4_IP                     
     type: mieru
     server: 157.254.223.48
@@ -235,11 +168,7 @@ proxies:
     transport: TCP
     username: dongtaiwang.com
     password: dongtaiwang.com
-
-
-
 #  GL/ipp/cm2/5
-
   - name: cm2_5_IP
     type: hysteria
     server: 2a14:7584:d097::a
@@ -252,15 +181,8 @@ proxies:
     protocol: udp
     up: "50 Mbps"
     down: "500 Mbps"
-
-
-
 #  GL/ipp/cm2/6
-
-
-
 #  GL/ipp/h/1
-
   - name: h_1_IP
     type: hysteria
     server: 5.83.129.153
@@ -273,11 +195,7 @@ proxies:
     protocol: udp
     up: "50 Mbps"
     down: "500 Mbps"
-
-
-
 #  GL/ipp/h/2
-
   - name: h_2_IP
     type: hysteria
     server: 98.142.247.21
@@ -290,11 +208,7 @@ proxies:
     protocol: udp
     up: "50 Mbps"
     down: "500 Mbps"
-
-
-
 #  GL/ipp/h/3
-
   - name: h_3_IP
     type: hysteria
     server: 5.83.129.90
@@ -307,15 +221,8 @@ proxies:
     protocol: udp
     up: "50 Mbps"
     down: "500 Mbps"
-
-
-
 #  GL/ipp/h/4
-
-
-
 #  GL/ipp/h2/1
-
   - name: h2_1_IP
     type: hysteria2
     server: 157.254.223.43
@@ -326,11 +233,7 @@ proxies:
     password: dongtaiwang.com
     sni: apple.com
     skip-cert-verify: true 
-
-
-
 #  GL/ipp/h2/2
-
   - name: h2_2_IP
     type: hysteria2
     server: 157.254.223.24
@@ -341,25 +244,17 @@ proxies:
     password: alvin9999.com
     sni: apple.com
     skip-cert-verify: true 
-
-
-
 #  GL/ipp/h2/3
-
   - name: h2_3_IP
     type: hysteria2
     server: 62.210.124.146
     port: 22000 
-    up: 500          
-    down: 5000
+    up: 50        
+    down: 500
     password: dongtaiwang.com
     sni: www.microsoft.com
     skip-cert-verify: true 
-
-
-
 #  GL/ipp/h2/4
-
   - name: h2_4_IP
     type: hysteria2
     server: 2a14:7584:d04a::a
@@ -369,11 +264,7 @@ proxies:
     password: dongtaiwang.com
     sni: apple.com
     skip-cert-verify: true 
-
-
-
 #  GL/ipp/m/1
-
   - name: m_1_IP
     type: mieru
     server: 45.221.98.11
@@ -383,16 +274,9 @@ proxies:
     password: dongtaiwang.com 
     up: "55 Mbps"
     down: "550 Mbps" 
-
-
-	
 #  GL/ipp/m/2
-
-
-
 #  GL/ipp/naiveproxy/1
-
-  - name: "n_1_IP"
+  - name: n_1_IP
     type: http
     server: us.193919.xyz
     port: 44000
@@ -400,26 +284,15 @@ proxies:
     password: dongtaiwang.com
     #tls: true
     #skip-cert-verify: true  # 根据情况可选
-
-
-
 #  GL/ipp/naiveproxy/2
-
-  - name: "n_2_IP"
+  - name: n_2_IP
     type: http
     server: naive1.336892.xyz
     port: 22338
     username: dongtaiwang.com
     password: dongtaiwang.com
-	
-	
-	
 #  GL/ipp/q/1
-
-
-
 #  GL/ipp/q/2
-
   - name: q_2_IP               
     type: hysteria
     server: 208.87.243.151
@@ -432,15 +305,8 @@ proxies:
     protocol: udp
     up: "50 Mbps"
     down: "500 Mbps"
-
-
-
 #  GL/ipp/q/3
-
-
-
 #  GL/ipp/q/4
-
   - name: q_4_IP                     
     type: anytls
     server: fan2.856098.xyz
@@ -455,11 +321,7 @@ proxies:
       - h2
       - http/1.1
     skip-cert-verify: true
-
-
-
 #  GL/ipp/s/1
-
   - name: s_1_IP
     type: vless
     server: 157.254.223.44
@@ -484,11 +346,7 @@ proxies:
         enabled: true
         up: 50
         down: 500
-
-
-
 #  GL/ipp/s/2
-
   - name: s_2_IP
     type: vless
     server: 89.144.35.232
@@ -514,20 +372,12 @@ proxies:
         enabled: true
         up: 50
         down: 100
-
-
-
 #  GL/ipp/x/1
 #  GL/ipp/x/2
 #  GL/ipp/x/3
 #  GL/ipp/x/4
-#xhttp mihomo 还不支持，以上4个都无法导入
- 
-
-
+#  xhttp mihomo 还不支持，以上4个都无法导入
 #  GL/ipp/h2/3
-
-
   - name: IP001
     type: anytls
     server: tw.399403.xyz
@@ -542,9 +392,6 @@ proxies:
       - h2
       - http/1.1
     skip-cert-verify: true
-  
-        
-
   - name: IP002
     type: hysteria
     server: 208.87.243.151
@@ -556,9 +403,6 @@ proxies:
     skip-cert-verify: true
     up: "55 Mbps"
     down: "500 Mbps"    
-    
-
-
   - name: IP003
     type: anytls  
     server: fan3.394615.xyz
@@ -573,13 +417,24 @@ proxies:
       - h2
       - http/1.1
     skip-cert-verify: true    
-                  
+  - name: IP004_v2ray2
+    type: vmess
+    server: 2a14:7584:d0a2::a
+    port: 23456
+    uuid: bd48e0ac-e90e-4451-a4f2-abf061cfb890
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /alvin9999.com
+      headers:
+        Host: www.bing.com                  
 
 
-  - name: trojan
+#  - name: trojan
     
-
-
   - name: "http"
     type: http
     server: tw.399403.xyz
@@ -588,8 +443,6 @@ proxies:
     password: dongtaiwang.com
     tls: true
     skip-cert-verify: true 
-    
-       
     
   - name: "vless"                   
     type: vless
@@ -605,8 +458,7 @@ proxies:
       public-key: 78FJmeccKt0_704WnpAy9eY7Q2cfUJ301yZGcxkKbVU
       short-id: ''                    
     client-fingerprint: chrome 
-
-    
+  
   - name: "IP16-美国家宽-only中转"
     type: socks5
     server: 192.217.9.125
@@ -623,45 +475,24 @@ proxies:
     #udp: true
     # ip-version: ipv6    
          
-
-     
-  - name: IP18
-    type: vmess
-    server: 2a14:7584:d0a2::a
-    port: 23456
-    uuid: bd48e0ac-e90e-4451-a4f2-abf061cfb890
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /alvin9999.com
-      headers:
-        Host: www.bing.com
-       
-
+  - {name: ip-US-2, server: 34.221.19.27, port: 50000, type: ss, cipher: aes-256-gcm, password: a9a37b54-e95a-4bc4-9637-7fd00a03dd2e, udp: true, tfo: true}
 
   - {name: IP9-US-IDC, type: "anytls", server: "43.162.108.172", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
   - {name: IP13-US-IDC, server: e.2.q.x.v.n.f.8.d.us01-ae5.entry.v51124-4.qpon, port: 20012, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: IP14-US-IDC, server: e.2.q.x.v.n.f.8.d.us01-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: IP15-US-IDC, server: v52ry8d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-     
-
-  - {"name":"ss","type":"ss","server":"2a14:7583:29cd::a","port":12345,"password":"dongtaiwang.com","cipher":"aes-256-gcm"}           
-  - {"name":"ssr","type":"ssr","server":"ssr2.762988.xyz","port":33336,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
-  - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
-  - {"name":"warp","type":"wireguard","server":"162.159.192.229","port":1010,"udp":true,"ip":"172.16.0.2","ipv6":"2606:4700:110:8040:e677:b446:ac05:a038","private-key":"ULALYURSXWaCTC2ydffFdr8uFepy7u7KwV1Rmn0ZbWU=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","dns":["1.1.1.1"],"mtu":1280,"remote-dns-resolve":true}
-
 
   - {name: 🇯🇵 免费-日本4-Ver.8, server: uthy3-g04.jp04-1d-vm0.entry.fr0528.art, port: 447, type: vmess, uuid: a5fa9c72-9693-3619-9673-7fb482baa9ee, alterId: 1, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - { name: 美国2, server: 0.b.q.e.4.q.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-
+  - {name: 美国2, server: 0.b.q.e.4.q.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: HK01, server: naqnz-g04.hk01-ae5.entry.v50708.dev, port: 19274, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.ccwink.cc", port: 30001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw1-vds14.anyhk.co", skip-cert-verify: true, up: null, down: null}
   - {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.ccwink.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
 
-  - {name: ip-US-2, server: 34.221.19.27, port: 50000, type: ss, cipher: aes-256-gcm, password: a9a37b54-e95a-4bc4-9637-7fd00a03dd2e, udp: true, tfo: true}
+  - {"name":"ss","type":"ss","server":"2a14:7584:d0a1::a","port":12345,"password":"alvin9999.com","cipher":"aes-256-gcm"}           
+  - {"name":"ssr","type":"ssr","server":"ssr2.762988.xyz","port":33336,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
+  - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
+  - {"name":"warp","type":"wireguard","server":"162.159.192.229","port":1010,"udp":true,"ip":"172.16.0.2","ipv6":"2606:4700:110:8040:e677:b446:ac05:a038","private-key":"ULALYURSXWaCTC2ydffFdr8uFepy7u7KwV1Rmn0ZbWU=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","dns":["1.1.1.1"],"mtu":1280,"remote-dns-resolve":true}
+
 
 
 
@@ -672,90 +503,103 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - DL
-      - ip-US-FranTech1 
-      - ip-US-FranTech2  
-      - ip-US-GCSL
-      - ip-US-AKILE                               
-      - ip-US-FranTech3
-      - IP1
-      - IP2
-      - IP3
-      - IP4
-      - IP5
-      - IP6
-      - IP7
-      - IP8
-      - IP9
-      - IP10
-      - IP11
-      - IP12
-      - IP13
-      - IP14
-      - IP15
-      - IP16-美国家宽-only中转
-      - IP17
-      - IP18
-      - IP19
-      - 美国2
-      - cfvless
-      - warp
-      - ssr
-      - ss
-      - trojan
-      - 🇹🇼 TW-1 | Sub3
-      - 🇹🇼 TW-2 | Sub3
-      - 🇯🇵 免费-日本4-Ver.8
+      - cm2_1_IP1
+      - cm2_1_IP2
+      - cm2_1_IP3
+      - cm2_1_IP4
+      - cm2_1_IP5
+      - cm2_2_IP1
+      - cm2_3_IP1
+      - cm2_3_IP2
+      - cm2_4_IP
+      - cm2_5_IP
+      - h_1_IP
+      - h_2_IP
+      - h_3_IP
+      - h2_1_IP
+      - h2_2_IP
+      - h2_3_IP
+      - h2_4_IP
+      - m_1_IP
+      - n_1_IP
+      - n_2_IP
+      - q_2_IP
+      - q_4_IP
+      - s_1_IP
+      - s_2_IP
+      - IP001
+      - IP002
+      - IP003
+      - IP004_v2ray2
+      - "http"
+      - "vless"
+      - "IP16-美国家宽-only中转"
+      - ip-US-2 
       - IP9-US-IDC
       - IP13-US-IDC
       - IP14-US-IDC
       - IP15-US-IDC
-      - 🇭🇰 HK-10 | Sub3
-      - 🇭🇰 HK-11 | Sub3
-      - HK01 
+      - 🇯🇵 免费-日本4-Ver.8
+      - 美国2
+      - HK01
+      - "🇹🇼 TW-1 | Sub3"
+      - "🇹🇼 TW-2 | Sub3"
+      - "ss"
+      - "ssr"
+      - cfvless
+      - "warp"    
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - IP1
-      - IP2
-      - IP3
-      - IP4
-      - IP5
-      - IP6
-      - IP7
-      - IP8
-      - IP9
-      - IP10
-      - IP11
-      - IP12
-      - IP13
-      - IP14
-      - IP15
-      - IP16-美国家宽-only中转
-      - IP17
-      - IP18
-      - IP19
-      - 美国2
-      - cfvless
-      - warp
-      - ssr
-      - ss
-      - trojan
-      - 🇹🇼 TW-1 | Sub3
-      - 🇹🇼 TW-2 | Sub3
-      - 🇯🇵 免费-日本4-Ver.8
+      - cm2_1_IP1
+      - cm2_1_IP2
+      - cm2_1_IP3
+      - cm2_1_IP4
+      - cm2_1_IP5
+      - cm2_2_IP1
+      - cm2_3_IP1
+      - cm2_3_IP2
+      - cm2_4_IP
+      - cm2_5_IP
+      - h_1_IP
+      - h_2_IP
+      - h_3_IP
+      - h2_1_IP
+      - h2_2_IP
+      - h2_3_IP
+      - h2_4_IP
+      - m_1_IP
+      - n_1_IP
+      - n_2_IP
+      - q_2_IP
+      - q_4_IP
+      - s_1_IP
+      - s_2_IP
+      - IP001
+      - IP002
+      - IP003
+      - IP004_v2ray2
+      - "http"
+      - "vless"
+      - ip-US-2 
       - IP9-US-IDC
       - IP13-US-IDC
       - IP14-US-IDC
       - IP15-US-IDC
-      - 🇭🇰 HK-10 | Sub3
-      - 🇭🇰 HK-11 | Sub3
+      - 🇯🇵 免费-日本4-Ver.8
+      - 美国2
       - HK01
+      - "🇹🇼 TW-1 | Sub3"
+      - "🇹🇼 TW-2 | Sub3"
+      - "ss"
+      - "ssr"
+      - cfvless
+      - "warp"   
   - name: DL
     type: select
     url: 'http://www.gstatic.com/generate_204'
-    interval: 7200
     proxies:  
       - 🇯🇵 免费-日本4-Ver.8
       - 美国2
@@ -763,13 +607,13 @@ proxy-groups:
       - HK01      
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
-      - IP1
-      - IP4
-      - IP9
       - IP9-US-IDC
       - IP13-US-IDC
       - IP14-US-IDC
       - IP15-US-IDC
+      - q_4_IP
+      - IP001
+      - IP003
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -777,41 +621,6 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - DL
-      - IP1
-      - IP2
-      - IP3
-      - IP4
-      - IP5
-      - IP6
-      - IP7
-      - IP8
-      - IP9
-      - IP10
-      - IP11
-      - IP12
-      - IP13
-      - IP14
-      - IP15
-      - IP16-美国家宽-only中转
-      - IP17
-      - IP18
-      - IP19
-      - 美国2
-      - cfvless
-      - warp
-      - ssr
-      - ss
-      - trojan
-      - 🇹🇼 TW-1 | Sub3
-      - 🇹🇼 TW-2 | Sub3
-      - 🇯🇵 免费-日本4-Ver.8
-      - IP9-US-IDC
-      - IP13-US-IDC
-      - IP14-US-IDC
-      - IP15-US-IDC
-      - 🇭🇰 HK-10 | Sub3
-      - 🇭🇰 HK-11 | Sub3
-      - HK01 
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -822,75 +631,17 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
-      - IP1
-      - IP2
-      - IP3
-      - IP4
-      - IP5
-      - IP6
-      - IP7
-      - IP8
-      - IP9
-      - IP10
-      - IP11
-      - IP12
-      - IP13
-      - IP14
-      - IP15
-      - cfvless
-      - warp
-      - ssr
-      - ss
-      - trojan
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
-      - IP1
-      - IP2
-      - IP3
-      - IP4
-      - IP5
-      - IP6
-      - IP7
-      - IP8
-      - IP9
-      - IP10
-      - IP11
-      - IP12
-      - IP13
-      - IP14
-      - cfvless
-      - warp
-      - ssr
-      - ss
-      - trojan
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - IP1
-      - IP2
-      - IP3
-      - IP4
-      - IP5
-      - IP6
-      - IP7
-      - IP8
-      - IP9
-      - IP10
-      - IP11
-      - IP12
-      - IP13
-      - IP14
-      - cfvless
-      - warp
-      - ssr
-      - ss
-      - trojan
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -908,26 +659,6 @@ proxy-groups:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - IP1
-      - IP2
-      - IP3
-      - IP4
-      - IP5
-      - IP6
-      - IP7
-      - IP8
-      - IP9
-      - IP10
-      - IP11
-      - IP12
-      - IP13
-      - IP14
-      - cfvless
-      - warp
-      - DL
-      - ssr
-      - ss
-      - trojan
 rules:
  - DOMAIN-SUFFIX,local,🎯 全球直连                                                                                                                                    
  - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve                                                                                                                      
