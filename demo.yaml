@@ -22,6 +22,8 @@ dns:
 
 
 
+
+
 proxies:
 #  GL/ipp/cm2/1
   - name: cm2_1_IP1  
@@ -432,8 +434,12 @@ proxies:
       headers:
         Host: www.bing.com                  
 
-
-#  - name: trojan
+  - name: trojan
+    server: 121.169.46.116
+    port: 1090
+    type: socks5
+    username: Og%3D%3D
+    udp: true    
     
   - name: "http"
     type: http
@@ -459,13 +465,13 @@ proxies:
       short-id: ''                    
     client-fingerprint: chrome 
   
-  - name: "IP16-美国家宽-only中转"
+  - name: "IP1666"
+    server: 121.169.46.116
+    port: 1090
     type: socks5
-    server: 192.217.9.125
-    port: 35125
-    username: 16Af2a8Z
-    password: JfJ2xmf3q8
-    dialer-proxy: "🇹🇼 TW-2 | Sub3"
+    username: Og%3D%3D
+    udp: true  
+    dialer-proxy: "IP003"
     #tls: true
     # fingerprint: xxxx # 配置指纹将实现 SSL Pining 效果, 可使用 openssl x509 -noout -fingerprint -sha256 -inform pem -in yourcert.pem 获取
     # 下面两项如果填写则开启 mTLS（需要同时填写）
@@ -478,24 +484,44 @@ proxies:
   - {name: ip-US-2, server: 34.221.19.27, port: 50000, type: ss, cipher: aes-256-gcm, password: a9a37b54-e95a-4bc4-9637-7fd00a03dd2e, udp: true, tfo: true}
 
   - {name: IP9-US-IDC, type: "anytls", server: "43.162.108.172", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+  - {name: IP12-US-IDC, server: 0.b.q.e.4.q.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: IP13-US-IDC, server: e.2.q.x.v.n.f.8.d.us01-ae5.entry.v51124-4.qpon, port: 20012, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: IP14-US-IDC, server: e.2.q.x.v.n.f.8.d.us01-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: IP15-US-IDC, server: v52ry8d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: IP16-US-IDC, server: 4.c.q.k.v.n.b.8.d.us01-ae5.entry.v51124-4.qpon, port: 20012, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: IP17-US-IDC, server: p.c.2.e.z.q.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
 
-  - {name: 🇯🇵 免费-日本4-Ver.8, server: uthy3-g04.jp04-1d-vm0.entry.fr0528.art, port: 447, type: vmess, uuid: a5fa9c72-9693-3619-9673-7fb482baa9ee, alterId: 1, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: 美国2, server: 0.b.q.e.4.q.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: "🇯🇵 JP-4 | Sub3", type: "anytls", server: "jpyxvm.ccwink.cc", port: 8048, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+  - {name: JP-1, server: uthy3-g04.jp04-1d-vm0.entry.fr0528.art, port: 447, type: vmess, uuid: a5fa9c72-9693-3619-9673-7fb482baa9ee, alterId: 1, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
   - {name: HK01, server: naqnz-g04.hk01-ae5.entry.v50708.dev, port: 19274, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.ccwink.cc", port: 30001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw1-vds14.anyhk.co", skip-cert-verify: true, up: null, down: null}
   - {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.ccwink.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+  - {name: "🇺🇸 US-1 | Sub3", type: "anytls", server: "43.162.108.172", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
 
   - {"name":"ss","type":"ss","server":"2a14:7584:d0a1::a","port":12345,"password":"alvin9999.com","cipher":"aes-256-gcm"}           
   - {"name":"ssr","type":"ssr","server":"ssr2.762988.xyz","port":33336,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
   - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
   - {"name":"warp","type":"wireguard","server":"162.159.192.229","port":1010,"udp":true,"ip":"172.16.0.2","ipv6":"2606:4700:110:8040:e677:b446:ac05:a038","private-key":"ULALYURSXWaCTC2ydffFdr8uFepy7u7KwV1Rmn0ZbWU=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","dns":["1.1.1.1"],"mtu":1280,"remote-dns-resolve":true}
 
-
-
-
+  - {name: TW-DCBG-13, server: 36.141.116.62, port: 45690, type: ss, cipher: 2022-blake3-aes-128-gcm, password: NjVhMWE2YmVmNzg4MTcwMA==:MGY0MDExNDQtODJlMS00OA==, tfo: true}
+  - {name: TW-DCBG-11, server: 114.37.211.12, port: 55326, type: anytls, password: 437bd464-b524-3812-ac02-85483bcf7407, skip-cert-verify: true, tfo: true}
+  - {name: TW-DCBG-12, server: 111.243.121.219, port: 60101, type: vless, tls: true, uuid: 437bd464-b524-3812-ac02-85483bcf7407, servername: academy.nvidia.com, host: academy.nvidia.com, flow: xtls-rprx-vision, reality-opts: {public-key: uQgwZVJcw4Gf06rPfllYdyqp-ZH5xQ2BnRMxoSR8DT8, short-id: d69b618d}, client-fingerprint: random, skip-cert-verify: true, tfo: true}
+  - { name: 悦·🇺🇸美国1, server: yue-us.yuetoto.net, port: 21333, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: 64df5c9a-dda5-4c78-b7fd-e3b264b03d5a }
+  - { name: 悦·🇺🇸美国2, type: ss, server: yue-to-zz.yuetoto.net, port: 22012, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:NjRkZjVjOWEtZGRhNS00Yw==', udp: true }
+  - { name: 悦·🇺🇸美国专属1, type: ss, server: yue-to-premium.yuetoto.net, port: 28006, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:Yzg3OThjNjgtYmEyOC00YQ==', udp: true }
+  - { name: 悦·🇺🇸美国专属2, server: yue-us-premium.yuetoto.net, port: 21825, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
+  - { name: 悦·🇺🇸美国家宽1, server: yue-us-home.yuetoto.net, port: 21343, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: c8798c68-ba28-4acf-a768-ec2c41e3cdef }
+  - { name: 悦·🇺🇸美国家宽2, type: ss, server: yue-to-premium.yuetoto.net, port: 28012, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:ZDk5MmVhNTQtZDViNS00MA==', udp: true }
+  - { name: 悦·🇺🇸美国AI解锁1, type: ss, server: yue-to-premium.yuetoto.net, port: 28013, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:Yzg3OThjNjgtYmEyOC00YQ==', udp: true }
+  - { name: 悦·🇺🇸美国AI解锁2, server: yue-us-ai.yuetoto.net, port: 21064, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
+ 
+  - name: demo
+    server: 61.133.1.237
+    port: 48215
+    type: ss
+    cipher: aes-256-gcm
+    password: rQAXb32r0S3GMBvBJBGLYZSJfNagsZ6ZcGC7TDVEbtU=
+  
 proxy-groups:
   - name: 🔰 节点选择
     type: select
@@ -503,6 +529,7 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - DL
+      - demo
       - cm2_1_IP1
       - cm2_1_IP2
       - cm2_1_IP3
@@ -533,17 +560,33 @@ proxy-groups:
       - IP004_v2ray2
       - "http"
       - "vless"
-      - "IP16-美国家宽-only中转"
+      - trojan
+      - "IP1666"
       - ip-US-2 
       - IP9-US-IDC
+      - IP12-US-IDC
       - IP13-US-IDC
       - IP14-US-IDC
       - IP15-US-IDC
-      - 🇯🇵 免费-日本4-Ver.8
-      - 美国2
+      - IP16-US-IDC
+      - IP17-US-IDC
+      - TW-DCBG-11
+      - TW-DCBG-12
+      - TW-DCBG-13
+      - JP-1
+      - 🇯🇵 JP-4 | Sub3
       - HK01
       - "🇹🇼 TW-1 | Sub3"
       - "🇹🇼 TW-2 | Sub3"
+      - "🇺🇸 US-1 | Sub3"
+      - 悦·🇺🇸美国1
+      - 悦·🇺🇸美国2
+      - 悦·🇺🇸美国专属1      
+      - 悦·🇺🇸美国专属2      
+      - 悦·🇺🇸美国家宽1      
+      - 悦·🇺🇸美国家宽2
+      - 悦·🇺🇸美国AI解锁1
+      - 悦·🇺🇸美国AI解锁2
       - "ss"
       - "ssr"
       - cfvless
@@ -585,35 +628,73 @@ proxy-groups:
       - "vless"
       - ip-US-2 
       - IP9-US-IDC
+      - IP12-US-IDC
       - IP13-US-IDC
       - IP14-US-IDC
       - IP15-US-IDC
-      - 🇯🇵 免费-日本4-Ver.8
-      - 美国2
+      - JP-1
+      - 🇯🇵 JP-4 | Sub3
       - HK01
       - "🇹🇼 TW-1 | Sub3"
       - "🇹🇼 TW-2 | Sub3"
       - "ss"
       - "ssr"
       - cfvless
-      - "warp"   
+      - "warp" 
+      - TW-DCBG-11
+      - TW-DCBG-12
+      - TW-DCBG-13
   - name: DL
     type: select
     url: 'http://www.gstatic.com/generate_204'
     proxies:  
-      - 🇯🇵 免费-日本4-Ver.8
-      - 美国2
-      - IP16-美国家宽-only中转
+      - JP-1
+      - IP1666
       - HK01      
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
       - IP9-US-IDC
+      - IP12-US-IDC
       - IP13-US-IDC
       - IP14-US-IDC
       - IP15-US-IDC
+      - IP16-US-IDC
+      - IP17-US-IDC
       - q_4_IP
       - IP001
       - IP003
+  - name: TW聚合
+    type: select
+    url: 'http://www.gstatic.com/generate_204'
+    proxies:      
+      - 🇹🇼 TW-1 | Sub3
+      - 🇹🇼 TW-2 | Sub3
+      - q_4_IP
+      - IP001
+      - IP003    
+      - TW-DCBG-11
+      - TW-DCBG-12
+  - name: US聚合
+    type: select
+    url: 'http://www.gstatic.com/generate_204'
+    proxies:  
+      - IP1666   
+      - 🇺🇸 US-1 | Sub3  
+      - IP9-US-IDC
+      - IP12-US-IDC
+      - IP13-US-IDC
+      - IP14-US-IDC
+      - IP15-US-IDC
+      - IP16-US-IDC
+      - IP17-US-IDC 
+      - 悦·🇺🇸美国1
+      - 悦·🇺🇸美国2
+      - 悦·🇺🇸美国专属1      
+      - 悦·🇺🇸美国专属2      
+      - 悦·🇺🇸美国家宽1      
+      - 悦·🇺🇸美国家宽2
+      - 悦·🇺🇸美国AI解锁1
+      - 悦·🇺🇸美国AI解锁2    
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -631,6 +712,51 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
+      - cm2_1_IP1
+      - cm2_1_IP2
+      - cm2_1_IP3
+      - cm2_1_IP4
+      - cm2_1_IP5
+      - cm2_2_IP1
+      - cm2_3_IP1
+      - cm2_3_IP2
+      - cm2_4_IP
+      - cm2_5_IP
+      - h_1_IP
+      - h_2_IP
+      - h_3_IP
+      - h2_1_IP
+      - h2_2_IP
+      - h2_3_IP
+      - h2_4_IP
+      - m_1_IP
+      - n_1_IP
+      - n_2_IP
+      - q_2_IP
+      - q_4_IP
+      - s_1_IP
+      - s_2_IP
+      - IP001
+      - IP002
+      - IP003
+      - IP004_v2ray2
+      - "http"
+      - "vless"
+      - ip-US-2 
+      - IP9-US-IDC
+      - IP12-US-IDC
+      - IP13-US-IDC
+      - IP14-US-IDC
+      - IP15-US-IDC
+      - JP-1
+      - 🇯🇵 JP-4 | Sub3
+      - HK01
+      - "🇹🇼 TW-1 | Sub3"
+      - "🇹🇼 TW-2 | Sub3"
+      - "ss"
+      - "ssr"
+      - cfvless
+      - "warp" 
   - name: 📲 电报信息
     type: select
     proxies:
@@ -748,16 +874,16 @@ rules:
  - DOMAIN,bdtj.tagtic.cn,🎯 全球直连                                                                                                                                
  - DOMAIN,log.mmstat.com,🎯 全球直连                                                                                                                                
  - DOMAIN,sycm.mmstat.com,🎯 全球直连                                                                                                                               
- - DOMAIN-SUFFIX,blog.google,🎯 全球直连                                                                                                                            
- - DOMAIN-SUFFIX,googletraveladservices.com,🎯 全球直连                                                                                                             
-# - DOMAIN,clientservices.googleapis.com,🎯 全球直连                                                                                                                 
- - DOMAIN,safebrowsing.googleapis.com,🎯 全球直连                                                                                                                   
- - DOMAIN,dl.google.com,🎯 全球直连                                                                                                                                 
- - DOMAIN,dl.l.google.com,🎯 全球直连                                                                                                                               
-# - DOMAIN,update.googleapis.com,🎯 全球直连                                                                                                                         
-# - DOMAIN,fonts.googleapis.com,🎯 全球直连                                                                                                                          
- - DOMAIN,fonts.gstatic.com,🎯 全球直连                                                                                                                             
-# - DOMAIN,mtalk.google.com,🎯 全球直连                                                                                                                              
+ - DOMAIN-SUFFIX,blog.google,🔰 节点选择                                                                                                                           
+ - DOMAIN-SUFFIX,googletraveladservices.com,🔰 节点选择                                                                                                            
+ - DOMAIN,clientservices.googleapis.com,🔰 节点选择                                                                                                                  
+ - DOMAIN,safebrowsing.googleapis.com,🔰 节点选择                                                                                                            
+ - DOMAIN,dl.google.com,🔰 节点选择                                                                                                                                 
+ - DOMAIN,dl.l.google.com,🔰 节点选择                                                                                                                           
+ - DOMAIN,update.googleapis.com,🔰 节点选择                                                                                                                          
+ - DOMAIN,fonts.googleapis.com,🔰 节点选择                                                                                                                          
+ - DOMAIN,fonts.gstatic.com,🔰 节点选择                                                                                                                           
+ - DOMAIN,mtalk.google.com,🔰 节点选择                                                                                                                                
 # - DOMAIN,alt1-mtalk.google.com,🎯 全球直连                                                                                                                         
 # - DOMAIN,alt2-mtalk.google.com,🎯 全球直连                                                                                                                         
 # - DOMAIN,alt3-mtalk.google.com,🎯 全球直连                                                                                                                         
@@ -766,7 +892,7 @@ rules:
 # - DOMAIN,alt6-mtalk.google.com,🎯 全球直连                                                                                                                         
 # - DOMAIN,alt7-mtalk.google.com,🎯 全球直连                                                                                                                         
 # - DOMAIN,alt8-mtalk.google.com,🎯 全球直连                                                                                                                         
- - DOMAIN,pubads.g.doubleclick.net,🎯 全球直连                                                                                                                      
+ - DOMAIN,pubads.g.doubleclick.net,🔰 节点选择                                                                                                                       
  - DOMAIN,fairplay.l.qq.com,🎯 全球直连                                                                                                                             
  - DOMAIN,livew.l.qq.com,🎯 全球直连                                                                                                                                
  - DOMAIN,vd.l.qq.com,🎯 全球直连                                                                                                                                                                                                                                                         
@@ -2435,6 +2561,7 @@ rules:
  - DOMAIN-SUFFIX,claude.ai,DL
  - DOMAIN-SUFFIX,chatgpt.com,DL
  - DOMAIN-SUFFIX,cloudfront.net,DL
+ - DOMAIN-SUFFIX,ping0.cc,TW聚合
  - DOMAIN-SUFFIX,salesmartly.com,🔰 节点选择 
  - GEOIP,CN,🎯 全球直连                                                                                                                                             
  - MATCH,🐟 漏网之鱼                                                                                                                                                
