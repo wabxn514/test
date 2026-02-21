@@ -39,20 +39,20 @@ proxies:
     up: "50 Mbps"
     down: "500 Mbps"
   - name: cm2_1_IP2                  
-    type: hysteria
-    server: 5.178.101.33
-    port: 23008
-    auth-str: dongtaiwang.com
+    server: ip1.758733.xyz
+    port: 10088
+    type: tuic
+    uuid: 9bbd1f42-7ae7-4239-bd10-a68de95e3295
+    password: dongtaiwang.com
     sni: apple.com
+    alpn: [h3]
+    request-timeout: 8000
+    udp-relay-mode: native
     skip-cert-verify: true
-    alpn:
-      - h3
-    protocol: udp
-    up: "50 Mbps"
-    down: "500 Mbps"
+    congestion-controller: bbr
   - name: cm2_1_IP3                
     type: vless
-    server: 195.154.200.13
+    server: 2001:bc8:32d7:181::4
     port: 17401
     uuid: add14a5b-f648-4423-8a1f-8b8f54c0daef
     network: tcp
@@ -75,17 +75,29 @@ proxies:
         up: 50
         down: 500
   - name: cm2_1_IP4                     
-    type: hysteria
-    server: 2001:bc8:32d7:402::3
-    port: 20001
-    auth-str: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true
-    alpn:
-      - h3
-    protocol: udp
-    up: "50 Mbps"
-    down: "500 Mbps"
+    type: vless
+    server: 2001:bc8:32d7:181::5
+    port: 17401
+    uuid: add14a5b-f648-4423-8a1f-8b8f54c0daef
+    network: tcp
+    udp: true
+    tls: true
+    flow: 
+    servername: itunes.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: IXcXrT_Y0ATTZlGOhPnSmKo-cuGr4yMKV9Rz4-nA3yU
+      short-id: 8ef4455ba637425b
+    smux:
+      enabled: true
+      protocol: h2mux
+      max-connections: 1
+      min-streams: 4
+      padding: true
+      brutal-opts:
+        enabled: true
+        up: 50
+        down: 500
   - name: cm2_1_IP5                     
     type: hysteria
     server: 2001:bc8:32d7:402::4
@@ -200,8 +212,8 @@ proxies:
 #  GL/ipp/h/2
   - name: h_2_IP
     type: hysteria
-    server: 98.142.247.21
-    port: 39228
+    server: 5.83.129.153
+    port: 20088
     auth-str: dongtaiwang.com
     sni: apple.com
     skip-cert-verify: true
@@ -225,7 +237,7 @@ proxies:
     down: "500 Mbps"
 #  GL/ipp/h/4
 #  GL/ipp/h2/1
-  - name: h2_1_IP
+  - name: h2_1_IP1
     type: hysteria2
     server: 157.254.223.43
     port: 27921
@@ -234,7 +246,16 @@ proxies:
     down: 500
     password: dongtaiwang.com
     sni: apple.com
-    skip-cert-verify: true 
+    skip-cert-verify: true
+  - name: h2_1_IP2
+    type: hysteria2
+    server: 89.144.35.34
+    port: 50022
+    up: 50          
+    down: 500
+    password: dongtaiwang.com
+    sni: apple.com
+    skip-cert-verify: true  
 #  GL/ipp/h2/2
   - name: h2_2_IP
     type: hysteria2
@@ -277,22 +298,6 @@ proxies:
     up: "55 Mbps"
     down: "550 Mbps" 
 #  GL/ipp/m/2
-#  GL/ipp/naiveproxy/1
-  - name: n_1_IP
-    type: http
-    server: us.193919.xyz
-    port: 44000
-    username: dongtaiwang.com
-    password: dongtaiwang.com
-    #tls: true
-    #skip-cert-verify: true  # 根据情况可选
-#  GL/ipp/naiveproxy/2
-  - name: n_2_IP
-    type: http
-    server: naive1.336892.xyz
-    port: 22338
-    username: dongtaiwang.com
-    password: dongtaiwang.com
 #  GL/ipp/q/1
 #  GL/ipp/q/2
   - name: q_2_IP               
@@ -480,47 +485,157 @@ proxies:
     #skip-cert-verify: true
     #udp: true
     # ip-version: ipv6    
-         
-  - {name: ip-US-2, server: 34.221.19.27, port: 50000, type: ss, cipher: aes-256-gcm, password: a9a37b54-e95a-4bc4-9637-7fd00a03dd2e, udp: true, tfo: true}
-
-  - {name: IP9-US-IDC, type: "anytls", server: "43.162.108.172", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
-  - {name: IP12-US-IDC, server: 0.b.q.e.4.q.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-  - {name: IP13-US-IDC, server: e.2.q.x.v.n.f.8.d.us01-ae5.entry.v51124-4.qpon, port: 20012, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-  - {name: IP14-US-IDC, server: e.2.q.x.v.n.f.8.d.us01-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-  - {name: IP15-US-IDC, server: v52ry8d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-  - {name: IP16-US-IDC, server: 4.c.q.k.v.n.b.8.d.us01-ae5.entry.v51124-4.qpon, port: 20012, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-  - {name: IP17-US-IDC, server: p.c.2.e.z.q.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-
-  - {name: "🇯🇵 JP-4 | Sub3", type: "anytls", server: "jpyxvm.ccwink.cc", port: 8048, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
-  - {name: JP-1, server: uthy3-g04.jp04-1d-vm0.entry.fr0528.art, port: 447, type: vmess, uuid: a5fa9c72-9693-3619-9673-7fb482baa9ee, alterId: 1, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: HK01, server: naqnz-g04.hk01-ae5.entry.v50708.dev, port: 19274, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-  - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.ccwink.cc", port: 30001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw1-vds14.anyhk.co", skip-cert-verify: true, up: null, down: null}
-  - {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.ccwink.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
-  - {name: "🇺🇸 US-1 | Sub3", type: "anytls", server: "43.162.108.172", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
 
   - {"name":"ss","type":"ss","server":"2a14:7584:d0a1::a","port":12345,"password":"alvin9999.com","cipher":"aes-256-gcm"}           
   - {"name":"ssr","type":"ssr","server":"ssr2.762988.xyz","port":33336,"password":"dongtaiwang.com","cipher":"chacha20-ietf","obfs":"tls1.2_ticket_auth","protocol":"auth_chain_a"}
   - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
   - {"name":"warp","type":"wireguard","server":"162.159.192.229","port":1010,"udp":true,"ip":"172.16.0.2","ipv6":"2606:4700:110:8040:e677:b446:ac05:a038","private-key":"ULALYURSXWaCTC2ydffFdr8uFepy7u7KwV1Rmn0ZbWU=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","dns":["1.1.1.1"],"mtu":1280,"remote-dns-resolve":true}
 
-  - {name: TW-DCBG-13, server: 36.141.116.62, port: 45690, type: ss, cipher: 2022-blake3-aes-128-gcm, password: NjVhMWE2YmVmNzg4MTcwMA==:MGY0MDExNDQtODJlMS00OA==, tfo: true}
   - {name: TW-DCBG-11, server: 114.37.211.12, port: 55326, type: anytls, password: 437bd464-b524-3812-ac02-85483bcf7407, skip-cert-verify: true, tfo: true}
   - {name: TW-DCBG-12, server: 111.243.121.219, port: 60101, type: vless, tls: true, uuid: 437bd464-b524-3812-ac02-85483bcf7407, servername: academy.nvidia.com, host: academy.nvidia.com, flow: xtls-rprx-vision, reality-opts: {public-key: uQgwZVJcw4Gf06rPfllYdyqp-ZH5xQ2BnRMxoSR8DT8, short-id: d69b618d}, client-fingerprint: random, skip-cert-verify: true, tfo: true}
-  - { name: 悦·🇺🇸美国1, server: yue-us.yuetoto.net, port: 21333, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: 64df5c9a-dda5-4c78-b7fd-e3b264b03d5a }
-  - { name: 悦·🇺🇸美国2, type: ss, server: yue-to-zz.yuetoto.net, port: 22012, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:NjRkZjVjOWEtZGRhNS00Yw==', udp: true }
-  - { name: 悦·🇺🇸美国专属1, type: ss, server: yue-to-premium.yuetoto.net, port: 28006, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:Yzg3OThjNjgtYmEyOC00YQ==', udp: true }
-  - { name: 悦·🇺🇸美国专属2, server: yue-us-premium.yuetoto.net, port: 21825, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
-  - { name: 悦·🇺🇸美国家宽1, server: yue-us-home.yuetoto.net, port: 21343, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: c8798c68-ba28-4acf-a768-ec2c41e3cdef }
-  - { name: 悦·🇺🇸美国家宽2, type: ss, server: yue-to-premium.yuetoto.net, port: 28012, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:ZDk5MmVhNTQtZDViNS00MA==', udp: true }
-  - { name: 悦·🇺🇸美国AI解锁1, type: ss, server: yue-to-premium.yuetoto.net, port: 28013, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:Yzg3OThjNjgtYmEyOC00YQ==', udp: true }
-  - { name: 悦·🇺🇸美国AI解锁2, server: yue-us-ai.yuetoto.net, port: 21064, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
- 
+         
+  - {name: ip-US-2, server: 34.221.19.27, port: 50000, type: ss, cipher: aes-256-gcm, password: a9a37b54-e95a-4bc4-9637-7fd00a03dd2e, udp: true, tfo: true}
+
+
+#ikuuu.org | ikuuu
+  - {name: JP01, server: uthy3-g04.jp04-1d-vm0.entry.fr0528.art, port: 447, type: vmess, uuid: a5fa9c72-9693-3619-9673-7fb482baa9ee, alterId: 1, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: HK01, server: naqnz-g04.hk01-ae5.entry.v50708.dev, port: 19274, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: IP12-US-IDC, server: 0.b.q.e.4.q.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: IP13-US-IDC, server: e.2.q.x.v.n.f.8.d.us01-ae5.entry.v51124-4.qpon, port: 20012, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: IP14-US-IDC, server: e.2.q.x.v.n.f.8.d.us01-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: IP15-US-IDC, server: v52ry8d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: IP16-US-IDC, server: 4.c.q.k.v.n.b.8.d.us01-ae5.entry.v51124-4.qpon, port: 20012, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: IP17-US-IDC, server: p.c.2.e.z.q.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: 🇭🇰 香港Z02 | IEPL, server: 0.2.q.e.v.l.f.8.d.hk02-ae5.entry.v51124-4.qpon, port: 14562, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: 🇭🇰 香港Z03 | IEPL, server: 4.c.g.x.v.l.f.8.d.hk03-ae5.entry.v51124-4.qpon, port: 762, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: 🇭🇰 香港Z04 | IEPL, server: 0.2.g.m.4.r.f.8.d.hk04-ae5.entry.v51124-4.qpon, port: 806, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: 🇭🇰 香港Z05 | IEPL, server: 4.c.2.k.z.q.d.8.d.hk05-ae5.entry.v51124-4.qpon, port: 1814, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: 🇭🇰 香港Z09 | IEPL, server: e.2.q.e.4.l.d.8.d.hk09-vm5.entry.v51124-4.qpon, port: 15267, type: vmess, uuid: 6c68aa27-3045-3195-a91d-60acda5504f2, alterId: 1, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: 🇯🇵 日本Z01 | IEPL, server: 4.b.q.x.z.r.f.8.d.jp01-ae5.entry.v51124-4.qpon, port: 475, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: 🇯🇵 日本Z02 | IEPL, server: 0.7.2.m.z.q.b.8.d.jp02-ae5.entry.v51124-4.qpon, port: 485, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: 🇯🇵 日本Z04 | IEPL, server: 0.2.2.m.4.l.f.8.d.jp04-ae5.entry.v51124-4.qpon, port: 495, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: 🇯🇵 日本Z07 | IEPL, server: 0.c.g.x.v.n.f.8.d.jp07-ae5.entry.v51124-4.qpon, port: 14007, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: 🇯🇵 日本Z08 | IEPL, server: 4.c.2.k.4.q.f.8.d.jp08-ae5.entry.v51124-4.qpon, port: 12545, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: 🇺🇲 美国Z01 | IEPL | x1.5, server: 0.b.g.x.z.q.d.8.d.us01-ae5.entry.v51124-4.qpon, port: 20012, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: 🇺🇲 美国Z02 | IEPL | x1.5, server: 4.b.q.e.v.l.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+#github-Vanic24-VPN | sub3
+  - {name: "🇭🇰 HK-10 | Sub3", type: "anytls", server: "43.161.240.193", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+  - {name: "🇯🇵 JP-4 | Sub3", type: "anytls", server: "jpyxvm.ccwink.cc", port: 8048, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+  - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.ccwink.cc", port: 30001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw1-vds14.anyhk.co", skip-cert-verify: true, up: null, down: null}
+  - {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.ccwink.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+  - {name: "🇺🇸 US-1 | Sub3", type: "anytls", server: "43.162.108.172", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+#Yue.to | 悦通
+  - { name: YT·🇺🇸美国1, server: yue-us.yuetoto.net, port: 21333, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: 64df5c9a-dda5-4c78-b7fd-e3b264b03d5a }
+  - { name: YT·🇺🇸美国2, type: ss, server: yue-to-zz.yuetoto.net, port: 22012, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:NjRkZjVjOWEtZGRhNS00Yw==', udp: true }
+  - { name: YT·🇺🇸美国专属1, type: ss, server: yue-to-premium.yuetoto.net, port: 28006, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:Yzg3OThjNjgtYmEyOC00YQ==', udp: true }
+  - { name: YT·🇺🇸美国专属2, server: yue-us-premium.yuetoto.net, port: 21825, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
+  - { name: YT·🇺🇸美国家宽3, server: yue-us-home.yuetoto.net, port: 21343, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: c8798c68-ba28-4acf-a768-ec2c41e3cdef }
+  - { name: YT·🇺🇸美国家宽4, type: ss, server: yue-to-premium.yuetoto.net, port: 28012, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:ZDk5MmVhNTQtZDViNS00MA==', udp: true }
+  - { name: YT·🇺🇸美国AI解锁1, type: ss, server: yue-to-premium.yuetoto.net, port: 28013, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:Yzg3OThjNjgtYmEyOC00YQ==', udp: true }
+  - { name: YT·🇺🇸美国AI解锁2, server: yue-us-ai.yuetoto.net, port: 21064, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
+  - { name: YT·🇺🇸美国家宽1, server: yue-us-home.yuetoto.net, port: 21553, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: c8798c68-ba28-4acf-a768-ec2c41e3cdef }
+  - { name: YT·🇺🇸美国家宽2, type: ss, server: yue-to-premium.yuetoto.net, port: 28012, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:Yzg3OThjNjgtYmEyOC00YQ==', udp: true }
+#mitce.net | mitce
+  -
+    name: JP-1
+    type: vless
+    server: jp1-r.link-t7.com
+    port: 10031
+    uuid: 08E885B5-C46B-4F42-9D84-430E8E5D9705
+    udp: true
+    packet-encoding: xudp
+    cipher: auto
+    client-fingerprint: chrome
+    tls: true
+    skip-cert-verify: false
+    servername: s0.awsstatic.com
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: 686c0ef0
+    network: grpc
+    grpc-opts:
+      grpc-service-name: update
+  -
+    name: JP-2
+    type: vless
+    server: jp2-r.link-t7.com
+    port: 10032
+    uuid: 08E885B5-C46B-4F42-9D84-430E8E5D9705
+    udp: true
+    packet-encoding: xudp
+    cipher: auto
+    client-fingerprint: chrome
+    tls: true
+    skip-cert-verify: false
+    servername: s0.awsstatic.com
+    reality-opts:
+      public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+      short-id: 686c0ef0
+    network: grpc
+    grpc-opts:
+      grpc-service-name: update
+      
+      
+      
+      
+  - name: US Massivegrid  
+    type: vless
+    server: 143.14.106.72
+    port: 11000
+    uuid: b54b80b2-29d4-42a2-b964-e496f9c73a3e
+    encryption: none
+    udp: true
+    skip-cert-verify: false
+    tfo: false
+    tls: true
+    reality-opts:
+      public-key: 4Tojt77RVb_RVtk6OjdzF_U2r-daJOD0NpEt1wTIxx4
+      short-id: 4d414b9afc71b937
+    servername: www.apple.com
+    client-fingerprint: random
+    network: tcp  
+  - name: "US HostPapa"
+    type: vless
+    server: 1.ysmpe.ggff.net
+    port: 30990
+    uuid: 507cabfb-046d-4964-90df-427baa8ec31d
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: www.microsoft.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: yA3gio7eymUkBjGMm1gGqRqE6UNoI2P2FWLQ8yRcRGY
+      short-id: c0cccbf151bf2a86
+
+  - name: "US EDCL"
+    type: vless
+    server: 2.ysmpe.ggff.net
+    port: 30986
+    uuid: 5701bf2f-d41d-4d48-a5ff-56e7e3d8de1e
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: www.microsoft.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: yA3gio7eymUkBjGMm1gGqRqE6UNoI2P2FWLQ8yRcRGY
+      short-id: c0cccbf151bf2a86
   - name: demo
-    server: 61.133.1.237
-    port: 48215
-    type: ss
-    cipher: aes-256-gcm
-    password: rQAXb32r0S3GMBvBJBGLYZSJfNagsZ6ZcGC7TDVEbtU=
+    type: vless
+    server: 64.186.224.103
+    port: 63024
+    uuid: 7fe67213-dfc7-476b-b39e-cd1e34e4605c
+    network: tcp
+    tls: true
+    udp: true
+    servername: www.oracle.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 3YacactEqVhZkUaYsjk9ii7gZNPihrhucHb6TfPbqVg
+      short-id: 7bdbd2a8673379d6
   
 proxy-groups:
   - name: 🔰 节点选择
@@ -529,7 +644,14 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - DL
+      - HK聚合
+      - JP聚合
+      - TW聚合
+      - US聚合                     
       - demo
+      - US Massivegrid
+      - US EDCL
+      - US HostPapa
       - cm2_1_IP1
       - cm2_1_IP2
       - cm2_1_IP3
@@ -543,13 +665,12 @@ proxy-groups:
       - h_1_IP
       - h_2_IP
       - h_3_IP
-      - h2_1_IP
+      - h2_1_IP1
+      - h2_1_IP2
       - h2_2_IP
       - h2_3_IP
       - h2_4_IP
       - m_1_IP
-      - n_1_IP
-      - n_2_IP
       - q_2_IP
       - q_4_IP
       - s_1_IP
@@ -563,7 +684,6 @@ proxy-groups:
       - trojan
       - "IP1666"
       - ip-US-2 
-      - IP9-US-IDC
       - IP12-US-IDC
       - IP13-US-IDC
       - IP14-US-IDC
@@ -572,21 +692,20 @@ proxy-groups:
       - IP17-US-IDC
       - TW-DCBG-11
       - TW-DCBG-12
-      - TW-DCBG-13
       - JP-1
       - 🇯🇵 JP-4 | Sub3
       - HK01
       - "🇹🇼 TW-1 | Sub3"
       - "🇹🇼 TW-2 | Sub3"
       - "🇺🇸 US-1 | Sub3"
-      - 悦·🇺🇸美国1
-      - 悦·🇺🇸美国2
-      - 悦·🇺🇸美国专属1      
-      - 悦·🇺🇸美国专属2      
-      - 悦·🇺🇸美国家宽1      
-      - 悦·🇺🇸美国家宽2
-      - 悦·🇺🇸美国AI解锁1
-      - 悦·🇺🇸美国AI解锁2
+      - YT·🇺🇸美国1
+      - YT·🇺🇸美国2
+      - YT·🇺🇸美国专属1      
+      - YT·🇺🇸美国专属2      
+      - YT·🇺🇸美国家宽1      
+      - YT·🇺🇸美国家宽2
+      - YT·🇺🇸美国AI解锁1
+      - YT·🇺🇸美国AI解锁2
       - "ss"
       - "ssr"
       - cfvless
@@ -609,13 +728,12 @@ proxy-groups:
       - h_1_IP
       - h_2_IP
       - h_3_IP
-      - h2_1_IP
+      - h2_1_IP1
+      - h2_1_IP2
       - h2_2_IP
       - h2_3_IP
       - h2_4_IP
       - m_1_IP
-      - n_1_IP
-      - n_2_IP
       - q_2_IP
       - q_4_IP
       - s_1_IP
@@ -627,7 +745,6 @@ proxy-groups:
       - "http"
       - "vless"
       - ip-US-2 
-      - IP9-US-IDC
       - IP12-US-IDC
       - IP13-US-IDC
       - IP14-US-IDC
@@ -643,7 +760,6 @@ proxy-groups:
       - "warp" 
       - TW-DCBG-11
       - TW-DCBG-12
-      - TW-DCBG-13
   - name: DL
     type: select
     url: 'http://www.gstatic.com/generate_204'
@@ -653,7 +769,6 @@ proxy-groups:
       - HK01      
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
-      - IP9-US-IDC
       - IP12-US-IDC
       - IP13-US-IDC
       - IP14-US-IDC
@@ -663,9 +778,38 @@ proxy-groups:
       - q_4_IP
       - IP001
       - IP003
+  - name: HK聚合
+    type: url-test
+    url: 'http://www.youtube.com/generate_204'
+    interval: 300
+    tolerance: 100
+    proxies:      
+      - 🇭🇰 香港Z02 | IEPL
+      - 🇭🇰 香港Z03 | IEPL
+      - 🇭🇰 香港Z04 | IEPL
+      - 🇭🇰 香港Z05 | IEPL
+      - 🇭🇰 香港Z09 | IEPL 
+      - 🇭🇰 HK-10 | Sub3
+  - name: JP聚合
+    type: url-test
+    url: 'http://www.youtube.com/generate_204'
+    interval: 300
+    tolerance: 75
+    proxies:      
+      - 🇯🇵 日本Z01 | IEPL
+      - 🇯🇵 日本Z02 | IEPL
+      - 🇯🇵 日本Z04 | IEPL
+      - 🇯🇵 日本Z07 | IEPL
+      - 🇯🇵 日本Z08 | IEPL
+      - 🇯🇵 JP-4 | Sub3
+      - JP01
+      - JP-1
+      - JP-2
   - name: TW聚合
-    type: select
-    url: 'http://www.gstatic.com/generate_204'
+    type: url-test
+    url: 'http://www.youtube.com/generate_204'
+    interval: 300
+    tolerance: 100
     proxies:      
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
@@ -675,26 +819,29 @@ proxy-groups:
       - TW-DCBG-11
       - TW-DCBG-12
   - name: US聚合
-    type: select
-    url: 'http://www.gstatic.com/generate_204'
+    type: url-test
+    url: 'http://www.youtube.com/generate_204'
+    interval: 300
+    tolerance: 100
     proxies:  
       - IP1666   
       - 🇺🇸 US-1 | Sub3  
-      - IP9-US-IDC
       - IP12-US-IDC
       - IP13-US-IDC
       - IP14-US-IDC
       - IP15-US-IDC
       - IP16-US-IDC
       - IP17-US-IDC 
-      - 悦·🇺🇸美国1
-      - 悦·🇺🇸美国2
-      - 悦·🇺🇸美国专属1      
-      - 悦·🇺🇸美国专属2      
-      - 悦·🇺🇸美国家宽1      
-      - 悦·🇺🇸美国家宽2
-      - 悦·🇺🇸美国AI解锁1
-      - 悦·🇺🇸美国AI解锁2    
+      - 🇺🇲 美国Z01 | IEPL | x1.5
+      - 🇺🇲 美国Z02 | IEPL | x1.5
+      - YT·🇺🇸美国1
+      - YT·🇺🇸美国2
+      - YT·🇺🇸美国专属1      
+      - YT·🇺🇸美国专属2      
+      - YT·🇺🇸美国家宽1      
+      - YT·🇺🇸美国家宽2
+      - YT·🇺🇸美国AI解锁1
+      - YT·🇺🇸美国AI解锁2    
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -702,6 +849,10 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - DL
+      - HK聚合
+      - JP聚合
+      - TW聚合
+      - US聚合
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -725,13 +876,12 @@ proxy-groups:
       - h_1_IP
       - h_2_IP
       - h_3_IP
-      - h2_1_IP
+      - h2_1_IP1
+      - h2_1_IP2
       - h2_2_IP
       - h2_3_IP
       - h2_4_IP
       - m_1_IP
-      - n_1_IP
-      - n_2_IP
       - q_2_IP
       - q_4_IP
       - s_1_IP
@@ -743,7 +893,6 @@ proxy-groups:
       - "http"
       - "vless"
       - ip-US-2 
-      - IP9-US-IDC
       - IP12-US-IDC
       - IP13-US-IDC
       - IP14-US-IDC
