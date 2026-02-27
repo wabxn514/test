@@ -298,6 +298,15 @@ proxies:
     up: "55 Mbps"
     down: "550 Mbps" 
 #  GL/ipp/m/2
+  - name: m_2_IP
+    type: mieru
+    server: 151.242.183.49
+    port: 11000
+    transport: TCP
+    username: dongtaiwang.com
+    password: dongtaiwang.com 
+    up: "55 Mbps"
+    down: "550 Mbps" 
 #  GL/ipp/q/1
 #  GL/ipp/q/2
   - name: q_2_IP               
@@ -313,6 +322,20 @@ proxies:
     up: "50 Mbps"
     down: "500 Mbps"
 #  GL/ipp/q/3
+  - name: q_3_IP                     
+    type: anytls
+    server: 151.242.183.75
+    port: 33333
+    password: dongtaiwang.com
+    client-fingerprint: chrome
+    udp: true
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    min-idle-session: 0
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true
 #  GL/ipp/q/4
   - name: q_4_IP                     
     type: anytls
@@ -491,10 +514,164 @@ proxies:
   - {name: cfvless, server: 104.17.0.66, port: 80, client-fingerprint: random, type: vless, uuid: d8490c1c-062c-4a33-9785-4fe07dbacbcb, tls: false, tfo: false, servername: cfvless.wabxn514.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: cfvless.wabxn514.workers.dev}}, udp: true}
   - {"name":"warp","type":"wireguard","server":"162.159.192.229","port":1010,"udp":true,"ip":"172.16.0.2","ipv6":"2606:4700:110:8040:e677:b446:ac05:a038","private-key":"ULALYURSXWaCTC2ydffFdr8uFepy7u7KwV1Rmn0ZbWU=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","dns":["1.1.1.1"],"mtu":1280,"remote-dns-resolve":true}
 
-  - {name: TW-DCBG-11, server: 114.37.211.12, port: 55326, type: anytls, password: 437bd464-b524-3812-ac02-85483bcf7407, skip-cert-verify: true, tfo: true}
-  - {name: TW-DCBG-12, server: 111.243.121.219, port: 60101, type: vless, tls: true, uuid: 437bd464-b524-3812-ac02-85483bcf7407, servername: academy.nvidia.com, host: academy.nvidia.com, flow: xtls-rprx-vision, reality-opts: {public-key: uQgwZVJcw4Gf06rPfllYdyqp-ZH5xQ2BnRMxoSR8DT8, short-id: d69b618d}, client-fingerprint: random, skip-cert-verify: true, tfo: true}
-         
+       
   - {name: ip-US-2, server: 34.221.19.27, port: 50000, type: ss, cipher: aes-256-gcm, password: a9a37b54-e95a-4bc4-9637-7fd00a03dd2e, udp: true, tfo: true}
+  - name: temp1
+    type: hysteria2
+    server: 104.156.140.113
+    port: 52013
+    password: f1f47c9b-d065-409f-a5b5-e2f1f62d85bf
+    sni: files.xjqxz.top
+    skip-cert-verify: true
+    ports: '52013-62013'  # 对应原链接中的 mport 端口跳跃
+
+  - name: temp2
+    type: hysteria2
+    server: 142.171.44.180
+    port: 52013
+    password: f1f47c9b-d065-409f-a5b5-e2f1f62d85bf
+    sni: files.xjqxz.top
+    skip-cert-verify: true
+    ports: '52013-62013'
+
+  - name: temp3
+    type: ss
+    server: iepl.huli168.com
+    port: 19822
+    cipher: aes-256-gcm
+    password: g4JtpkuxkwRH4jhj
+    
+  - name: temp4
+    type: vless
+    server: 143.14.106.72
+    port: 11000
+    uuid: b54b80b2-29d4-42a2-b964-e496f9c73a3e
+    encryption: none
+    udp: true
+    skip-cert-verify: false
+    tfo: false
+    tls: true
+    reality-opts:
+      public-key: 4Tojt77RVb_RVtk6OjdzF_U2r-daJOD0NpEt1wTIxx4
+      short-id: 4d414b9afc71b937
+    servername: www.apple.com
+    client-fingerprint: random
+    network: tcp  
+
+  - name: temp5
+    type: vless
+    server: 64.186.224.103
+    port: 63024
+    uuid: 7fe67213-dfc7-476b-b39e-cd1e34e4605c
+    network: tcp
+    tls: true
+    udp: true
+    servername: www.oracle.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 3YacactEqVhZkUaYsjk9ii7gZNPihrhucHb6TfPbqVg
+      short-id: 7bdbd2a8673379d6
+
+  - name: temp6
+    type: ss
+    server: 47.242.138.224
+    port: 11111
+    cipher: aes-256-gcm
+    password: "iGR2hlgy2k"
+    udp: true
+
+  - name: "temp7"
+    type: hysteria2
+    server: sg.525168.xyz
+    port: 30038
+    password: 82c53f7b-967a-4c5a-8a59-e5d773bd8f94
+    sni: sg.525168.xyz
+    alpn:
+      - h3
+
+  - name: "temp8"
+    type: vless
+    server: 185.37.255.38
+    port: 19002
+    uuid: b24896b9-65a9-401b-be6d-c905fba82a78
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: addons.mozilla.org
+    reality-opts:
+      public-key: RLMvZ5xT_yrTr70qR0KVSWS5vU289XgRB-8STws45DA
+      # 链接中未提供 short-id (sid)，若服务端无强制要求，可忽略此字段
+
+  - name: "temp9"
+    type: vless
+    server: sg.banana.dns-dynamic.net
+    port: 443
+    uuid: 95a8fcea-455f-4a3b-ac12-329ecfef7002
+    network: ws
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: sg.banana.dns-dynamic.net
+    ws-opts:
+      path: "/xhgnws"
+      headers:
+        Host: sg.banana.dns-dynamic.net
+
+  - name: "temp10"
+    type: vless
+    server: 104.18.44.182
+    port: 443
+    uuid: 22620697-6fba-4b71-a348-0cef2f7bec1e
+    network: ws
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: do88.cmddo.ggff.net
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: do88.cmddo.ggff.net
+
+  - name: "temp11"
+    type: vless
+    server: ip3.xianjin.ltd
+    port: 443
+    uuid: d2fe1afc-6f63-4654-804b-c1285812aac4
+    network: ws
+    udp: true
+    tls: true
+    servername: sg.xianjin.ltd
+    ws-opts:
+      path: "/wang-vl?ed=2560"
+      headers:
+        Host: sg.xianjin.ltd
+
+  - name: "temp12"
+    type: hysteria2
+    server: 158.178.247.207
+    port: 47645
+    password: 33e8d651-b550-4676-aa0d-b3255eab6ba5
+    sni: www.bing.com
+    skip-cert-verify: true
+    alpn:
+      - h3
+
+  - name: "temp13"
+    type: vless
+    server: ip4.xianjin.ltd
+    port: 443
+    uuid: d2fe1afc-6f63-4654-804b-c1285812aac4
+    network: ws
+    udp: true
+    tls: true
+    servername: sg.xianjin.ltd
+    ws-opts:
+      path: "/wang-vl?ed=2560"
+      headers:
+        Host: sg.xianjin.ltd
+
+
 
 
 #ikuuu.org | ikuuu
@@ -574,68 +751,6 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: update
-      
-      
-      
-      
-  - name: US Massivegrid  
-    type: vless
-    server: 143.14.106.72
-    port: 11000
-    uuid: b54b80b2-29d4-42a2-b964-e496f9c73a3e
-    encryption: none
-    udp: true
-    skip-cert-verify: false
-    tfo: false
-    tls: true
-    reality-opts:
-      public-key: 4Tojt77RVb_RVtk6OjdzF_U2r-daJOD0NpEt1wTIxx4
-      short-id: 4d414b9afc71b937
-    servername: www.apple.com
-    client-fingerprint: random
-    network: tcp  
-  - name: "US HostPapa"
-    type: vless
-    server: 1.ysmpe.ggff.net
-    port: 30990
-    uuid: 507cabfb-046d-4964-90df-427baa8ec31d
-    network: tcp
-    tls: true
-    udp: true
-    flow: xtls-rprx-vision
-    servername: www.microsoft.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: yA3gio7eymUkBjGMm1gGqRqE6UNoI2P2FWLQ8yRcRGY
-      short-id: c0cccbf151bf2a86
-
-  - name: "US EDCL"
-    type: vless
-    server: 2.ysmpe.ggff.net
-    port: 30986
-    uuid: 5701bf2f-d41d-4d48-a5ff-56e7e3d8de1e
-    network: tcp
-    tls: true
-    udp: true
-    flow: xtls-rprx-vision
-    servername: www.microsoft.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: yA3gio7eymUkBjGMm1gGqRqE6UNoI2P2FWLQ8yRcRGY
-      short-id: c0cccbf151bf2a86
-  - name: demo
-    type: vless
-    server: 64.186.224.103
-    port: 63024
-    uuid: 7fe67213-dfc7-476b-b39e-cd1e34e4605c
-    network: tcp
-    tls: true
-    udp: true
-    servername: www.oracle.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 3YacactEqVhZkUaYsjk9ii7gZNPihrhucHb6TfPbqVg
-      short-id: 7bdbd2a8673379d6
   
 proxy-groups:
   - name: 🔰 节点选择
@@ -647,11 +762,9 @@ proxy-groups:
       - HK聚合
       - JP聚合
       - TW聚合
-      - US聚合                     
-      - demo
-      - US Massivegrid
-      - US EDCL
-      - US HostPapa
+      - US聚合 
+      - 本土势力
+      - 外来势力                    
       - cm2_1_IP1
       - cm2_1_IP2
       - cm2_1_IP3
@@ -671,7 +784,9 @@ proxy-groups:
       - h2_3_IP
       - h2_4_IP
       - m_1_IP
+      - m_2_IP
       - q_2_IP
+      - q_3_IP
       - q_4_IP
       - s_1_IP
       - s_2_IP
@@ -679,9 +794,6 @@ proxy-groups:
       - IP002
       - IP003
       - IP004_v2ray2
-      - "http"
-      - "vless"
-      - trojan
       - "IP1666"
       - ip-US-2 
       - IP12-US-IDC
@@ -690,11 +802,22 @@ proxy-groups:
       - IP15-US-IDC
       - IP16-US-IDC
       - IP17-US-IDC
-      - TW-DCBG-11
-      - TW-DCBG-12
-      - JP-1
-      - 🇯🇵 JP-4 | Sub3
       - HK01
+      - JP01
+      - 🇭🇰 香港Z02 | IEPL      
+      - 🇭🇰 香港Z03 | IEPL
+      - 🇭🇰 香港Z04 | IEPL
+      - 🇭🇰 香港Z05 | IEPL
+      - 🇭🇰 香港Z09 | IEPL
+      - 🇯🇵 日本Z01 | IEPL
+      - 🇯🇵 日本Z02 | IEPL
+      - 🇯🇵 日本Z04 | IEPL
+      - 🇯🇵 日本Z07 | IEPL
+      - 🇯🇵 日本Z08 | IEPL
+      - JP-1
+      - JP-2
+      - 🇭🇰 HK-10 | Sub3
+      - 🇯🇵 JP-4 | Sub3
       - "🇹🇼 TW-1 | Sub3"
       - "🇹🇼 TW-2 | Sub3"
       - "🇺🇸 US-1 | Sub3"
@@ -709,7 +832,107 @@ proxy-groups:
       - "ss"
       - "ssr"
       - cfvless
-      - "warp"    
+      - "warp"
+      - "http"
+      - "vless"
+      - trojan
+      - temp1
+      - temp2
+      - temp3
+      - temp4
+      - temp5
+      - temp6
+  - name: 本土势力
+    type: select
+    url: 'http://www.gstatic.com/generate_204'
+    proxies:  
+      - cm2_1_IP1
+      - cm2_1_IP2
+      - cm2_1_IP3
+      - cm2_1_IP4
+      - cm2_1_IP5
+      - cm2_2_IP1
+      - cm2_3_IP1
+      - cm2_3_IP2
+      - cm2_4_IP
+      - cm2_5_IP
+      - h_1_IP
+      - h_2_IP
+      - h_3_IP
+      - h2_1_IP1
+      - h2_1_IP2
+      - h2_2_IP
+      - h2_3_IP
+      - h2_4_IP
+      - m_1_IP
+      - m_2_IP
+      - q_2_IP
+      - q_3_IP
+      - q_4_IP
+      - s_1_IP
+      - s_2_IP
+      - IP001
+      - IP002
+      - IP003
+      - IP004_v2ray2
+      - "ss"
+      - "ssr"
+      - cfvless
+      - "warp"
+      - "http"
+      - "vless"
+      - trojan
+  - name: 外来势力
+    type: select
+    url: 'http://www.gstatic.com/generate_204'
+    proxies:      
+      - ip-US-2 
+      - IP12-US-IDC
+      - IP13-US-IDC
+      - IP14-US-IDC
+      - IP15-US-IDC
+      - IP16-US-IDC
+      - IP17-US-IDC
+      - HK01
+      - JP01
+      - 🇭🇰 香港Z02 | IEPL      
+      - 🇭🇰 香港Z03 | IEPL
+      - 🇭🇰 香港Z04 | IEPL
+      - 🇭🇰 香港Z05 | IEPL
+      - 🇭🇰 香港Z09 | IEPL
+      - 🇯🇵 日本Z01 | IEPL
+      - 🇯🇵 日本Z02 | IEPL
+      - 🇯🇵 日本Z04 | IEPL
+      - 🇯🇵 日本Z07 | IEPL
+      - 🇯🇵 日本Z08 | IEPL
+      - JP-1
+      - JP-2
+      - 🇭🇰 HK-10 | Sub3
+      - 🇯🇵 JP-4 | Sub3
+      - "🇹🇼 TW-1 | Sub3"
+      - "🇹🇼 TW-2 | Sub3"
+      - "🇺🇸 US-1 | Sub3"
+      - YT·🇺🇸美国1
+      - YT·🇺🇸美国2
+      - YT·🇺🇸美国专属1      
+      - YT·🇺🇸美国专属2      
+      - YT·🇺🇸美国家宽1      
+      - YT·🇺🇸美国家宽2
+      - YT·🇺🇸美国AI解锁1
+      - YT·🇺🇸美国AI解锁2
+      - temp1
+      - temp2
+      - temp3
+      - temp4
+      - temp5
+      - temp6
+      - temp7
+      - temp8
+      - temp9
+      - temp10
+      - temp11
+      - temp12
+      - temp13
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -734,7 +957,9 @@ proxy-groups:
       - h2_3_IP
       - h2_4_IP
       - m_1_IP
+      - m_2_IP
       - q_2_IP
+      - q_3_IP
       - q_4_IP
       - s_1_IP
       - s_2_IP
@@ -758,8 +983,8 @@ proxy-groups:
       - "ssr"
       - cfvless
       - "warp" 
-      - TW-DCBG-11
-      - TW-DCBG-12
+      - temp1
+      - temp2
   - name: DL
     type: select
     url: 'http://www.gstatic.com/generate_204'
@@ -816,8 +1041,8 @@ proxy-groups:
       - q_4_IP
       - IP001
       - IP003    
-      - TW-DCBG-11
-      - TW-DCBG-12
+      - temp1
+      - temp2
   - name: US聚合
     type: url-test
     url: 'http://www.youtube.com/generate_204'
@@ -853,6 +1078,8 @@ proxy-groups:
       - JP聚合
       - TW聚合
       - US聚合
+      - 本土势力
+      - 外来势力  
   - name: 🌏 国内媒体
     type: select
     proxies:
