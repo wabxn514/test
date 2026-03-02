@@ -1,8 +1,9 @@
 proxies:
-- {name: "🇭🇰 HK-10 | Sub3", type: "anytls", server: "43.161.240.193", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
-- {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.ccwink.cc", port: 30102, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw.ccwink.cc", skip-cert-verify: true, up: null, down: null}
-- {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.ccwink.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
-- {name: "🇯🇵 JP-5 | Sub3", type: "anytls", server: "47.245.5.125", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
-- {name: "🇸🇬 SG-2 | Sub3", type: "anytls", server: "ocisg.ccwink.cc", port: 56311, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
-- {name: "🇰🇷 KR-2 | Sub3", type: "anytls", server: "kr.ccwink.cc", port: 32455, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
-- {name: "🇺🇸 US-2 | Sub3", type: "anytls", server: "43.162.108.172", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "HK-10", type: "anytls", server: "43.161.240.193", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "TW-1", type: "hysteria2", server: "tw.ccwink.cc", port: 30102, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw.ccwink.cc", skip-cert-verify: true, up: null, down: null}
+- {name: "TW-2", type: "anytls", server: "tw.ccwink.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "JP-5", type: "anytls", server: "47.245.5.125", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "SG-2", type: "anytls", server: "ocisg.ccwink.cc", port: 56311, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "KR-2", type: "anytls", server: "kr.ccwink.cc", port: 32455, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+
+- {name: "US-2", type: "anytls", server: "43.162.108.172", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
