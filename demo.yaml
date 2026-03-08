@@ -517,22 +517,25 @@ proxies:
        
   - {name: ip-US-2, server: 34.221.19.27, port: 50000, type: ss, cipher: aes-256-gcm, password: a9a37b54-e95a-4bc4-9637-7fd00a03dd2e, udp: true, tfo: true}
   - name: temp1
+    server: jp82.o5o5o.top
+    port: 8080
+    udp: true
+    skip-cert-verify: false
+    sni: us80.o5o5o.top
     type: hysteria2
-    server: 104.156.140.113
-    port: 52013
-    password: f1f47c9b-d065-409f-a5b5-e2f1f62d85bf
-    sni: files.xjqxz.top
-    skip-cert-verify: true
-    ports: '52013-62013'  # 对应原链接中的 mport 端口跳跃
-
+    password: 969b0364-2a66-4a20-bd92-c0f16793dc75
+      
   - name: temp2
-    type: hysteria2
-    server: 142.171.44.180
-    port: 52013
-    password: f1f47c9b-d065-409f-a5b5-e2f1f62d85bf
-    sni: files.xjqxz.top
-    skip-cert-verify: true
-    ports: '52013-62013'
+    type: ss
+    server: 60.249.35.59
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: "TGmyFreeNodeChat.7677822:21669"
+    udp: true
 
   - name: temp3
     type: ss
@@ -559,49 +562,36 @@ proxies:
     network: tcp  
 
   - name: temp5
-    type: vless
-    server: 64.186.224.103
-    port: 63024
-    uuid: 7fe67213-dfc7-476b-b39e-cd1e34e4605c
-    network: tcp
-    tls: true
-    udp: true
-    servername: www.oracle.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 3YacactEqVhZkUaYsjk9ii7gZNPihrhucHb6TfPbqVg
-      short-id: 7bdbd2a8673379d6
-
-  - name: temp6
     type: ss
-    server: 47.242.138.224
-    port: 11111
-    cipher: aes-256-gcm
-    password: "iGR2hlgy2k"
+    server: dafeizhu.whtjdasha.com
+    port: 32207
+    cipher: 2022-blake3-aes-128-gcm
+    password: "NjVhMWE2YmVmNzg4MTcwMA==:YzFmMWJkZWItZjhiNC00NQ=="
+    udp: true
+
+  - name: "temp6"
+    type: ss
+    server: xiaofeizhu.idsduf.com
+    port: 40017
+    cipher: 2022-blake3-aes-128-gcm
+    password: "NjVhMWE2YmVmNzg4MTcwMA==:YzFmMWJkZWItZjhiNC00NQ=="
     udp: true
 
   - name: "temp7"
-    type: hysteria2
-    server: sg.525168.xyz
-    port: 30038
-    password: 82c53f7b-967a-4c5a-8a59-e5d773bd8f94
-    sni: sg.525168.xyz
-    alpn:
-      - h3
+    type: ss
+    server: dafeizhu.whtjdasha.com
+    port: 45690
+    cipher: 2022-blake3-aes-128-gcm
+    password: "NjVhMWE2YmVmNzg4MTcwMA==:YzFmMWJkZWItZjhiNC00NQ=="
+    udp: true
 
   - name: "temp8"
-    type: vless
-    server: 185.37.255.38
-    port: 19002
-    uuid: b24896b9-65a9-401b-be6d-c905fba82a78
-    network: tcp
+    type: ss
+    server: xiaofeizhu.idsduf.com
+    port: 45691
+    cipher: 2022-blake3-aes-128-gcm
+    password: "NjVhMWE2YmVmNzg4MTcwMA==:YzFmMWJkZWItZjhiNC00NQ=="
     udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: addons.mozilla.org
-    reality-opts:
-      public-key: RLMvZ5xT_yrTr70qR0KVSWS5vU289XgRB-8STws45DA
-      # 链接中未提供 short-id (sid)，若服务端无强制要求，可忽略此字段
 
   - name: "temp9"
     type: vless
@@ -984,7 +974,17 @@ proxy-groups:
       - cfvless
       - "warp" 
       - temp1
-      - temp2
+      - temp2      
+  - name: Gemini
+    type: select
+    url: 'http://www.youtube.com/generate_204'
+    proxies:
+      - 🔰 节点选择      
+      - HK聚合
+      - TW聚合
+      - JP聚合
+      - US聚合
+      - DL            
   - name: DL
     type: select
     url: 'http://www.gstatic.com/generate_204'
@@ -1003,6 +1003,15 @@ proxy-groups:
       - q_4_IP
       - IP001
       - IP003
+      - 🇯🇵 JP-4 | Sub3
+      - YT·🇺🇸美国1
+      - YT·🇺🇸美国2
+      - YT·🇺🇸美国专属1      
+      - YT·🇺🇸美国专属2      
+      - YT·🇺🇸美国家宽1      
+      - YT·🇺🇸美国家宽2
+      - YT·🇺🇸美国AI解锁1
+      - YT·🇺🇸美国AI解锁2        
   - name: HK聚合
     type: url-test
     url: 'http://www.youtube.com/generate_204'
@@ -1049,6 +1058,7 @@ proxy-groups:
     interval: 300
     tolerance: 100
     proxies:  
+#      - 🇹🇼 TW-2 | Sub3
       - IP1666   
       - 🇺🇸 US-1 | Sub3  
       - IP12-US-IDC
@@ -1059,14 +1069,14 @@ proxy-groups:
       - IP17-US-IDC 
       - 🇺🇲 美国Z01 | IEPL | x1.5
       - 🇺🇲 美国Z02 | IEPL | x1.5
-      - YT·🇺🇸美国1
-      - YT·🇺🇸美国2
-      - YT·🇺🇸美国专属1      
-      - YT·🇺🇸美国专属2      
-      - YT·🇺🇸美国家宽1      
-      - YT·🇺🇸美国家宽2
-      - YT·🇺🇸美国AI解锁1
-      - YT·🇺🇸美国AI解锁2    
+#      - YT·🇺🇸美国1
+#      - YT·🇺🇸美国2
+#      - YT·🇺🇸美国专属1      
+#      - YT·🇺🇸美国专属2      
+#      - YT·🇺🇸美国家宽1      
+#      - YT·🇺🇸美国家宽2
+#      - YT·🇺🇸美国AI解锁1
+#      - YT·🇺🇸美国AI解锁2    
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -1250,16 +1260,16 @@ rules:
  - DOMAIN,bdtj.tagtic.cn,🎯 全球直连                                                                                                                                
  - DOMAIN,log.mmstat.com,🎯 全球直连                                                                                                                                
  - DOMAIN,sycm.mmstat.com,🎯 全球直连                                                                                                                               
- - DOMAIN-SUFFIX,blog.google,🔰 节点选择                                                                                                                           
- - DOMAIN-SUFFIX,googletraveladservices.com,🔰 节点选择                                                                                                            
- - DOMAIN,clientservices.googleapis.com,🔰 节点选择                                                                                                                  
- - DOMAIN,safebrowsing.googleapis.com,🔰 节点选择                                                                                                            
- - DOMAIN,dl.google.com,🔰 节点选择                                                                                                                                 
- - DOMAIN,dl.l.google.com,🔰 节点选择                                                                                                                           
- - DOMAIN,update.googleapis.com,🔰 节点选择                                                                                                                          
- - DOMAIN,fonts.googleapis.com,🔰 节点选择                                                                                                                          
- - DOMAIN,fonts.gstatic.com,🔰 节点选择                                                                                                                           
- - DOMAIN,mtalk.google.com,🔰 节点选择                                                                                                                                
+# - DOMAIN-SUFFIX,blog.google,🔰 节点选择                                                                                                                           
+# - DOMAIN-SUFFIX,googletraveladservices.com,🔰 节点选择                                                                                                            
+# - DOMAIN,clientservices.googleapis.com,🔰 节点选择                                                                                                                  
+# - DOMAIN,safebrowsing.googleapis.com,🔰 节点选择                                                                                                            
+# - DOMAIN,dl.google.com,🔰 节点选择                                                                                                                                 
+# - DOMAIN,dl.l.google.com,🔰 节点选择                                                                                                                           
+# - DOMAIN,update.googleapis.com,🔰 节点选择                                                                                                                          
+# - DOMAIN,fonts.googleapis.com,🔰 节点选择                                                                                                                          
+# - DOMAIN,fonts.gstatic.com,🔰 节点选择                                                                                                                           
+# - DOMAIN,mtalk.google.com,🔰 节点选择                                                                                                                                
 # - DOMAIN,alt1-mtalk.google.com,🎯 全球直连                                                                                                                         
 # - DOMAIN,alt2-mtalk.google.com,🎯 全球直连                                                                                                                         
 # - DOMAIN,alt3-mtalk.google.com,🎯 全球直连                                                                                                                         
@@ -1267,7 +1277,12 @@ rules:
 # - DOMAIN,alt5-mtalk.google.com,🎯 全球直连                                                                                                                         
 # - DOMAIN,alt6-mtalk.google.com,🎯 全球直连                                                                                                                         
 # - DOMAIN,alt7-mtalk.google.com,🎯 全球直连                                                                                                                         
-# - DOMAIN,alt8-mtalk.google.com,🎯 全球直连                                                                                                                         
+# - DOMAIN,alt8-mtalk.google.com,🎯 全球直连
+ - DOMAIN-SUFFIX,google.com,Gemini
+ - DOMAIN-SUFFIX,googleapis.com,Gemini
+ - DOMAIN-SUFFIX,gstatic.com,Gemini
+ - DOMAIN-SUFFIX,googleusercontent.com,Gemini    
+ - DOMAIN-SUFFIX,googletagmanager.com,Gemini                                                                                                            
  - DOMAIN,pubads.g.doubleclick.net,🔰 节点选择                                                                                                                       
  - DOMAIN,fairplay.l.qq.com,🎯 全球直连                                                                                                                             
  - DOMAIN,livew.l.qq.com,🎯 全球直连                                                                                                                                
@@ -2925,7 +2940,7 @@ rules:
  - DOMAIN-SUFFIX,mi.com,🎯 全球直连 
  - DOMAIN-SUFFIX,ai.google.dev,DL
  - DOMAIN-SUFFIX,makersuite.google.com,🐟 漏网之鱼 
- - DOMAIN-SUFFIX,gemini.google.com,DL
+ - DOMAIN-SUFFIX,gemini.google.com,Gemini
  - DOMAIN-KEYWORD,google,🔰 节点选择
  - DOMAIN-SUFFIX,x.com,🔰 节点选择       
  - DOMAIN-SUFFIX,passport-glb.lenovo.com,🎯 全球直连 
@@ -2934,6 +2949,7 @@ rules:
  - DOMAIN-SUFFIX,1fichier.com,🎯 全球直连  
  - DOMAIN-SUFFIX,jb51.net,🎯 全球直连  
  - DOMAIN-SUFFIX,ccc.msi.com,🎯 全球直连 
+ - DOMAIN-SUFFIX,speedtest.net,🎯 全球直连
  - DOMAIN-SUFFIX,claude.ai,DL
  - DOMAIN-SUFFIX,chatgpt.com,DL
  - DOMAIN-SUFFIX,cloudfront.net,DL
