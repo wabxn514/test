@@ -517,13 +517,19 @@ proxies:
        
   - {name: ip-US-2, server: 34.221.19.27, port: 50000, type: ss, cipher: aes-256-gcm, password: a9a37b54-e95a-4bc4-9637-7fd00a03dd2e, udp: true, tfo: true}
   - name: temp1
-    server: jp82.o5o5o.top
-    port: 8080
+    type: vless
+    server: tokyo.high-speed-test-01.online
+    port: 61111
+    uuid: 4c165520-7050-43d6-ab92-e6640d8e0501
+    network: tcp
+    tls: true
     udp: true
-    skip-cert-verify: false
-    sni: us80.o5o5o.top
-    type: hysteria2
-    password: 969b0364-2a66-4a20-bd92-c0f16793dc75
+    flow: xtls-rprx-vision
+    servername: www.nintendo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Le7Qcuw8WuEHD4dsLVtVoOSM7ZixD7p0YT_JpsLR0W4
+      short-id: "5d"
       
   - name: temp2
     type: ss
@@ -594,74 +600,112 @@ proxies:
     udp: true
 
   - name: "temp9"
-    type: vless
-    server: sg.banana.dns-dynamic.net
-    port: 443
-    uuid: 95a8fcea-455f-4a3b-ac12-329ecfef7002
-    network: ws
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: sg.banana.dns-dynamic.net
-    ws-opts:
-      path: "/xhgnws"
-      headers:
-        Host: sg.banana.dns-dynamic.net
+    server: zouter.0061.my
+    port: 17565
+    type: ss
+    cipher: aes-256-gcm
+    password: g30u31+V5+EmaIJfvcdFFPt1OcxJ0koJd5CmDwmiG8w=     
 
   - name: "temp10"
     type: vless
-    server: 104.18.44.182
+    server: 47.245.1.105
     port: 443
-    uuid: 22620697-6fba-4b71-a348-0cef2f7bec1e
-    network: ws
-    udp: true
+    uuid: 388a5c60-033b-4d8b-af5b-94b5a4d6dd77
+    network: tcp
     tls: true
+    udp: true
+    servername: cloudflare.com
     client-fingerprint: chrome
-    servername: do88.cmddo.ggff.net
-    ws-opts:
-      path: "/?ed=2048"
-      headers:
-        Host: do88.cmddo.ggff.net
+    alpn:
+      - h2
+      - http/1.1
+    reality-opts:
+      public-key: DuAYG9hZHzieIPa6zAH9CtNaqUvnQyuVhyrBB0JEBWQ
+      short-id: "226108dec4"  # 已加上双引号，防止解析报错
 
   - name: "temp11"
     type: vless
-    server: ip3.xianjin.ltd
+    server: 47.239.8.0
     port: 443
-    uuid: d2fe1afc-6f63-4654-804b-c1285812aac4
-    network: ws
-    udp: true
+    uuid: 53077081-ad56-4602-a921-d3811fe997b3
+    network: tcp
     tls: true
-    servername: sg.xianjin.ltd
-    ws-opts:
-      path: "/wang-vl?ed=2560"
-      headers:
-        Host: sg.xianjin.ltd
+    udp: true
+    servername: cloudflare.com
+    client-fingerprint: chrome
+    alpn:
+      - h2
+      - http/1.1
+    reality-opts:
+      public-key: achYdwdKLVrPku1pC0gmhmhY2QeVK8ud8vMTVr0k0hs
+      short-id: "42bfab"      # 已加上双引号，防止解析报错
 
   - name: "temp12"
-    type: hysteria2
-    server: 158.178.247.207
-    port: 47645
-    password: 33e8d651-b550-4676-aa0d-b3255eab6ba5
-    sni: www.bing.com
-    skip-cert-verify: true
-    alpn:
-      - h3
+    type: vless
+    server: qz1.71773212.xyz
+    port: 15443
+    uuid: ec55f48b-4b54-424a-961e-1b7792c0d432
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: v1-dy.ixigua.com
+    client-fingerprint: chrome
+    packet-encoding: xudp
+    reality-opts:
+      public-key: LycCjLu4EMIUzUe04zaiZiEDNiyov_e9ij7RASrQWho
+      short-id: "d0d7bfc9b0ecfd7b"
 
   - name: "temp13"
-    type: vless
-    server: ip4.xianjin.ltd
-    port: 443
-    uuid: d2fe1afc-6f63-4654-804b-c1285812aac4
-    network: ws
-    udp: true
-    tls: true
-    servername: sg.xianjin.ltd
-    ws-opts:
-      path: "/wang-vl?ed=2560"
-      headers:
-        Host: sg.xianjin.ltd
+    type: ss
+    server: c71s1.jjcruises.com
+    port: 29181
+    cipher: aes-256-gcm
+    password: "HtdgL6hZ7Y6jqAHH"
 
+  # Shadowsocks
+  - name: "temp14"
+    type: ss
+    server: c71s2.jjcruises.com
+    port: 29181
+    cipher: aes-256-gcm
+    password: "HtdgL6hZ7Y6jqAHH"
 
+  # VMess
+  - name: "temp15"
+    type: vmess
+    server: c71s3.jjcruises.com
+    port: 29181
+    uuid: 4f78070e-c6ac-477f-83fe-c5e23774d622
+    alterId: 0
+    cipher: aes-128-gcm
+
+  # VMess
+  - name: "temp16"
+    type: vmess
+    server: c71s4.jjcruises.com
+    port: 29181
+    uuid: 4f78070e-c6ac-477f-83fe-c5e23774d622
+    alterId: 0
+    cipher: aes-128-gcm
+
+  # VMess
+  - name: "temp17"
+    type: vmess
+    server: c71s5.jjcruises.com
+    port: 29181
+    uuid: 4f78070e-c6ac-477f-83fe-c5e23774d622
+    alterId: 0
+    cipher: aes-128-gcm
+
+  # VMess
+  - name: "temp18"
+    type: vmess
+    server: c71s801.jjcruises.com
+    port: 29181
+    uuid: 4f78070e-c6ac-477f-83fe-c5e23774d622
+    alterId: 0
+    cipher: aes-128-gcm
 
 
 #ikuuu.org | ikuuu
@@ -708,7 +752,7 @@ proxies:
     type: vless
     server: jp1-r.link-t7.com
     port: 10031
-    uuid: 08E885B5-C46B-4F42-9D84-430E8E5D9705
+    uuid: 08A3645B-0915-4E9C-9D3A-A0285E650860
     udp: true
     packet-encoding: xudp
     cipher: auto
@@ -727,7 +771,7 @@ proxies:
     type: vless
     server: jp2-r.link-t7.com
     port: 10032
-    uuid: 08E885B5-C46B-4F42-9D84-430E8E5D9705
+    uuid: 08A3645B-0915-4E9C-9D3A-A0285E650860
     udp: true
     packet-encoding: xudp
     cipher: auto
@@ -741,6 +785,46 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: update
+      
+#新墙洞
+  - { name: '🇭🇰 香港 IEPL 01', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13952, cipher: 2022-blake3-aes-256-gcm, password: 'VJE3om53Iz5t3ugNa57KYNW79ZBrgxCtMXfMw+RKrEc=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇭🇰 香港 IEPL 02', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 12400, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇭🇰 香港 IEPL 03', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 12401, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇭🇰 香港 IEPL 04', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 12361, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇭🇰 香港 IEPL 05', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 12163, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇭🇰 香港 IEPL 06', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 12752, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇨🇳 台湾 IEPL 01', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 12402, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇨🇳 台湾 IEPL 02', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 12407, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇸🇬 新加坡 IEPL 01', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 12523, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇸🇬 新加坡 IEPL 02', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 12527, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇸🇬 新加坡 IEPL 03', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 12528, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇯🇵 日本 IEPL 01', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 14623, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇯🇵 日本 IEPL 02', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 14625, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇯🇵 日本 IEPL 03', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 14628, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇯🇵 日本 IEPL 04', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 14629, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇰🇷 韩国 IEPL 01', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 14630, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇺🇸 美国 IEPL 01', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 12745, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇺🇸 美国 IEPL 02', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 12742, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇺🇸 美国 IEPL 03', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 11235, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇺🇸 美国 IEPL 04', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13261, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇺🇸 美国 GIA 01', type: ss, server: gia_us99.07c06051-81fd-4aa4-a94e-a0860315df8f.org, port: 14999, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇺🇸 美国 GIA 02', type: ss, server: gia_us00.07c06051-81fd-4aa4-a94e-a0860315df8f.org, port: 14999, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇷🇺 俄罗斯 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13153, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇨🇦 加拿大 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13154, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇮🇳 印度 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13155, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇹🇷 土耳其 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13156, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇲🇽 墨西哥 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13157, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇳🇬 尼日利亚 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13158, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇧🇷 巴西 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13159, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇩🇪 德国 IEPL 01', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13152, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇫🇷 法国 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13141, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇹🇭 泰国 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13142, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇦🇺 澳大利亚 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13143, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇬🇧 英国 IEPL 01', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13242, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇵🇭 菲律宾 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13144, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇦🇷 阿根廷 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13145, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+  - { name: '🇲🇾 马来西亚 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13146, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
+      
   
 proxy-groups:
   - name: 🔰 节点选择
@@ -923,6 +1007,48 @@ proxy-groups:
       - temp11
       - temp12
       - temp13
+      - temp14
+      - temp15
+      - temp16
+      - temp17
+      - temp18
+      - '🇭🇰 香港 IEPL 01'
+      - '🇭🇰 香港 IEPL 02'
+      - '🇭🇰 香港 IEPL 03'
+      - '🇭🇰 香港 IEPL 04'
+      - '🇭🇰 香港 IEPL 05'
+      - '🇭🇰 香港 IEPL 06'
+      - '🇨🇳 台湾 IEPL 01'
+      - '🇨🇳 台湾 IEPL 02'
+      - '🇸🇬 新加坡 IEPL 01'
+      - '🇸🇬 新加坡 IEPL 02'
+      - '🇸🇬 新加坡 IEPL 03'
+      - '🇯🇵 日本 IEPL 01'
+      - '🇯🇵 日本 IEPL 02'
+      - '🇯🇵 日本 IEPL 03'
+      - '🇯🇵 日本 IEPL 04'
+      - '🇰🇷 韩国 IEPL 01'
+      - '🇺🇸 美国 IEPL 01'
+      - '🇺🇸 美国 IEPL 02'
+      - '🇺🇸 美国 IEPL 03'
+      - '🇺🇸 美国 IEPL 04'
+      - '🇺🇸 美国 GIA 01'
+      - '🇺🇸 美国 GIA 02'
+      - '🇷🇺 俄罗斯 IEPL'
+      - '🇨🇦 加拿大 IEPL' 
+      - '🇮🇳 印度 IEPL'
+      - '🇹🇷 土耳其 IEPL' 
+      - '🇲🇽 墨西哥 IEPL' 
+      - '🇳🇬 尼日利亚 IEPL'
+      - '🇧🇷 巴西 IEPL'
+      - '🇩🇪 德国 IEPL 01'
+      - '🇫🇷 法国 IEPL'
+      - '🇹🇭 泰国 IEPL'
+      - '🇦🇺 澳大利亚 IEPL'
+      - '🇬🇧 英国 IEPL 01'
+      - '🇵🇭 菲律宾 IEPL'
+      - '🇦🇷 阿根廷 IEPL' 
+      - '🇲🇾 马来西亚 IEPL'
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -1024,6 +1150,12 @@ proxy-groups:
       - 🇭🇰 香港Z05 | IEPL
       - 🇭🇰 香港Z09 | IEPL 
       - 🇭🇰 HK-10 | Sub3
+      - '🇭🇰 香港 IEPL 01'
+      - '🇭🇰 香港 IEPL 02'
+      - '🇭🇰 香港 IEPL 03'
+      - '🇭🇰 香港 IEPL 04'
+      - '🇭🇰 香港 IEPL 05'
+      - '🇭🇰 香港 IEPL 06'
   - name: JP聚合
     type: url-test
     url: 'http://www.youtube.com/generate_204'
@@ -1039,6 +1171,10 @@ proxy-groups:
       - JP01
       - JP-1
       - JP-2
+      - '🇯🇵 日本 IEPL 01'
+      - '🇯🇵 日本 IEPL 02'
+      - '🇯🇵 日本 IEPL 03'
+      - '🇯🇵 日本 IEPL 04'
   - name: TW聚合
     type: url-test
     url: 'http://www.youtube.com/generate_204'
@@ -1077,6 +1213,12 @@ proxy-groups:
 #      - YT·🇺🇸美国家宽2
 #      - YT·🇺🇸美国AI解锁1
 #      - YT·🇺🇸美国AI解锁2    
+      - '🇺🇸 美国 IEPL 01'
+      - '🇺🇸 美国 IEPL 02'
+      - '🇺🇸 美国 IEPL 03'
+      - '🇺🇸 美国 IEPL 04'
+      - '🇺🇸 美国 GIA 01'
+      - '🇺🇸 美国 GIA 02'
   - name: 🌍 国外媒体
     type: select
     proxies:
