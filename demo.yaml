@@ -175,13 +175,25 @@ proxies:
         up: 50
         down: 500       
 #  GL/ipp/cm2/4
-  - name: cm2_4_IP                     
+  - name: cm2_4_IP1                     
     type: mieru
     server: 157.254.223.48
     port: 33990
     transport: TCP
     username: dongtaiwang.com
     password: dongtaiwang.com
+  - name: cm2_4_IP2    
+    server: 157.254.223.48
+    port: 11540
+    type: tuic
+    uuid: 6845cb43-4b8d-49e8-a011-1051d6c4d2ae
+    password: 6845cb43-4b8d-49e8-a011-1051d6c4d2ae
+    sni: www.microsoft.com
+    alpn: [h3]
+    request-timeout: 8000
+    udp-relay-mode: native
+    skip-cert-verify: true
+    congestion-controller: bbr
 #  GL/ipp/cm2/5
   - name: cm2_5_IP
     type: hysteria
@@ -249,13 +261,14 @@ proxies:
     skip-cert-verify: true
   - name: h2_1_IP2
     type: hysteria2
-    server: 89.144.35.34
-    port: 50022
+    server: 157.254.223.43
+    port: 27921
+    port-range: 28000-29000  
     up: 50          
     down: 500
     password: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true  
+    sni: www.bing.com
+    skip-cert-verify: true
 #  GL/ipp/h2/2
   - name: h2_2_IP
     type: hysteria2
@@ -270,7 +283,7 @@ proxies:
 #  GL/ipp/h2/3
   - name: h2_3_IP
     type: hysteria2
-    server: 62.210.124.146
+    server: 2001:bc8:32d7:17b::3
     port: 22000 
     up: 50        
     down: 500
@@ -280,12 +293,12 @@ proxies:
 #  GL/ipp/h2/4
   - name: h2_4_IP
     type: hysteria2
-    server: 2a14:7584:d04a::a
-    port: 50022 
+    server: 2001:bc8:32d7:17b::3
+    port: 22000 
     up: 50          
     down: 500
     password: dongtaiwang.com
-    sni: apple.com
+    sni: www.microsoft.com
     skip-cert-verify: true 
 #  GL/ipp/m/1
   - name: m_1_IP
@@ -308,6 +321,18 @@ proxies:
     up: "55 Mbps"
     down: "550 Mbps" 
 #  GL/ipp/q/1
+  - name: q_1_IP                     
+    server: 5.178.101.117
+    port: 30006
+    type: tuic
+    uuid: 36106e0f-4d9a-470b-a3fd-535f3b7a1e92
+    password: dongtaiwang.com
+    sni: www.microsoft.com
+    alpn: [h3]
+    request-timeout: 8000
+    udp-relay-mode: native
+    skip-cert-verify: true
+    congestion-controller: bbr
 #  GL/ipp/q/2
   - name: q_2_IP               
     type: hysteria
@@ -434,19 +459,12 @@ proxies:
     up: "55 Mbps"
     down: "500 Mbps"    
   - name: IP003
-    type: anytls  
-    server: fan3.394615.xyz
-    port: 8443
+    type: hysteria2
+    server: "2a14:7583:295c::a"
+    port: 11130
     password: dongtaiwang.com
-    client-fingerprint: chrome
-    udp: true
-    idle-session-check-interval: 30
-    idle-session-timeout: 30
-    min-idle-session: 0
-    alpn:
-      - h2
-      - http/1.1
-    skip-cert-verify: true    
+    sni: www.microsoft.com
+    skip-cert-verify: true
   - name: IP004_v2ray2
     type: vmess
     server: 2a14:7584:d0a2::a
@@ -494,12 +512,13 @@ proxies:
     client-fingerprint: chrome 
   
   - name: "IP1666"
-    server: 121.169.46.116
-    port: 1090
+    server: 38.111.30.111
+    port: 26433
     type: socks5
-    username: Og%3D%3D
-    udp: true  
-    dialer-proxy: "IP003"
+    username: 4b2c7676
+    password: 6f0f4cbba5bb
+    #udp: true  
+    dialer-proxy: "🇭🇰 HK-10 | Sub3"
     #tls: true
     # fingerprint: xxxx # 配置指纹将实现 SSL Pining 效果, 可使用 openssl x509 -noout -fingerprint -sha256 -inform pem -in yourcert.pem 获取
     # 下面两项如果填写则开启 mTLS（需要同时填写）
@@ -568,28 +587,27 @@ proxies:
     network: tcp  
 
   - name: temp5
-    type: ss
-    server: dafeizhu.whtjdasha.com
-    port: 32207
-    cipher: 2022-blake3-aes-128-gcm
-    password: "NjVhMWE2YmVmNzg4MTcwMA==:YzFmMWJkZWItZjhiNC00NQ=="
-    udp: true
+    server: 117.52.17.208
+    port: 5555
+    type: socks5
+    username: 123
+    password: 123
+    #udp: true  
+    dialer-proxy: "🇭🇰 HK-10 | Sub3"
 
   - name: "temp6"
-    type: ss
-    server: xiaofeizhu.idsduf.com
-    port: 40017
-    cipher: 2022-blake3-aes-128-gcm
-    password: "NjVhMWE2YmVmNzg4MTcwMA==:YzFmMWJkZWItZjhiNC00NQ=="
-    udp: true
+    server: 102.217.190.157
+    port: 5555
+    type: socks5
+    username: 123
+    password: 123
 
   - name: "temp7"
-    type: ss
-    server: dafeizhu.whtjdasha.com
-    port: 45690
-    cipher: 2022-blake3-aes-128-gcm
-    password: "NjVhMWE2YmVmNzg4MTcwMA==:YzFmMWJkZWItZjhiNC00NQ=="
-    udp: true
+    server: dix.yiandrive.com
+    port: 45233
+    type: socks5
+    username: 2223
+    password: 3332
 
   - name: "temp8"
     type: ss
@@ -732,7 +750,7 @@ proxies:
 #github-Vanic24-VPN | sub3
   - {name: "🇭🇰 HK-10 | Sub3", type: "anytls", server: "43.161.240.193", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
   - {name: "🇯🇵 JP-4 | Sub3", type: "anytls", server: "jpyxvm.ccwink.cc", port: 8048, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
-  - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.ccwink.cc", port: 30001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw1-vds14.anyhk.co", skip-cert-verify: true, up: null, down: null}
+  - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.ccwink.cc", port: 30102, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw.ccwink.cc", skip-cert-verify: true, up: null, down: null}
   - {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.ccwink.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
   - {name: "🇺🇸 US-1 | Sub3", type: "anytls", server: "43.162.108.172", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
 #Yue.to | 悦通
@@ -744,8 +762,10 @@ proxies:
   - { name: YT·🇺🇸美国家宽4, type: ss, server: yue-to-premium.yuetoto.net, port: 28012, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:ZDk5MmVhNTQtZDViNS00MA==', udp: true }
   - { name: YT·🇺🇸美国AI解锁1, type: ss, server: yue-to-premium.yuetoto.net, port: 28013, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:Yzg3OThjNjgtYmEyOC00YQ==', udp: true }
   - { name: YT·🇺🇸美国AI解锁2, server: yue-us-ai.yuetoto.net, port: 21064, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
-  - { name: YT·🇺🇸美国家宽1, server: yue-us-home.yuetoto.net, port: 21553, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: c8798c68-ba28-4acf-a768-ec2c41e3cdef }
-  - { name: YT·🇺🇸美国家宽2, type: ss, server: yue-to-premium.yuetoto.net, port: 28012, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:Yzg3OThjNjgtYmEyOC00YQ==', udp: true }
+  - { name: YT·🇺🇸美国家宽1, server: yue-us-home.yuetoto.net, port: 21372, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
+  - { name: YT·🇺🇸美国家宽2, type: ss, server: yue-to-premium.yuetoto.net, port: 28012, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:ZDk5MmVhNTQtZDViNS00MA==', udp: true }
+
+
 #mitce.net | mitce
   -
     name: JP-1
@@ -824,8 +844,7 @@ proxies:
   - { name: '🇵🇭 菲律宾 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13144, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
   - { name: '🇦🇷 阿根廷 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13145, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
   - { name: '🇲🇾 马来西亚 IEPL', type: ss, server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org, port: 13146, cipher: 2022-blake3-aes-256-gcm, password: 'mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=', udp: true, tfo: false }
-      
-  
+
 proxy-groups:
   - name: 🔰 节点选择
     type: select
@@ -847,7 +866,8 @@ proxy-groups:
       - cm2_2_IP1
       - cm2_3_IP1
       - cm2_3_IP2
-      - cm2_4_IP
+      - cm2_4_IP1
+      - cm2_4_IP2
       - cm2_5_IP
       - h_1_IP
       - h_2_IP
@@ -859,6 +879,7 @@ proxy-groups:
       - h2_4_IP
       - m_1_IP
       - m_2_IP
+      - q_1_IP
       - q_2_IP
       - q_3_IP
       - q_4_IP
@@ -928,7 +949,8 @@ proxy-groups:
       - cm2_2_IP1
       - cm2_3_IP1
       - cm2_3_IP2
-      - cm2_4_IP
+      - cm2_4_IP1
+      - cm2_4_IP2
       - cm2_5_IP
       - h_1_IP
       - h_2_IP
@@ -940,6 +962,7 @@ proxy-groups:
       - h2_4_IP
       - m_1_IP
       - m_2_IP
+      - q_1_IP
       - q_2_IP
       - q_3_IP
       - q_4_IP
@@ -969,6 +992,7 @@ proxy-groups:
       - IP17-US-IDC
       - HK01
       - JP01
+      - IP1666
       - 🇭🇰 香港Z02 | IEPL      
       - 🇭🇰 香港Z03 | IEPL
       - 🇭🇰 香港Z04 | IEPL
@@ -1062,7 +1086,8 @@ proxy-groups:
       - cm2_2_IP1
       - cm2_3_IP1
       - cm2_3_IP2
-      - cm2_4_IP
+      - cm2_4_IP1
+      - cm2_4_IP2
       - cm2_5_IP
       - h_1_IP
       - h_2_IP
@@ -1074,6 +1099,7 @@ proxy-groups:
       - h2_4_IP
       - m_1_IP
       - m_2_IP
+      - q_1_IP
       - q_2_IP
       - q_3_IP
       - q_4_IP
@@ -1110,7 +1136,9 @@ proxy-groups:
       - TW聚合
       - JP聚合
       - US聚合
-      - DL            
+      - DL   
+      - 本土势力
+      - 外来势力           
   - name: DL
     type: select
     url: 'http://www.gstatic.com/generate_204'
@@ -1188,6 +1216,8 @@ proxy-groups:
       - IP003    
       - temp1
       - temp2
+      - '🇨🇳 台湾 IEPL 01'
+      - '🇨🇳 台湾 IEPL 02'
   - name: US聚合
     type: url-test
     url: 'http://www.youtube.com/generate_204'
@@ -1209,16 +1239,16 @@ proxy-groups:
 #      - YT·🇺🇸美国2
 #      - YT·🇺🇸美国专属1      
 #      - YT·🇺🇸美国专属2      
-#      - YT·🇺🇸美国家宽1      
-#      - YT·🇺🇸美国家宽2
+      - YT·🇺🇸美国家宽1      
+      - YT·🇺🇸美国家宽2
 #      - YT·🇺🇸美国AI解锁1
-#      - YT·🇺🇸美国AI解锁2    
+#      - YT·🇺🇸美国AI解锁2 
       - '🇺🇸 美国 IEPL 01'
       - '🇺🇸 美国 IEPL 02'
       - '🇺🇸 美国 IEPL 03'
       - '🇺🇸 美国 IEPL 04'
       - '🇺🇸 美国 GIA 01'
-      - '🇺🇸 美国 GIA 02'
+      - '🇺🇸 美国 GIA 02'   
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -1241,55 +1271,25 @@ proxy-groups:
     type: select
     proxies:
       - 🎯 全球直连
-      - 🔰 节点选择
-      - cm2_1_IP1
-      - cm2_1_IP2
-      - cm2_1_IP3
-      - cm2_1_IP4
-      - cm2_1_IP5
-      - cm2_2_IP1
-      - cm2_3_IP1
-      - cm2_3_IP2
-      - cm2_4_IP
-      - cm2_5_IP
-      - h_1_IP
-      - h_2_IP
-      - h_3_IP
-      - h2_1_IP1
-      - h2_1_IP2
-      - h2_2_IP
-      - h2_3_IP
-      - h2_4_IP
-      - m_1_IP
-      - q_2_IP
-      - q_4_IP
-      - s_1_IP
-      - s_2_IP
-      - IP001
-      - IP002
-      - IP003
-      - IP004_v2ray2
-      - "http"
-      - "vless"
-      - ip-US-2 
-      - IP12-US-IDC
-      - IP13-US-IDC
-      - IP14-US-IDC
-      - IP15-US-IDC
-      - JP-1
-      - 🇯🇵 JP-4 | Sub3
-      - HK01
-      - "🇹🇼 TW-1 | Sub3"
-      - "🇹🇼 TW-2 | Sub3"
-      - "ss"
-      - "ssr"
-      - cfvless
-      - "warp" 
+      - 🔰 节点选择    
+      - HK聚合
+      - TW聚合
+      - JP聚合
+      - US聚合
+      - DL   
+      - 本土势力
+      - 外来势力  
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
+      - HK聚合
+      - JP聚合
+      - TW聚合
+      - US聚合
+      - 本土势力
+      - 外来势力  
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -1313,6 +1313,12 @@ proxy-groups:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
+      - HK聚合
+      - JP聚合
+      - TW聚合
+      - US聚合
+      - 本土势力
+      - 外来势力  
 rules:
  - DOMAIN-SUFFIX,local,🎯 全球直连                                                                                                                                    
  - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve                                                                                                                      
