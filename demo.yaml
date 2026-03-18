@@ -537,18 +537,18 @@ proxies:
   - {name: ip-US-2, server: 34.221.19.27, port: 50000, type: ss, cipher: aes-256-gcm, password: a9a37b54-e95a-4bc4-9637-7fd00a03dd2e, udp: true, tfo: true}
   - name: temp1
     type: vless
-    server: tokyo.high-speed-test-01.online
-    port: 61111
-    uuid: 4c165520-7050-43d6-ab92-e6640d8e0501
+    server: 103.rushrushnode.org
+    port: 10103
+    uuid: 14d36639-0d42-4b3d-acd3-ff1c0ceae0ad
     network: tcp
     tls: true
     udp: true
     flow: xtls-rprx-vision
-    servername: www.nintendo.com
-    client-fingerprint: chrome
+    servername: img14.360buyimg.com
+    client-fingerprint: firefox
     reality-opts:
-      public-key: Le7Qcuw8WuEHD4dsLVtVoOSM7ZixD7p0YT_JpsLR0W4
-      short-id: "5d"
+      public-key: GwBhOiy3pLa73zga-wmG07xRfiI71_A9VDi-DiHeBWk
+      short-id: "9153"
       
   - name: temp2
     type: ss
@@ -754,16 +754,16 @@ proxies:
   - {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.ccwink.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
   - {name: "🇺🇸 US-1 | Sub3", type: "anytls", server: "43.162.108.172", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
 #Yue.to | 悦通
-  - { name: YT·🇺🇸美国1, server: yue-us.yuetoto.net, port: 21333, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: 64df5c9a-dda5-4c78-b7fd-e3b264b03d5a }
-  - { name: YT·🇺🇸美国2, type: ss, server: yue-to-zz.yuetoto.net, port: 22012, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:NjRkZjVjOWEtZGRhNS00Yw==', udp: true }
-  - { name: YT·🇺🇸美国专属1, type: ss, server: yue-to-premium.yuetoto.net, port: 28006, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:Yzg3OThjNjgtYmEyOC00YQ==', udp: true }
-  - { name: YT·🇺🇸美国专属2, server: yue-us-premium.yuetoto.net, port: 21825, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
+  - { name: YT·🇺🇸美国1, server: api-8m.yuetong.online, port: 21020, sni: api-8m.yuetong.online, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, hop-interval: 30, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
+  - { name: YT·🇺🇸美国2, server: api-8m.yuetong.online, port: 21539, sni: api-8m.yuetong.online, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, hop-interval: 30, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
   - { name: YT·🇺🇸美国家宽3, server: yue-us-home.yuetoto.net, port: 21343, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: c8798c68-ba28-4acf-a768-ec2c41e3cdef }
   - { name: YT·🇺🇸美国家宽4, type: ss, server: yue-to-premium.yuetoto.net, port: 28012, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:ZDk5MmVhNTQtZDViNS00MA==', udp: true }
-  - { name: YT·🇺🇸美国AI解锁1, type: ss, server: yue-to-premium.yuetoto.net, port: 28013, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:Yzg3OThjNjgtYmEyOC00YQ==', udp: true }
-  - { name: YT·🇺🇸美国AI解锁2, server: yue-us-ai.yuetoto.net, port: 21064, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
-  - { name: YT·🇺🇸美国家宽1, server: yue-us-home.yuetoto.net, port: 21372, sni: null, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
-  - { name: YT·🇺🇸美国家宽2, type: ss, server: yue-to-premium.yuetoto.net, port: 28012, cipher: 2022-blake3-aes-128-gcm, password: 'ZjZmYjhhMTM3MTYwYzk4ZQ==:ZDk5MmVhNTQtZDViNS00MA==', udp: true }
+  - { name: YT·🇺🇸美国家宽1, server: dl-eim.yuetong.online, port: 443, sni: dl-eim.yuetong.online, up: null, down: null, skip-cert-verify: false, hop-interval: 30, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
+  - { name: YT·🇺🇸美国家宽2, type: anytls, server: dl-eim.yuetong.online, port: 443, password: d992ea54-d5b5-40e4-b365-59495aa90e3d, udp: true, sni: dl-eim.yuetong.online }
+  - { name: YT·🇺🇸美国专属1, server: web-azz.yuetong.online, port: 21887, sni: web-azz.yuetong.online, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, hop-interval: 30, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
+  - { name: YT·🇺🇸美国专属2, server: web-azz.yuetong.online, port: 21708, sni: web-azz.yuetong.online, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, hop-interval: 30, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
+  - { name: YT·🇺🇸美国AI解锁1, server: box-ihcw.yuetong.online, port: 21761, sni: box-ihcw.yuetong.online, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, hop-interval: 30, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
+  - { name: YT·🇺🇸美国AI解锁2, server: box-ihcw.yuetong.online, port: 21353, sni: box-ihcw.yuetong.online, up: null, down: null, skip-cert-verify: false, ports: 21001-21999, hop-interval: 30, type: hysteria2, password: d992ea54-d5b5-40e4-b365-59495aa90e3d }
 
 
 #mitce.net | mitce
@@ -1167,10 +1167,10 @@ proxy-groups:
       - YT·🇺🇸美国AI解锁1
       - YT·🇺🇸美国AI解锁2        
   - name: HK聚合
-    type: url-test
+    type: fallback
     url: 'http://www.youtube.com/generate_204'
-    interval: 300
-    tolerance: 100
+    interval: 180
+    tolerance: 75
     proxies:      
       - 🇭🇰 香港Z02 | IEPL
       - 🇭🇰 香港Z03 | IEPL
@@ -1187,7 +1187,7 @@ proxy-groups:
   - name: JP聚合
     type: url-test
     url: 'http://www.youtube.com/generate_204'
-    interval: 300
+    interval: 180
     tolerance: 75
     proxies:      
       - 🇯🇵 日本Z01 | IEPL
@@ -1206,8 +1206,8 @@ proxy-groups:
   - name: TW聚合
     type: url-test
     url: 'http://www.youtube.com/generate_204'
-    interval: 300
-    tolerance: 100
+    interval: 180
+    tolerance: 75
     proxies:      
       - 🇹🇼 TW-1 | Sub3
       - 🇹🇼 TW-2 | Sub3
@@ -1221,10 +1221,9 @@ proxy-groups:
   - name: US聚合
     type: url-test
     url: 'http://www.youtube.com/generate_204'
-    interval: 300
+    interval: 180
     tolerance: 100
     proxies:  
-#      - 🇹🇼 TW-2 | Sub3
       - IP1666   
       - 🇺🇸 US-1 | Sub3  
       - IP12-US-IDC
@@ -1302,6 +1301,12 @@ proxy-groups:
       - ♻️ 自动选择
       - DIRECT
       - DL
+      - HK聚合
+      - JP聚合
+      - TW聚合
+      - US聚合
+      - 本土势力
+      - 外来势力  
   - name: 🛑 全球拦截
     type: select
     proxies:
@@ -1426,6 +1431,7 @@ rules:
 # - DOMAIN,alt6-mtalk.google.com,🎯 全球直连                                                                                                                         
 # - DOMAIN,alt7-mtalk.google.com,🎯 全球直连                                                                                                                         
 # - DOMAIN,alt8-mtalk.google.com,🎯 全球直连
+ - DOMAIN-SUFFIX,fiber.google.com,🔰 节点选择   
  - DOMAIN-SUFFIX,google.com,Gemini
  - DOMAIN-SUFFIX,googleapis.com,Gemini
  - DOMAIN-SUFFIX,gstatic.com,Gemini
