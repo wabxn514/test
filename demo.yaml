@@ -571,20 +571,16 @@ proxies:
     
   - name: temp4
     type: vless
-    server: 143.14.106.72
-    port: 11000
-    uuid: b54b80b2-29d4-42a2-b964-e496f9c73a3e
-    encryption: none
-    udp: true
-    skip-cert-verify: false
-    tfo: false
+    server: 154.51.40.10
+    port: 58934
+    uuid: a6402552-3a11-447a-c17d-457d3ada9a13
+    network: tcp
     tls: true
+    udp: true
+    servername: www.speedtest.org
+    client-fingerprint: chrome
     reality-opts:
-      public-key: 4Tojt77RVb_RVtk6OjdzF_U2r-daJOD0NpEt1wTIxx4
-      short-id: 4d414b9afc71b937
-    servername: www.apple.com
-    client-fingerprint: random
-    network: tcp  
+      public-key: UtL7E0Gmxj3X5JdcPAutpTRKo7K2hugkR0vwk2XroUM
 
   - name: temp5
     server: 117.52.17.208
