@@ -1,0 +1,25 @@
+proxies:
+- {name: "🇭🇰 HK-1 | Sub3", type: "anytls", server: "hkaws.ccwink.photos", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇯🇵 JP-4 | Sub3", type: "anytls", server: "jpaws.ccwink.photos", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇭🇰 HK-2 | Sub3", type: "hysteria2", server: "hkt.ccwink.cc", port: 56309, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "hkt.ccwink.cc", skip-cert-verify: true, up: null, down: null}
+- {name: "🇭🇰 HK-3 | Sub3", type: "anytls", server: "hkt.ccwink.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇭🇰 HK-4 | Sub3", type: "anytls", server: "hkaws.ccwink.photos", port: 60005, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇭🇰 HK-5 | Sub3", type: "anytls", server: "jpaws.ccwink.photos", port: 60005, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇭🇰 HK-6 | Sub3", type: "anytls", server: "43.161.240.193", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇭🇰 HK-7 | Sub3", type: "anytls", server: "43.161.240.193", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇭🇰 HK-12 | Sub3", type: "hysteria2", server: "jpaws.ccwink.photos", port: 88, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "hkak.ccwink.cc", skip-cert-verify: true, up: 2000, down: 2000}
+- {name: "🇭🇰 HK-13 | Sub3", type: "hysteria2", server: "hkaws.ccwink.photos", port: 88, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "hkak.ccwink.cc", skip-cert-verify: true, up: 2000, down: 2000}
+- {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.ccwink.cc", port: 30102, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw.ccwink.cc", skip-cert-verify: true, up: null, down: null}
+- {name: "🇹🇼 TW-2 | Sub3", type: "anytls", server: "tw.ccwink.cc", port: 6549, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇹🇼 TW-3 | Sub3", type: "anytls", server: "hkaws.ccwink.photos", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇹🇼 TW-4 | Sub3", type: "anytls", server: "jpaws.ccwink.photos", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇯🇵 JP-5 | Sub3", type: "anytls", server: "jpyxvm.ccwink.cc", port: 56300, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇯🇵 JP-6 | Sub3", type: "anytls", server: "jpyxvm.ccwink.cc", port: 8048, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇯🇵 JP-7 | Sub3", type: "anytls", server: "hkaws.ccwink.photos", port: 60004, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇯🇵 JP-8 | Sub3", type: "anytls", server: "jpaws.ccwink.photos", port: 60004, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇸🇬 SG-1 | Sub3", type: "anytls", server: "hkaws.ccwink.photos", port: 60003, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇸🇬 SG-2 | Sub3", type: "anytls", server: "jpaws.ccwink.photos", port: 60003, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇸🇬 SG-3 | Sub3", type: "anytls", server: "sggcp.ccwink.cc", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇸🇬 SG-4 | Sub3", type: "anytls", server: "sggcp.ccwink.cc", port: 60003, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- {name: "🇰🇷 KR-1 | Sub3", type: "hysteria2", server: "kr.ccwink.cc", port: 56309, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "kr.ccwink.cc", skip-cert-verify: true, up: null, down: null}
+- {name: "🇰🇷 KR-2 | Sub3", type: "anytls", server: "kr.ccwink.cc", port: 32455, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
