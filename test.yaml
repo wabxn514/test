@@ -1,10 +1,6 @@
 proxies:
 - {name: "🇯🇵 JP-4 | Sub3", type: "anytls", server: "jpaws.ccwink.photos", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
 - {name: "🇭🇰 HK-2 | Sub3", type: "hysteria2", server: "hkt.ccwink.cc", port: 56309, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "hkt.ccwink.cc", skip-cert-verify: true, up: null, down: null}
-- {name: "🇭🇰 HK-4 | Sub3", type: "anytls", server: "hkaws.ccwink.photos", port: 60005, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
-- {name: "🇭🇰 HK-5 | Sub3", type: "anytls", server: "jpaws.ccwink.photos", port: 60005, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
-- {name: "🇭🇰 HK-6 | Sub3", type: "anytls", server: "43.161.240.193", port: 60002, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
-- {name: "🇭🇰 HK-7 | Sub3", type: "anytls", server: "43.161.240.193", port: 60001, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
 - {name: "🇭🇰 HK-12 | Sub3", type: "hysteria2", server: "jpaws.ccwink.photos", port: 88, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "hkak.ccwink.cc", skip-cert-verify: true, up: 2000, down: 2000}
 - {name: "🇭🇰 HK-13 | Sub3", type: "hysteria2", server: "hkaws.ccwink.photos", port: 88, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "hkak.ccwink.cc", skip-cert-verify: true, up: 2000, down: 2000}
 - {name: "🇹🇼 TW-1 | Sub3", type: "hysteria2", server: "tw.ccwink.cc", port: 30102, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "tw.ccwink.cc", skip-cert-verify: true, up: null, down: null}
@@ -19,3 +15,59 @@ proxies:
 - {name: "🇸🇬 SG-4 | Sub3", type: "anytls", server: "sggcp.ccwink.cc", port: 60003, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
 - {name: "🇰🇷 KR-1 | Sub3", type: "hysteria2", server: "kr.ccwink.cc", port: 56309, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "kr.ccwink.cc", skip-cert-verify: true, up: null, down: null}
 - {name: "🇰🇷 KR-2 | Sub3", type: "anytls", server: "kr.ccwink.cc", port: 32455, password: "9e0f72bb-7ad6-4383-994a-497569a94d74", sni: "baidu.com", skip-cert-verify: true, udp: true}
+- name: 香港 A14 IEPL专线 电信优化
+  type: vless
+  server: pccw04.aisafushi.org
+  port: 443
+  uuid: df901fd3-7d9b-4f1e-a235-c38c1314b20e
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.microsoft.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A07 IEPL专线 移动优化
+  type: vless
+  server: hk07.aisafushi.org
+  port: 1500
+  uuid: df901fd3-7d9b-4f1e-a235-c38c1314b20e
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.microsoft.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A02 IEPL专线 联通优化
+  type: vless
+  server: hk02.aisafushi.org
+  port: 443
+  uuid: df901fd3-7d9b-4f1e-a235-c38c1314b20e
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.microsoft.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A24 电信+联通 BGP路由 高带宽优化
+  type: vless
+  server: hr04.aisthegroupa.org
+  port: 443
+  uuid: df901fd3-7d9b-4f1e-a235-c38c1314b20e
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.microsoft.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
