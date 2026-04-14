@@ -18,11 +18,9 @@ dns:
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
   proxy-server-nameserver:
-    - https://dns.alidns.com/dns-query
-
-
-
-
+    - 223.5.5.5
+    - 180.184.1.1
+    - 119.29.29.29
 
 proxies:
 #  GL/ipp/cm2/1
