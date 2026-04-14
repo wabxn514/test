@@ -608,12 +608,13 @@ proxies:
     password: 3332
 
   - name: "temp8"
-    type: ss
-    server: xiaofeizhu.idsduf.com
-    port: 45691
-    cipher: 2022-blake3-aes-128-gcm
-    password: "NjVhMWE2YmVmNzg4MTcwMA==:YzFmMWJkZWItZjhiNC00NQ=="
+    type: anytls
+    server: hkcom1.changshenglou.com
+    port: 44396
+    password: 102d7df4-2da2-44ba-8028-315d2159f958
     udp: true
+    sni: gw.alicdn.com
+    skip-cert-verify: true
 
   - name: "temp9"
     server: zouter.0061.my
