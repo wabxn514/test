@@ -571,17 +571,19 @@ proxies:
     
   - name: temp4
     type: vless
-    server: 154.51.40.10
-    port: 58934
-    uuid: a6402552-3a11-447a-c17d-457d3ada9a13
+    server: 0079527.com
+    port: 48247
+    uuid: 0922da22-51c4-4f7e-bbd1-b62f09dee7de
     network: tcp
-    tls: true
     udp: true
-    servername: www.speedtest.org
-    client-fingerprint: chrome
+    tls: true
+    client-fingerprint: firefox
+    servername: www.icloud.com
+    flow: xtls-rprx-vision
     reality-opts:
-      public-key: UtL7E0Gmxj3X5JdcPAutpTRKo7K2hugkR0vwk2XroUM
-
+      public-key: wyM1fO50h99XsWmV6mHl-75vSdB2peZmZxKvN9YWPg0
+      short-id: 2046d994786d
+  
   - name: temp5
     server: 117.52.17.208
     port: 5555
