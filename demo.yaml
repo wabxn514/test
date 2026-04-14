@@ -6,6 +6,7 @@ dns:
   prefer-h3: true
   listen: :53
   enhanced-mode: fake-ip
+  unified-delay: true
   fake-ip-range: 198.18.0.1/16
   respect-rules: true  # 开启此项以减少泄露
   default-nameserver:
