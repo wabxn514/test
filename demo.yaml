@@ -734,10 +734,10 @@ proxies:
   - {name: IP15-US-IDC, server: v52ry8d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: IP16-US-IDC, server: 4.c.q.k.v.n.b.8.d.us01-ae5.entry.v51124-4.qpon, port: 20012, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: IP17-US-IDC, server: p.c.2.e.z.q.b.8.d.us02-ae5.entry.v51124-4.qpon, port: 20017, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-  - {name: 🇭🇰 香港Z02 | IEPL, server: 0.2.q.e.v.l.f.8.d.hk02-ae5.entry.v51124-4.qpon, port: 14562, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: 🇭🇰 香港S02 | IEPL, server: 9.9.d.k.7.g.6.d.1.hk02-ae5.entry.v51124-6.qpon, port: 14564, type: ss, cipher: aes-256-gcm, password: 2e8bb7c3-f76e-3594-bedf-46bc916c2bf7, udp: true}
   - {name: 🇭🇰 香港Z03 | IEPL, server: 4.c.g.x.v.l.f.8.d.hk03-ae5.entry.v51124-4.qpon, port: 762, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: 🇭🇰 香港Z04 | IEPL, server: 0.2.g.m.4.r.f.8.d.hk04-ae5.entry.v51124-4.qpon, port: 806, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
-  - {name: 🇭🇰 香港Z05 | IEPL, server: 4.c.2.k.z.q.d.8.d.hk05-ae5.entry.v51124-4.qpon, port: 1814, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
+  - {name: 🇭🇰 香港S05 | IEPL, server: l.f.d.k.g.a.n.d.1.hk05-ae5.entry.v51124-6.qpon, port: 1816, type: ss, cipher: aes-256-gcm, password: 2e8bb7c3-f76e-3594-bedf-46bc916c2bf7, udp: true}
   - {name: 🇭🇰 香港Z09 | IEPL, server: e.2.q.e.4.l.d.8.d.hk09-vm5.entry.v51124-4.qpon, port: 15267, type: vmess, uuid: 6c68aa27-3045-3195-a91d-60acda5504f2, alterId: 1, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
   - {name: 🇯🇵 日本Z01 | IEPL, server: 4.b.q.x.z.r.f.8.d.jp01-ae5.entry.v51124-4.qpon, port: 475, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
   - {name: 🇯🇵 日本Z02 | IEPL, server: 0.7.2.m.z.q.b.8.d.jp02-ae5.entry.v51124-4.qpon, port: 485, type: ss, cipher: aes-256-gcm, password: 6c68aa27-3045-3195-a91d-60acda5504f2, udp: true}
